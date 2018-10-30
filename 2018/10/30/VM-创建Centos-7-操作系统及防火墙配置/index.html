@@ -6,15 +6,74 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Melvin の blog</title>
+  <title>VM 创建Centos 7 操作系统及防火墙配置 | Melvin の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Melvin の blog">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="目的： VMware vSphere Client 下使用Linux虚拟机安装Centos7系统工具：VMware vSphere Client5.5一、虚拟机基础配置    1、使用vShere client 连接到物理机上，上传要安装的操作系统镜像，选择“配置”-“存储器”，然后选择你要上传到的位置，然后右击选择“浏览数据存储”，然后现在要上传到的文件夹，然后找到要上传的文件进行上传：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VM 创建Centos 7 操作系统及防火墙配置">
+<meta property="og:url" content="http://yoursite.com/2018/10/30/VM-创建Centos-7-操作系统及防火墙配置/index.html">
 <meta property="og:site_name" content="Melvin の blog">
+<meta property="og:description" content="目的： VMware vSphere Client 下使用Linux虚拟机安装Centos7系统工具：VMware vSphere Client5.5一、虚拟机基础配置    1、使用vShere client 连接到物理机上，上传要安装的操作系统镜像，选择“配置”-“存储器”，然后选择你要上传到的位置，然后右击选择“浏览数据存储”，然后现在要上传到的文件夹，然后找到要上传的文件进行上传：">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/pasted-29.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-30.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-31.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-32.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-33.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-34.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-35.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-36.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-37.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-38.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-39.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-40.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-41.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-42.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-43.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-44.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-45.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-46.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-47.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-48.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-49.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-50.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-51.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-52.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-53.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-54.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-55.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-56.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-57.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-58.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-59.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-60.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-61.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-62.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-63.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-64.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-65.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-66.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-67.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-68.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-69.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-70.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-71.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-72.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-73.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-74.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-75.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-76.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-77.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-78.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-79.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-80.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-81.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-82.png">
+<meta property="og:updated_time" content="2018-10-30T13:26:40.826Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Melvin の blog">
+<meta name="twitter:title" content="VM 创建Centos 7 操作系统及防火墙配置">
+<meta name="twitter:description" content="目的： VMware vSphere Client 下使用Linux虚拟机安装Centos7系统工具：VMware vSphere Client5.5一、虚拟机基础配置    1、使用vShere client 连接到物理机上，上传要安装的操作系统镜像，选择“配置”-“存储器”，然后选择你要上传到的位置，然后右击选择“浏览数据存储”，然后现在要上传到的文件夹，然后找到要上传的文件进行上传：">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-29.png">
   
     <link rel="alternative" href="/atom.xml" title="Melvin の blog" type="application/atom+xml">
   
@@ -150,184 +209,215 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-VM-创建Centos-7-操作系统及防火墙配置" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      VM 创建Centos 7 操作系统及防火墙配置
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/VM-创建Centos-7-操作系统及防火墙配置/" class="archive-article-date">
+
+        
+        <a href="/2018/10/30/VM-创建Centos-7-操作系统及防火墙配置/" class="archive-article-date">
   	<time datetime="2018-10-30T12:35:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/VM-创建Centos-7-操作系统及防火墙配置/">VM 创建Centos 7 操作系统及防火墙配置</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>目的： VMware vSphere Client 下使用Linux虚拟机安装Centos7系统<br>工具：VMware vSphere Client5.5<br>一、虚拟机基础配置<br>    1、使用vShere client 连接到物理机上，上传要安装的操作系统镜像，选择“配置”-“存储器”，然后选择你要上传到的位置，然后右击选择“浏览数据存储”，然后现在要上传到的文件夹，然后找到要上传的文件进行上传：</p>
+<p><img src="/images/pasted-29.png" alt="upload successful"></p>
+<p><img src="/images/pasted-30.png" alt="upload successful"><br>    2、在要上传的数据存储中，建立ISO文件夹，然后上传文件：</p>
+<p><img src="/images/pasted-31.png" alt="upload successful"></p>
+<p><img src="/images/pasted-32.png" alt="upload successful"><br>    3、右键虚拟机，然后创建虚拟主机：</p>
+<p><img src="/images/pasted-33.png" alt="upload successful"><br>    4、按照需求，定义虚拟机的名称，然后点击下一步：</p>
+<p><img src="/images/pasted-34.png" alt="upload successful"><br>    5、选择安装的存储位置，然后点击“下一步”：</p>
+<p><img src="/images/pasted-35.png" alt="upload successful"><br>    6、选择要安装的操作系统版本，然后点击“下一步”：</p>
+<p><img src="/images/pasted-36.png" alt="upload successful"><br>    7、选择要安装的网卡的个数和选择网卡，然后点击“下一步”：</p>
+<p><img src="/images/pasted-37.png" alt="upload successful"><br>    8、配置系统硬盘的大小，然后点击“下一步”：</p>
+<p><img src="/images/pasted-38.png" alt="upload successful"><br>    9、即将完成虚拟机创建，此处勾选“完成前编辑虚拟机设置”选项，然后点击“下一步”：</p>
+<p><img src="/images/pasted-39.png" alt="upload successful"><br>    10、然后安装个人需求配置系统所需要的内存、CPU的大小，然后点击“完成”</p>
+<p><img src="/images/pasted-40.png" alt="upload successful"><br>    11、然后等待虚拟机创建完成：</p>
+<p><img src="/images/pasted-41.png" alt="upload successful"><br>二、虚拟机安装Centos7 操作系统<br>    1、选择刚创建的虚拟机，然后点击“打开电源”，然后打开“启动虚拟控制台”：</p>
+<p><img src="/images/pasted-42.png" alt="upload successful"><br>    2、挂载系统镜像：</p>
+<p><img src="/images/pasted-43.png" alt="upload successful"></p>
+<p><img src="/images/pasted-44.png" alt="upload successful"><br>    3、然后点击“虚拟机”，选择“客户机”，点击“发送”进行虚拟机重启：</p>
+<p><img src="/images/pasted-45.png" alt="upload successful"><br>    4、然后选择“Install Centos 7” 然后按Tab键，配置系统内网卡的名字：<br>    在提示符后面添加“net.ifnames=0 biosdevname=0”,然后按回车键，开始安装：</p>
+<p><img src="/images/pasted-46.png" alt="upload successful"><br>    5、开始安装：</p>
+<p><img src="/images/pasted-47.png" alt="upload successful"><br>    6、选择安装的语言，一般选择默认，直接点击“Continue”：</p>
+<p><img src="/images/pasted-48.png" alt="upload successful"><br>    7、选择“日期和时间”：</p>
+<p><img src="/images/pasted-49.png" alt="upload successful"> </p>
+<p><img src="/images/pasted-50.png" alt="upload successful"><br>    8、选择安装的存储位置，然后根据需求分配空间：</p>
+<p><img src="/images/pasted-51.png" alt="upload successful"></p>
+<p><img src="/images/pasted-52.png" alt="upload successful"></p>
+<p><img src="/images/pasted-53.png" alt="upload successful"></p>
+<p><img src="/images/pasted-54.png" alt="upload successful"></p>
+<p><img src="/images/pasted-55.png" alt="upload successful"><br>    9、选择安装的操作系统版本：</p>
+<p><img src="/images/pasted-56.png" alt="upload successful"></p>
+<p><img src="/images/pasted-57.png" alt="upload successful"><br>    此处安装的是桌面版本的<br>    10、一切配置完成后，点击”Begin Installtion“，然后开始安装：</p>
+<p><img src="/images/pasted-58.png" alt="upload successful"><br>    11、设置root帐号密码：</p>
+<p><img src="/images/pasted-59.png" alt="upload successful"></p>
+<p><img src="/images/pasted-60.png" alt="upload successful"><br>    12、等待系统安装完成，然后点击“reboot”，重启服务器：</p>
+<p><img src="/images/pasted-61.png" alt="upload successful"></p>
+<p><img src="/images/pasted-62.png" alt="upload successful"><br>    13、Centos7桌面版第一次进系统需要配置一些信息，如下：</p>
+<p><img src="/images/pasted-63.png" alt="upload successful"><br>    14、系统简单配置：</p>
+<p><img src="/images/pasted-64.png" alt="upload successful"></p>
+<p><img src="/images/pasted-65.png" alt="upload successful"><br>    15、选择时区：</p>
+<p><img src="/images/pasted-66.png" alt="upload successful"><br>    16、创建一个非管理员用户：</p>
+<p><img src="/images/pasted-67.png" alt="upload successful"> </p>
+<p><img src="/images/pasted-68.png" alt="upload successful"><br>    17、设置完成，开始使用Centos7系统：</p>
+<p><img src="/images/pasted-69.png" alt="upload successful"><br>    18、系统安装成功：</p>
+<p><img src="/images/pasted-70.png" alt="upload successful"><br>三、网络设置<br>    1、打开系统的命令终端，登陆系统用的是一般用户，配置网络需要切换到root用户：</p>
+<p><img src="/images/pasted-71.png" alt="upload successful"><br>    2、配置网络地址，vi /etc/sysconfig/network-scripts/ifcfg-eth0    :</p>
+<p><img src="/images/pasted-72.png" alt="upload successful"></p>
+<p><img src="/images/pasted-73.png" alt="upload successful"><br>    3、重启网络服务：<br>    Centos7 重启网络有两种方式：<br>    systemctl restart network<br>    systemctl restart network.service</p>
+<p><img src="/images/pasted-74.png" alt="upload successful"><br>四、关闭防火墙<br>    1、关闭防火墙<br>   systemctl stop firewalld.service</p>
+<p><img src="/images/pasted-75.png" alt="upload successful"><br>    2、关闭开机启动防火墙：<br>    systemctl disable firewalld.service</p>
+<p><img src="/images/pasted-76.png" alt="upload successful"><br>    3、开启防火墙：<br>  systemctl start firewalld.service</p>
+<p><img src="/images/pasted-77.png" alt="upload successful"><br>    4、关闭selinux防火墙，注意：关闭色Linux防火墙后，需要重启系统才能生效：<br>   vi /etc/sysconfig/selinux  ，然后将enforcing  改为disabled</p>
+<p><img src="/images/pasted-78.png" alt="upload successful"></p>
+<p><img src="/images/pasted-79.png" alt="upload successful"><br>    5、重启服务器，（selinux防火墙关闭后需重启才能生效）<br>   重启命令： shutdown -r now</p>
+<p><img src="/images/pasted-80.png" alt="upload successful"><br>    6、测试登陆正常，系统安装成功：</p>
+<p><img src="/images/pasted-81.png" alt="upload successful"> </p>
+<p><img src="/images/pasted-82.png" alt="upload successful"></p>
+<pre><code>5、
+</code></pre>
+      
 
-        <div class="article-info info-on-right">
-          
-          
-
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/10/30/VM-创建Centos-7-操作系统及防火墙配置/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/Windows-10-系统-PyCharm软件的安装、激活、汉化-详细教程/" class="archive-article-date">
-  	<time datetime="2018-10-30T11:42:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/10/30/Windows-10-系统-PyCharm软件的安装、激活、汉化-详细教程/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Windows 10 系统 PyCharm软件的安装、激活、汉化 详细教程</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/Windows-10-系统-PyCharm软件的安装、激活、汉化-详细教程/">Windows 10 系统 PyCharm软件的安装、激活、汉化 详细教程</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/Windows10-64位安装Python-3-6-4/" class="archive-article-date">
-  	<time datetime="2018-10-30T11:30:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/Windows10-64位安装Python-3-6-4/">Windows10 64位安装Python 3.6.4</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/Linux系统常用命令/" class="archive-article-date">
-  	<time datetime="2018-10-30T09:40:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/Linux系统常用命令/">Linux系统常用命令</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/Mysql-学习笔记/" class="archive-article-date">
-  	<time datetime="2018-10-30T08:15:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/Mysql-学习笔记/">Mysql 学习笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/25/hello-world/" class="archive-article-date">
-  	<time datetime="2018-10-25T07:59:52.692Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/25/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -355,8 +445,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
