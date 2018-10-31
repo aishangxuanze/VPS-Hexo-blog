@@ -152,6 +152,90 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Centos7-firewall防火墙常用配置" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/31/Centos7-firewall防火墙常用配置/">Centos7 firewall防火墙常用配置</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/31/Centos7-firewall防火墙常用配置/" class="archive-article-date">
+  	<time datetime="2018-10-31T10:55:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-31</time>
+</a>
+        
+      </header>
+    
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一、Centos7和Centos6 防火墙的区别：<br>     使用的工具不一样了。Centos6 使用的是iptables ，Centos7 使用的是filewall<br>    iptables 用于过滤数据包，属于网络层防火墙。<br>    firewall 能够允许哪些服务可用，那些端口可用…属于更高一层的防火墙。<br>二、常用命令<br>    vi /usr/lib/firewalld/services/ssh.xml<br>   vi /usr/lib/firewalld/services/html.xml<br>   systemctl enable firewalld.service<br>   systemctl restart firewalld.service<br>   firewall-cmd –state<br>   firewall-cmd –list-all<br>   firewall-cmd –zone=public –permanent –add-port=8502/tcp<br>   vi /etc/firewalld/zones/public.xml<br>   <port protocol="tcp" port="8502"><br>   systemctl restart firewalld.service<br>三、firewall配置<br>    The configuration for firewalld is stored in various XML files<br>    in /usr/lib/firewalld and /etc/firewalld<br>   This allows a great deal of flexibility as the files can be edited, written to, backed up, used as templates for other installations and so on.</port></p>
+<p>注意：以下firewalld 的操作只有重启之后才有效：service firewalld restart<br>四、系统配置目录<br>    1、 /usr/lib/firewalld/services<br>   目录中存放定义好的网络服务和端口参数，系统参数，不能修改。</p>
+<p><img src="/images/pasted-221.png" alt="upload successful"><br>    2、用户配置目录<br>    /etc/firewalld</p>
+<p><img src="/images/pasted-222.png" alt="upload successful"><br>    3、如何自定义添加端口<br>     用户可以通过修改配置文件的方式添加端口，也可以通过命令的方式添加端口，注意：修改的内容会在/etc/firewalld/目录下的配置文件中体现。<br>    3.1 、命令的方式添加端口：<br>        firwall-cmd –permanent –add-port=9527/tcp</p>
+<p><img src="/images/pasted-223.png" alt="upload successful"><br>五、firewall常用命令<br>    1、重启、关闭、开启、firewalld.serverice 服务<br>            Service firewalld restart 重启<br>       Service firewalld start  开启<br>       Service firewalld stop  关闭<br>       systemctl status firewalld</p>
+<pre><code>   systemctl stop firewalld  关闭
+
+   systemctl start firewalld 开启
+
+   systemctl  restart firewalld 重启
+
+   systemctl  disable firewalld  关闭开机启动 
+2、查看状态
+firewall-cmd --state
+</code></pre><p>   3、查看防火墙规则<br>           firewall-cmd –list-all<br>六、Centos 切换为iptables防火墙<br>    切换到iptables首先应该关掉默认的firewalld，然后安装iptables服务。<br>    1、关闭firewall<br>    service firewalld stop systemctl disable firewalld.service #禁止firewall开机启动<br>    2、安装iptables 防火墙<br>    yum install iptables-services #安装<br>   3、编辑iptables防火墙配置<br>   vi /etc/sysconfig/iptables #编辑防火墙配置文件</p>
+<p>   下面是一个完整的配置文件：<br>           Firewall configuration written by system-config-firewall  Manual customization of this file is not recommended.  *filter  :INPUT ACCEPT [0:0]  :FORWARD ACCEPT [0:0]  :OUTPUT ACCEPT [0:0]  -A INPUT -m state –state ESTABLISHED,RELATED -j ACCEPT  -A INPUT -p icmp -j ACCEPT  -A INPUT -i lo -j ACCEPT  -A INPUT -m state –state NEW -m tcp -p tcp –dport 22 -j ACCEPT  -A INPUT -m state –state NEW -m tcp -p tcp –dport 80 -j ACCEPT  -A INPUT -m state –state NEW -m tcp -p tcp –dport 3306 -j ACCEPT  -A INPUT -j REJECT –reject-with icmp-host-prohibited  -A FORWARD -j REJECT –reject-with icmp-host-prohibited  COMMIT</p>
+<pre><code>wq! #保存退出
+</code></pre><p>service iptables start #开启systemctl enable iptables.service #设置防火墙开机启动</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/31/Centos7-firewall防火墙常用配置/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Centos7-安装Python3-6-5-及安装ipython6-1-0" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -957,78 +1041,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/10/30/Linux系统常用命令/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Mysql-学习笔记" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/30/Mysql-学习笔记/">Mysql 学习笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/30/Mysql-学习笔记/" class="archive-article-date">
-  	<time datetime="2018-10-30T08:15:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
-        
-      </header>
-    
-    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
-   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一、关系型数据库<br>    关系：由行和列组成的二维表<br>   表：至少要有列，可以没有行<br>   列：是实体的属性。<br>   数据模型：层次模型、网状模型、关系模型、非关系模型。<br>   DBMS：DataBase Mangenent System   数据库管理系统。<br>二、数据库必须要有缓存，存放索引<br>    存储引擎；并发性好<br>   读，写<br>         读锁：共享锁<br>     写锁：独占锁<br>   减少锁粒度：<br>     表锁：对整个表进行锁<br>     也锁：对页和块进行锁<br>     行锁：对行进行锁<br>   数据库锁：<br>     锁管理器：<br>三、数据库：mysql<br>    一个线程相应一个用户请求<br>   复用：线程池，thread pool</p>
-<p>   事务：ACID，一组DML<br>          原子性：这一组DML要么执行，要么都不执行。<br>       一致性；数据库从一种状态转变成另一种状态，状态的前后是一致的数据。一致性值得数据，数据的总量不变。<br>       隔离性：多个事务彼此之间，如果操作同一个数据的时候，彼此之间不进行干扰。保证并发性的前提是锁，对于隔离来讲，是有隔离级别的。隔离有四种级别。隔离级别越高，严格性越高，并发性越低，隔离性越好，彼此之间的影响性越少；隔离性越低，并发性越高，隔离性越差，彼此之间的影响性越大。（数据库的四个隔离级别：读未提交（READ UNCOMMITTED）；读提交（READ COMMITTED）；可重读（REPEATABLE READ）；串行化（SERIABLIZABLE））<br>       持久性：数据一旦提交以后，必须不能丢失。数据未提交，必须要能撤销。事务日志：（转换随机IO至顺序IO）。为了保证持久性：事务提交，立即写入磁盘<br>四、Mysql日志<br>    错误日志：<br>   查询日志：<br>   慢查询日志：<br>   事务日志：<br>   二进制日志：<br>   中继日志：<br>五、SQL：结构化查询语言<br>    SQL：结构化查询语言（唯一一种不需要关心底层数据存储格式的语言。）<br>    ANSI，sql-86，sql-92，sql-99，sql-03 对象-关系型数据，xml<br>SQL-Server：T-SQL<br>Oracle：p1/sql<br>MySQL：sql<br>SQL：API<br>client ：Protocol：server<br>mysql– &gt;mysqld<br>自定义程序– &gt;mysqld<br>    驱动– &gt;mysqld<br>    Php-mysql:mysql_connect()<br>  连接器 ODBC</p>
-<p>数据库提供的接口分类两种：<br>   远程通信：<br>   本地通信：<br>      Linux<br>      Unix sock：mysql.sock<br>      Windows：<br>      PIPE<br>      MEMORY</p>
-<p>SQL：<br>  DML：CRUD（Insert、Update、Delete、Select）用来实现数据操作的语句。<br>  DDL：操作数据库对象，例如：表，索引、视图、存储过程、存储函数、触发器、游标、事件调度器。（CREATE创建、DROP删除、ALTER修改）数据库定义语音。<br>  DCL：权限管理语句，GRANT授权、REVOKE收回权限。<br>六、DBA职责<br>   概念和物理模式的设计<br>   安全性和授权<br>   数据可用性和故障恢复<br>   数据库调整<br>七、数据的组织<br>    数据类型：变长，定长<br>    VARCHAR（200）：root，5字节<br>            root ，redis<br>    CHAR（200）：root，200字节，redis<br>   定长记录：<br>   数据块：行，是固定的<br>   变长记录：<br>   数据块：行数是变化的<br>   rid：<br>   无序记录：堆文件组织<br>有序文件：顺序文件组织，聚簇索引，如果索引是有序的，那么记录就是有序的。树状索引一般都是有序的，哈希索引没有序。<br>   散列文件组织：hash索引，<br>   按照索引数据结构，索引类型：<br>    树状索引：<br>    散列索引：哈希索引，使用哈希函数计算后进行存储<br>八、变长记录需要解决的问题：<br>    1、如何描述一个记录，以实现快速记录获取；<br>   2、如何存储变长记录；以实现快速记录存储；<br>九、索引类型<br>    主索引：主键索引<br>   辅助索引：<br>十、数据库存储的文件：<br>    数据文件<br>   索引文件<br>   日志文件<br>   对于聚簇索引来讲，数据文件和索引文件是在一块的，对于能够支持聚簇索引的存储引擎来讲，文件必须要表现为不同的组织结构。<br>十一、MySQL存储引擎：<br>     MyISAM：<br>    每一个表都有三个文件：<br>       数据文件：表名.MYD<br>       索引文件：表名.MYI<br>       表定义：表名.FRM<br>    InnoDB：<br>       表：<br>          表空间：多张表可放置于同一个表空间，MySQL支持单表使用独立的表空间文件；<br>          表定义文件：每张表的表定义文件在数据库目录中；</p>
-<p>   数据字典：也叫系统目录（system catalog）<br>       用来保存数据库服务器上的元数据。<br>       关系的名字<br>       每个关系中各属性的名字<br>       属性的数据类型和长度<br>       每个表关系上的视图名字及视图的定义<br>       约束<br>       授权用户的名字<br>       用户的授权和账户信息<br>       统计类数据：<br>          每个关系中属性的个数；<br>          每个关系中行的个数；<br>          每个关系的存储方法<br>十二、缓存置换<br>    缓存置换策略：LRU：Least Recently Used 最近最少使用算法；MRU：most Recently Used 最多使用算法。<br>    被盯住的块：（Pinned block）不允许写回磁盘阵列的块。<br>    块的强制写出：为了数据的安全性和可靠性而设置的策略。<br>十三、InnoDB引擎调优：<br>    mysql&gt; SHOW{global(全局) | session（当前）} WARIABLES；当前用户有效生成的变量；<br>           动态调整<br>    mysql&gt;SHOW {global | session} STATUS；数据库服务器当前运行状态<br>十四、MySQL默认的远程TCP端口 3306<br>十五、安装：使用rpm安装：/var/lib/mysql/mysql.sock<br>    使用二进制安装：/tmp/mysql.sock<br>  mysql 安装方式：<br>   二进制格式：<br>   rpm<br>  OS vendor<br>      MySQL<br>  通用二进制包<br> 源码格式<br>     make–&gt; cmake<br>十六、堆、栈<br>    heap：数据存储于内存中的存储引擎；<br>   内存数据库：临时表<br> 十七、Mysql命令<br>       Mysql &gt;USE mysql;      切换数据库mysql<br>     Mysql&gt;SHOW TABLES;   查看表<br>     Mysql&gt;DESC user;    显示表有多少字段</p>
-<p>   Constraint:约束<br>   Primayr key<br>   Foreign key<br>   Unique key<br>   chkeck</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/30/Mysql-学习笔记/">展开全文 >></a>
         </p>
       
 
