@@ -6,15 +6,54 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | Melvin の blog</title>
+  <title>Centos7 安装Python3.6.5 及安装ipython6.1.0 | Melvin の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Melvin の blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+  <meta name="description" content="一、centos7 安装Python3.6.5 教程    1、在安装Python之前，需要先安装一些后面遇到的依赖问题（如果有依赖问题，按照提示安装）：    yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-d">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Centos7 安装Python3.6.5 及安装ipython6.1.0">
+<meta property="og:url" content="http://yoursite.com/2018/10/31/Centos7-安装Python3-6-5-及安装ipython6-1-0/index.html">
 <meta property="og:site_name" content="Melvin の blog">
+<meta property="og:description" content="一、centos7 安装Python3.6.5 教程    1、在安装Python之前，需要先安装一些后面遇到的依赖问题（如果有依赖问题，按照提示安装）：    yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-d">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/pasted-187.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-188.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-189.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-190.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-191.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-192.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-193.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-194.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-195.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-196.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-197.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-198.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-199.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-200.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-201.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-202.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-203.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-204.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-205.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-206.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-207.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-208.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-209.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-210.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-211.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-212.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-213.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-214.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-215.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-216.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-217.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-218.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-219.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-220.png">
+<meta property="og:updated_time" content="2018-10-31T10:47:17.892Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Melvin の blog">
+<meta name="twitter:title" content="Centos7 安装Python3.6.5 及安装ipython6.1.0">
+<meta name="twitter:description" content="一、centos7 安装Python3.6.5 教程    1、在安装Python之前，需要先安装一些后面遇到的依赖问题（如果有依赖问题，按照提示安装）：    yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-d">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-187.png">
   
     <link rel="alternative" href="/atom.xml" title="Melvin の blog" type="application/atom+xml">
   
@@ -150,295 +189,196 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Centos7-安装Python3-6-5-及安装ipython6-1-0" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Centos7 安装Python3.6.5 及安装ipython6.1.0
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/31/Centos7-安装Python3-6-5-及安装ipython6-1-0/" class="archive-article-date">
+
+        
+        <a href="/2018/10/31/Centos7-安装Python3-6-5-及安装ipython6-1-0/" class="archive-article-date">
   	<time datetime="2018-10-31T10:15:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-31</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/31/Centos7-安装Python3-6-5-及安装ipython6-1-0/">Centos7 安装Python3.6.5 及安装ipython6.1.0</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一、centos7 安装Python3.6.5 教程<br>    1、在安装Python之前，需要先安装一些后面遇到的依赖问题（如果有依赖问题，按照提示安装）：<br>    yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel<br>    yum install xz gcc zlib zlib-devel wget sqlite-devel openssl-devel -y</p>
+<p><img src="/images/pasted-187.png" alt="upload successful"></p>
+<p><img src="/images/pasted-188.png" alt="upload successful"><br>    2、从官网上下载Python源码包<br>   下载地址：<a href="https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tar.xz" target="_blank" rel="noopener">https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tar.xz</a><br>   下载完成后，将源码包上传至服务器</p>
+<p><img src="/images/pasted-189.png" alt="upload successful"><br>    3、解压文件：<br>     xz -d Python-3.6.5.tar.xz<br>     tar -xvf Python-3.6.5.tar.xz</p>
+<p><img src="/images/pasted-190.png" alt="upload successful"><br>    4、进入到文件目录<br>    cd Python-3.6.5</p>
+<p><img src="/images/pasted-191.png" alt="upload successful"><br>    5、开始对Python进行安装编译<br>    ./configure –prefix=/usr/Python-3.6.5 </p>
+<p><img src="/images/pasted-192.png" alt="upload successful"></p>
+<p><img src="/images/pasted-193.png" alt="upload successful"><br>执行make命令（一直等待编译即可，大概五六分钟）</p>
+<p><img src="/images/pasted-194.png" alt="upload successful"><br>执行make install 命令（等待编译安装）</p>
+<p><img src="/images/pasted-195.png" alt="upload successful"><br>    安装过程中出现错误，需要安装zlib包<br>   yum -y install zlib<em><br>   安装zlib</em>后，重新编译<br>   make install</p>
+<p><img src="/images/pasted-196.png" alt="upload successful"><br>    6、让Centos7系统能够默认使用Python3.6<br>    cd /usr/bin/</p>
+<p><img src="/images/pasted-197.png" alt="upload successful"><br>    mv python python.bak  #备份原文件<br>   ln -s /usr/Python-3.6.5/bin/python3.6 /usr/bin/python （注意自己文件首字母大小写）<br>   （备注：ln -s 源文件  目标文件  做软链接）<br>       7、测试Python3.6.5 是否安装成功<br>    8、因为yum源使用的Python2，替换为Python3以后，会导致其无法正常工作。需要修改以下信息：<br>    修改yum配置文件：<br>    vi /usr/bin/yum</p>
+<p><img src="/images/pasted-198.png" alt="upload successful"><br>    9、测试yum是否正常<br>    yum -y install vim</p>
+<p><img src="/images/pasted-199.png" alt="upload successful"><br>    提示错误，需要修改以下信息：<br>    vi /usr/libexec/urlgrabber-ext-down<br>    将 /usr/bin/python  改为 /usr/bin/python2.7</p>
+<p><img src="/images/pasted-200.png" alt="upload successful"><br>    10、再次测试yum是否正常<br>    yum -y install vim</p>
+<p><img src="/images/pasted-201.png" alt="upload successful"></p>
+<p>二、Centos7安装ipython 6.1.0<br>    1、安装依赖环境<br>    yum install xz gcc zlib zlib-devel wget sqlite-devel openssl-devel -y</p>
+<p><img src="/images/pasted-202.png" alt="upload successful"><br>    2、下载ipython安装包：<br>    安装包下载地址：<br> wget <a href="https://pypi.python.org/packages/79/63/b671fc2bf0051739e87a7478a207bbeb45cfae3c328d38ccdd063d9e0074/ipython-6.1.0.tar.gz#md5=1e15e1ce3f3f722da6935d7ac0e51346" target="_blank" rel="noopener">https://pypi.python.org/packages/79/63/b671fc2bf0051739e87a7478a207bbeb45cfae3c328d38ccdd063d9e0074/ipython-6.1.0.tar.gz#md5=1e15e1ce3f3f722da6935d7ac0e51346</a></p>
+<p><img src="/images/pasted-203.png" alt="upload successful"><br>    提示没有安装wget工具，使用yum安装wget工具<br>   yum -y install wget</p>
+<p><img src="/images/pasted-204.png" alt="upload successful"><br>    继续下载ipython安装包</p>
+<p><img src="/images/pasted-205.png" alt="upload successful"><br>    3、安装ipython：<br>        tar xf ipython-6.1.0.tar.gz<br>     cd ipython-6.1.0</p>
+<p><img src="/images/pasted-206.png" alt="upload successful"><br>    使用Python安装ipython（前提已安装Python）<br>    python setup.py install</p>
+<p><img src="/images/pasted-207.png" alt="upload successful"><br>    4、测试ipython是否安装成功</p>
+<p><img src="/images/pasted-208.png" alt="upload successful"><br>    出现这样的错误，说明环境变量设置错误，修改方式如下：<br>    alias ipython=’python -m IPython’</p>
+<p><img src="/images/pasted-209.png" alt="upload successful"><br>    5、提示以上错误，需要通过pip安装所有缺失模块，直至ipython运行成功：<br>    提示缺少‘traitlets’模块，通过pip安装确实模块<br>    pip3 install traitlets</p>
+<p><img src="/images/pasted-210.png" alt="upload successful"><br>    6、下载安装pip<br>    安装扩展源：yum -y install epel-release</p>
+<p><img src="/images/pasted-211.png" alt="upload successful"></p>
+<p><img src="/images/pasted-212.png" alt="upload successful"></p>
+<p><img src="/images/pasted-213.png" alt="upload successful"><br>    7、安装traitlets模块</p>
+<p><img src="/images/pasted-214.png" alt="upload successful"><br>    8、pip3 install pygments</p>
+<p><img src="/images/pasted-215.png" alt="upload successful"><br>    9、pip3 install pexpect</p>
+<p><img src="/images/pasted-216.png" alt="upload successful"><br>    10、pip3 install pickleshare</p>
+<p><img src="/images/pasted-217.png" alt="upload successful"><br>    11、pip3 install prompt_toolkit</p>
+<p><img src="/images/pasted-218.png" alt="upload successful"><br>    12、pip3 install simplegeneric</p>
+<p><img src="/images/pasted-219.png" alt="upload successful"><br>    13、再次测试 ipython ：</p>
+<p><img src="/images/pasted-220.png" alt="upload successful"></p>
+<p>总结：<br>    在pip安装的过程中浪费了大量的时间，一直提示-bash: pip3: command not found  从网上找了很多方法，都不管用，最后创建了软链接终于成功。</p>
+<p>   通过此次安装得知：在安装的过程中，遇到什么问题要多搜索，一定能找到解决办法的。</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/10/31/Centos7-安装Python3-6-5-及安装ipython6-1-0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/31/VMwareWorkstation-创建新的虚拟机/" class="archive-article-date">
-  	<time datetime="2018-10-31T09:56:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-31</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/10/31/VMwareWorkstation-创建新的虚拟机/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">VMwareWorkstation 创建新的虚拟机</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/31/VMwareWorkstation-创建新的虚拟机/">VMwareWorkstation 创建新的虚拟机</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/31/VMWare-中安装VMWare-Tools-（Centos系统和Window-系统）/" class="archive-article-date">
-  	<time datetime="2018-10-31T09:06:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/31/VMWare-中安装VMWare-Tools-（Centos系统和Window-系统）/">VMWare 中安装VMWare Tools （Centos系统和Window 系统）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/31/在vSphere-Client-使用模板部署虚拟机-系统硬盘空间扩展/" class="archive-article-date">
-  	<time datetime="2018-10-31T05:04:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/31/在vSphere-Client-使用模板部署虚拟机-系统硬盘空间扩展/">在vSphere Client 使用模板部署虚拟机 系统硬盘空间扩展</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/安装虚拟机和windows-server-2012-系统操作文档/" class="archive-article-date">
-  	<time datetime="2018-10-31T00:35:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/安装虚拟机和windows-server-2012-系统操作文档/">安装虚拟机和windows server 2012 系统操作文档</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/VM-创建Centos-7-操作系统及防火墙配置/" class="archive-article-date">
-  	<time datetime="2018-10-30T12:35:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/VM-创建Centos-7-操作系统及防火墙配置/">VM 创建Centos 7 操作系统及防火墙配置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/Windows-10-系统-PyCharm软件的安装、激活、汉化-详细教程/" class="archive-article-date">
-  	<time datetime="2018-10-30T11:42:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/Windows-10-系统-PyCharm软件的安装、激活、汉化-详细教程/">Windows 10 系统 PyCharm软件的安装、激活、汉化 详细教程</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/Windows10-64位安装Python-3-6-4/" class="archive-article-date">
-  	<time datetime="2018-10-30T11:30:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/Windows10-64位安装Python-3-6-4/">Windows10 64位安装Python 3.6.4</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/Linux系统常用命令/" class="archive-article-date">
-  	<time datetime="2018-10-30T09:40:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/Linux系统常用命令/">Linux系统常用命令</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/Mysql-学习笔记/" class="archive-article-date">
-  	<time datetime="2018-10-30T08:15:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/Mysql-学习笔记/">Mysql 学习笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2018/page/2/">2</a><a class="extend next" rel="next" href="/archives/2018/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -467,8 +407,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

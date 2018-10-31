@@ -152,6 +152,110 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Centos7-安装Python3-6-5-及安装ipython6-1-0" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/31/Centos7-安装Python3-6-5-及安装ipython6-1-0/">Centos7 安装Python3.6.5 及安装ipython6.1.0</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/31/Centos7-安装Python3-6-5-及安装ipython6-1-0/" class="archive-article-date">
+  	<time datetime="2018-10-31T10:15:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-31</time>
+</a>
+        
+      </header>
+    
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一、centos7 安装Python3.6.5 教程<br>    1、在安装Python之前，需要先安装一些后面遇到的依赖问题（如果有依赖问题，按照提示安装）：<br>    yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel<br>    yum install xz gcc zlib zlib-devel wget sqlite-devel openssl-devel -y</p>
+<p><img src="/images/pasted-187.png" alt="upload successful"></p>
+<p><img src="/images/pasted-188.png" alt="upload successful"><br>    2、从官网上下载Python源码包<br>   下载地址：<a href="https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tar.xz" target="_blank" rel="noopener">https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tar.xz</a><br>   下载完成后，将源码包上传至服务器</p>
+<p><img src="/images/pasted-189.png" alt="upload successful"><br>    3、解压文件：<br>     xz -d Python-3.6.5.tar.xz<br>     tar -xvf Python-3.6.5.tar.xz</p>
+<p><img src="/images/pasted-190.png" alt="upload successful"><br>    4、进入到文件目录<br>    cd Python-3.6.5</p>
+<p><img src="/images/pasted-191.png" alt="upload successful"><br>    5、开始对Python进行安装编译<br>    ./configure –prefix=/usr/Python-3.6.5 </p>
+<p><img src="/images/pasted-192.png" alt="upload successful"></p>
+<p><img src="/images/pasted-193.png" alt="upload successful"><br>执行make命令（一直等待编译即可，大概五六分钟）</p>
+<p><img src="/images/pasted-194.png" alt="upload successful"><br>执行make install 命令（等待编译安装）</p>
+<p><img src="/images/pasted-195.png" alt="upload successful"><br>    安装过程中出现错误，需要安装zlib包<br>   yum -y install zlib<em><br>   安装zlib</em>后，重新编译<br>   make install</p>
+<p><img src="/images/pasted-196.png" alt="upload successful"><br>    6、让Centos7系统能够默认使用Python3.6<br>    cd /usr/bin/</p>
+<p><img src="/images/pasted-197.png" alt="upload successful"><br>    mv python python.bak  #备份原文件<br>   ln -s /usr/Python-3.6.5/bin/python3.6 /usr/bin/python （注意自己文件首字母大小写）<br>   （备注：ln -s 源文件  目标文件  做软链接）<br>       7、测试Python3.6.5 是否安装成功<br>    8、因为yum源使用的Python2，替换为Python3以后，会导致其无法正常工作。需要修改以下信息：<br>    修改yum配置文件：<br>    vi /usr/bin/yum</p>
+<p><img src="/images/pasted-198.png" alt="upload successful"><br>    9、测试yum是否正常<br>    yum -y install vim</p>
+<p><img src="/images/pasted-199.png" alt="upload successful"><br>    提示错误，需要修改以下信息：<br>    vi /usr/libexec/urlgrabber-ext-down<br>    将 /usr/bin/python  改为 /usr/bin/python2.7</p>
+<p><img src="/images/pasted-200.png" alt="upload successful"><br>    10、再次测试yum是否正常<br>    yum -y install vim</p>
+<p><img src="/images/pasted-201.png" alt="upload successful"></p>
+<p>二、Centos7安装ipython 6.1.0<br>    1、安装依赖环境<br>    yum install xz gcc zlib zlib-devel wget sqlite-devel openssl-devel -y</p>
+<p><img src="/images/pasted-202.png" alt="upload successful"><br>    2、下载ipython安装包：<br>    安装包下载地址：<br> wget <a href="https://pypi.python.org/packages/79/63/b671fc2bf0051739e87a7478a207bbeb45cfae3c328d38ccdd063d9e0074/ipython-6.1.0.tar.gz#md5=1e15e1ce3f3f722da6935d7ac0e51346" target="_blank" rel="noopener">https://pypi.python.org/packages/79/63/b671fc2bf0051739e87a7478a207bbeb45cfae3c328d38ccdd063d9e0074/ipython-6.1.0.tar.gz#md5=1e15e1ce3f3f722da6935d7ac0e51346</a></p>
+<p><img src="/images/pasted-203.png" alt="upload successful"><br>    提示没有安装wget工具，使用yum安装wget工具<br>   yum -y install wget</p>
+<p><img src="/images/pasted-204.png" alt="upload successful"><br>    继续下载ipython安装包</p>
+<p><img src="/images/pasted-205.png" alt="upload successful"><br>    3、安装ipython：<br>        tar xf ipython-6.1.0.tar.gz<br>     cd ipython-6.1.0</p>
+<p><img src="/images/pasted-206.png" alt="upload successful"><br>    使用Python安装ipython（前提已安装Python）<br>    python setup.py install</p>
+<p><img src="/images/pasted-207.png" alt="upload successful"><br>    4、测试ipython是否安装成功</p>
+<p><img src="/images/pasted-208.png" alt="upload successful"><br>    出现这样的错误，说明环境变量设置错误，修改方式如下：<br>    alias ipython=’python -m IPython’</p>
+<p><img src="/images/pasted-209.png" alt="upload successful"><br>    5、提示以上错误，需要通过pip安装所有缺失模块，直至ipython运行成功：<br>    提示缺少‘traitlets’模块，通过pip安装确实模块<br>    pip3 install traitlets</p>
+<p><img src="/images/pasted-210.png" alt="upload successful"><br>    6、下载安装pip<br>    安装扩展源：yum -y install epel-release</p>
+<p><img src="/images/pasted-211.png" alt="upload successful"></p>
+<p><img src="/images/pasted-212.png" alt="upload successful"></p>
+<p><img src="/images/pasted-213.png" alt="upload successful"><br>    7、安装traitlets模块</p>
+<p><img src="/images/pasted-214.png" alt="upload successful"><br>    8、pip3 install pygments</p>
+<p><img src="/images/pasted-215.png" alt="upload successful"><br>    9、pip3 install pexpect</p>
+<p><img src="/images/pasted-216.png" alt="upload successful"><br>    10、pip3 install pickleshare</p>
+<p><img src="/images/pasted-217.png" alt="upload successful"><br>    11、pip3 install prompt_toolkit</p>
+<p><img src="/images/pasted-218.png" alt="upload successful"><br>    12、pip3 install simplegeneric</p>
+<p><img src="/images/pasted-219.png" alt="upload successful"><br>    13、再次测试 ipython ：</p>
+<p><img src="/images/pasted-220.png" alt="upload successful"></p>
+<p>总结：<br>    在pip安装的过程中浪费了大量的时间，一直提示-bash: pip3: command not found  从网上找了很多方法，都不管用，最后创建了软链接终于成功。</p>
+<p>   通过此次安装得知：在安装的过程中，遇到什么问题要多搜索，一定能找到解决办法的。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/31/Centos7-安装Python3-6-5-及安装ipython6-1-0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-VMwareWorkstation-创建新的虚拟机" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -954,81 +1058,10 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/25/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/25/hello-world/" class="archive-article-date">
-  	<time datetime="2018-10-25T07:59:52.692Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-25</time>
-</a>
-        
-      </header>
-    
-    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
-   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/25/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
