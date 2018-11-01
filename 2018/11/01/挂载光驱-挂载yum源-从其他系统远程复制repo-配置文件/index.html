@@ -6,36 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vsftp服务搭建配置 | Melvin の blog</title>
+  <title>挂载光驱 挂载yum源 从其他系统远程复制repo 配置文件 | Melvin の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="（1）安装vsftp （2）配置服务 （3）创建虚拟用户 （4）安装db4 （5）建立认证文件 （6）配合admin和pub用户访问权限 （7）验证vsftp服务一、安装vsftp    yum -y install vsftpd  备注：Centos7无法安装db4，需要安装以下软件包即可：   yum install -y psmisc net-tools systemd-devel lib">
+  <meta name="description" content="有时候系统不能上外网，不能通过互联网yum源安装，需要挂载光驱，通过光驱的文件进行安装。    1、挂载光驱：mount /dev/cdrom /mnt   将光盘的文件挂载到 /mnt目录下面   2、挂载yum源：首先要到/etc/yum.repo.d文件夹下，先将原先的repo文件备份出来，然后新建repo配置文件：     新建repo配置文件的名字：base.repo ,具体配置文">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vsftp服务搭建配置">
-<meta property="og:url" content="http://yoursite.com/2018/11/01/vsftp服务搭建配置/index.html">
+<meta property="og:title" content="挂载光驱 挂载yum源 从其他系统远程复制repo 配置文件">
+<meta property="og:url" content="http://yoursite.com/2018/11/01/挂载光驱-挂载yum源-从其他系统远程复制repo-配置文件/index.html">
 <meta property="og:site_name" content="Melvin の blog">
-<meta property="og:description" content="（1）安装vsftp （2）配置服务 （3）创建虚拟用户 （4）安装db4 （5）建立认证文件 （6）配合admin和pub用户访问权限 （7）验证vsftp服务一、安装vsftp    yum -y install vsftpd  备注：Centos7无法安装db4，需要安装以下软件包即可：   yum install -y psmisc net-tools systemd-devel lib">
+<meta property="og:description" content="有时候系统不能上外网，不能通过互联网yum源安装，需要挂载光驱，通过光驱的文件进行安装。    1、挂载光驱：mount /dev/cdrom /mnt   将光盘的文件挂载到 /mnt目录下面   2、挂载yum源：首先要到/etc/yum.repo.d文件夹下，先将原先的repo文件备份出来，然后新建repo配置文件：     新建repo配置文件的名字：base.repo ,具体配置文">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/pasted-263.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-264.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-265.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-266.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-267.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-268.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-269.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-270.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-271.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-272.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-273.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-274.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-275.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-276.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-277.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-278.png">
-<meta property="og:updated_time" content="2018-11-01T11:29:42.880Z">
+<meta property="og:image" content="http://yoursite.com/images/pasted-279.png">
+<meta property="og:updated_time" content="2018-11-01T12:01:37.036Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vsftp服务搭建配置">
-<meta name="twitter:description" content="（1）安装vsftp （2）配置服务 （3）创建虚拟用户 （4）安装db4 （5）建立认证文件 （6）配合admin和pub用户访问权限 （7）验证vsftp服务一、安装vsftp    yum -y install vsftpd  备注：Centos7无法安装db4，需要安装以下软件包即可：   yum install -y psmisc net-tools systemd-devel lib">
-<meta name="twitter:image" content="http://yoursite.com/images/pasted-263.png">
+<meta name="twitter:title" content="挂载光驱 挂载yum源 从其他系统远程复制repo 配置文件">
+<meta name="twitter:description" content="有时候系统不能上外网，不能通过互联网yum源安装，需要挂载光驱，通过光驱的文件进行安装。    1、挂载光驱：mount /dev/cdrom /mnt   将光盘的文件挂载到 /mnt目录下面   2、挂载yum源：首先要到/etc/yum.repo.d文件夹下，先将原先的repo文件备份出来，然后新建repo配置文件：     新建repo配置文件的名字：base.repo ,具体配置文">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-279.png">
   
     <link rel="alternative" href="/atom.xml" title="Melvin の blog" type="application/atom+xml">
   
@@ -171,20 +156,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vsftp服务搭建配置" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-挂载光驱-挂载yum源-从其他系统远程复制repo-配置文件" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      vsftp服务搭建配置
+      挂载光驱 挂载yum源 从其他系统远程复制repo 配置文件
     </h1>
   
 
         
-        <a href="/2018/11/01/vsftp服务搭建配置/" class="archive-article-date">
-  	<time datetime="2018-11-01T10:46:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
+        <a href="/2018/11/01/挂载光驱-挂载yum源-从其他系统远程复制repo-配置文件/" class="archive-article-date">
+  	<time datetime="2018-11-01T11:50:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
 </a>
         
       </header>
@@ -197,38 +182,11 @@
       
        
        
-        <p> （1）安装vsftp<br> （2）配置服务<br> （3）创建虚拟用户<br> （4）安装db4<br> （5）建立认证文件<br> （6）配合admin和pub用户访问权限<br> （7）验证vsftp服务<br>一、安装vsftp<br>    yum -y install vsftpd<br>  备注：Centos7无法安装db4，需要安装以下软件包即可：<br>   yum install -y psmisc net-tools systemd-devel libdb-devel perl-DBI</p>
-<p><img src="/images/pasted-263.png" alt="upload successful"></p>
-<p><img src="/images/pasted-264.png" alt="upload successful"><br>二、配置服务</p>
-<p><img src="/images/pasted-265.png" alt="upload successful"><br>    listen=YES<br>    1、本地用户新增档案的权限<br>    local_umask=022  #本地用户文件上传后的权限是-rw-r–r–<br>    connect_from_port_20=YES</p>
-<p>   允许系统用户登录<br>        local_enable=YES</p>
-<p>   禁止匿名用户登录：<br>        anonymous_enable=NO</p>
-<p>  允许为目标配置显示信息，显示每个目录下面的message_file文件的内容：</p>
-<p><img src="/images/pasted-266.png" alt="upload successful"><br>    用户配置文件：</p>
-<p><img src="/images/pasted-267.png" alt="upload successful"></p>
-<p>备注：centos7 无法启动vsftp时，禁用以下选项：<br>   allow_writeable_chroot=YES</p>
-<p>   #listen_ipv6=YES</p>
-<p>三、创建虚拟用户：<br>    创建FTP存放数据的文件夹：<br>    mkdir -p /data/ftp<br>    useradd -d /data/ftp -s /sbin/nologin virtual   #用户名virtual 将来会存放ftp数据，指定存放数据的位置：/data/ftp</p>
-<p>四、安装db4<br>    yum install -y db4*</p>
-<p><img src="/images/pasted-268.png" alt="upload successful"></p>
-<p>建立数据库文件并设置文件属性<br>把需要的用户名和密码都输入到login.txt</p>
-<pre><code>vi /etc/vsftpd/login.txt
-</code></pre><p><img src="/images/pasted-269.png" alt="upload successful"><br>然后执行以下命令：<br>    db_load -T -t hash -f /etc/vsftpd/login.txt /etc/vsftpd/vsftpd_login.db     #将/etc/vsftpd/login.txt 文件变成  /etc/vsftpd/下面的 vsftpd_login.db 数据库文件    </p>
-<p><img src="/images/pasted-270.png" alt="upload successful"></p>
-<p>五、建立认证文件<br>    vi /etc/pam.d/vsftpd.vu  插入以下两行， 这里需要注意的是 vsftpd.vu可以其任何名字，关键是要跟配置文件pam一致，一定不能有空格<br>   auth required pam_userdb.so db=/etc/vsftpd/vsftpd_login<br>    account required pam_useradd.so db=/etc/vsftpd/vsftpd_login</p>
-<p>六、配置admin和pub用户访问权限<br>    mkdir -p /etc/vsftpd/vsftpd_user_conf<br>   cd /etc/vsftpd/vsftpd_usr_conf</p>
-<p><img src="/images/pasted-271.png" alt="upload successful"> </p>
-<p><img src="/images/pasted-272.png" alt="upload successful"></p>
-<p><img src="/images/pasted-273.png" alt="upload successful"><br>七、验证vsftp服务<br>    Linux 验证：ftp 127.0.0.1  输入用户名：admin 密码：admin123</p>
-<p><img src="/images/pasted-274.png" alt="upload successful"><br>    提示ftp：command not found   主要是因为ftp是客户端，没有安装，需要安装ftp服务：<br>    yum -y install ftp</p>
-<p><img src="/images/pasted-275.png" alt="upload successful"><br>八、vsftp 服务重启<br>    systemctl restart vsftpd</p>
-<p><img src="/images/pasted-276.png" alt="upload successful"></p>
-<p>出现 vsftpd.service failed because the control process exited with error code.<br>  出现错误的原因是：由于centos7中vsftp的配置文件默认将 listen_ipv6=YES 这一行没有注释掉，而我们目前的网络环境还不支持ipv6，从而导致出现错误无法启动，所以解决方法是将 listen_ipv6=YES更改为：listen_ipv6=NO，或将这一行注释掉<br>   vi  /etc/vsftpd/vsftpd.conf<br>   listen_ipv6=NO</p>
-<p><img src="/images/pasted-277.png" alt="upload successful"><br>九、验证ftp服务：</p>
-<p><img src="/images/pasted-278.png" alt="upload successful"></p>
-<p>备注：<br>    出现530 这个错误，从网上找了很多方法，尝试了很多次，都不能成功。最后是问了大牛，找到了问题所在，总结如下：<br>    1、首先要懂得vsftp的工作原理<br>    2、对于vsftpd.confg配置文件一定不能有空格<br>    3、一直出现530的错误，是因为创建了用户，没有指定ftp存放数据的文件夹</p>
-<p>   注意：通过FTP返回的错误码，有助于定位问题，本例为错误500<br>    解决方案：<br>          getsebool ftpd_disable_trans<br>          如果查看状态不是on  那么输入命令<br>          setsebool -P ftpd_disable_trans 1<br>    重启服务：systemclt restart vsftpd</p>
-<p>   550 create directory operation failed 的错误信息<br>     不重启服务器<br>    执行命令：setenforce 0</p>
+        <p>   有时候系统不能上外网，不能通过互联网yum源安装，需要挂载光驱，通过光驱的文件进行安装。<br>    1、挂载光驱：mount /dev/cdrom /mnt   将光盘的文件挂载到 /mnt目录下面<br>   2、挂载yum源：首先要到/etc/yum.repo.d文件夹下，先将原先的repo文件备份出来，然后新建repo配置文件：</p>
+<p><img src="/images/pasted-279.png" alt="upload successful"><br>    新建repo配置文件的名字：base.repo ,具体配置文件内容：<br>    [base-repo]<br>    name=base.repo<br>    baseurl=file:///mnt   注：baseurl后面可接：网站（HTTP://）;FTP 服务器（ftp://）;系统文件（file:/// 此处的三个斜杠，有一个斜杠代表了系统的根目录）<br>    gpgcheck=0<br>    3、更新yum源<br>      yum clean all<br>   yum makecache<br>   yum repolist<br>    4、scp复制文件<br>    scp是有Security 的文件copy，基于ssh登录。操作起来比较方便，比如要把当前一个文件<br>    copy到远程另外一台主机上，可以如下命令：<br>    scp -r /home/daisy/full.tar.gz <a href="mailto:root@172.19.2.75" target="_blank" rel="noopener">root@172.19.2.75</a>:/home/root<br>  解释：把本机的 /home/daisy/文件夹下的 full.tar.gz文件  复制到远程机器 172.19.2.75上的 /home/root/目录下；<br>  然后会提示你输入远程主机172.19.2.75 主机的root用户的登录密码，指定了用户名root。</p>
+<p>  如果想反过来操作，把文件从远程主机copy到当前系统，使用以下命令：<br>  scp -r <a href="mailto:root@172.17.2.75" target="_blank" rel="noopener">root@172.17.2.75</a>:/home/root/full.tar.gz  /home/<br>  解释：把远程的主机172.17.2.75的/home/root/文件夹下的full.tar.gz文件 以root的身份复制到本地主机的 /home/文件夹下。<br>    5、可用的参数定义<br>    -v  和大多数Linux命令中的-v意思一样，用来显示进度，可以用来查看链接，认证或是配置错误。<br>    -C  使能压缩选项<br>    -P  选择端口，注意-p已经被rcp使用。<br>    -4 强行使用IPV4 地址<br>    -6 强行使用IPV6 地址。</p>
+<p>注意点：<br>     1.如果远程服务器防火墙有特殊限制，scp便要走特殊端口，具体用什么端口视情况而定，命令格式如下：</p>
+<p>#scp -p 4588 <a href="mailto:remote@www.abc.com" target="_blank" rel="noopener">remote@www.abc.com</a>:/usr/local/sin.sh /home/administrator<br>    2.使用scp要注意所使用的用户是否具有可读取远程服务器相应文件的权限</p>
 
        
       
@@ -309,7 +267,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/01/vsftp服务搭建配置/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/01/挂载光驱-挂载yum源-从其他系统远程复制repo-配置文件/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -323,18 +281,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/11/01/挂载光驱-挂载yum源-从其他系统远程复制repo-配置文件/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          挂载光驱 挂载yum源 从其他系统远程复制repo 配置文件
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/11/01/Centos7-配置SNMP服务/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Centos7 配置SNMP服务</div>
+    <a href="/2018/11/01/vsftp服务搭建配置/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vsftp服务搭建配置</div>
       <i class="icon-circle-right"></i>
     </a>
   
