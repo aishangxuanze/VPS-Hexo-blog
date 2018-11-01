@@ -6,33 +6,39 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>华为模拟器eNSP 安装教程 | Melvin の blog</title>
+  <title>Centos6.5 使用光盘镜像系统源安装数据库mysql5.7 | Melvin の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="随着华为网络设备的日渐普遍，华为网络设备的使用越来越多，学习华为网络路由知识的人也越来越多，华为提供的eNSP模拟软件，能够很好的为初学者提供很好的模拟学习软件。一、准备工作    软件：   ensp软件为免费软件，可以在华为官网上进行下载，版本：eNSP V100R002C00B320   windows10 操作系统二、安装步骤    1、下载eNSP软件：该软件为免费软件，可以在华为">
+  <meta name="description" content="一、光盘挂载镜像配置yum源    1、挂载光盘镜像   mount /dev/cdrom/media  #将光盘系统文件挂载到/media文件夹下     2、配置光盘yum源 repo配置文件   cd /etc/yum.repo.d    #切换到yum配置文件目录    mkdir repos_bak      #创建repos配置文件备份文件夹   mv *.repo repos_bak">
 <meta property="og:type" content="article">
-<meta property="og:title" content="华为模拟器eNSP 安装教程">
-<meta property="og:url" content="http://yoursite.com/2018/11/01/华为模拟器eNSP-安装教程/index.html">
+<meta property="og:title" content="Centos6.5 使用光盘镜像系统源安装数据库mysql5.7">
+<meta property="og:url" content="http://yoursite.com/2018/11/01/Centos6-5-使用光盘镜像系统源安装数据库mysql5-7/index.html">
 <meta property="og:site_name" content="Melvin の blog">
-<meta property="og:description" content="随着华为网络设备的日渐普遍，华为网络设备的使用越来越多，学习华为网络路由知识的人也越来越多，华为提供的eNSP模拟软件，能够很好的为初学者提供很好的模拟学习软件。一、准备工作    软件：   ensp软件为免费软件，可以在华为官网上进行下载，版本：eNSP V100R002C00B320   windows10 操作系统二、安装步骤    1、下载eNSP软件：该软件为免费软件，可以在华为">
+<meta property="og:description" content="一、光盘挂载镜像配置yum源    1、挂载光盘镜像   mount /dev/cdrom/media  #将光盘系统文件挂载到/media文件夹下     2、配置光盘yum源 repo配置文件   cd /etc/yum.repo.d    #切换到yum配置文件目录    mkdir repos_bak      #创建repos配置文件备份文件夹   mv *.repo repos_bak">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/pasted-280.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-281.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-282.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-283.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-284.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-285.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-286.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-287.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-288.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-289.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-290.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-291.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-292.png">
-<meta property="og:updated_time" content="2018-11-01T12:29:03.030Z">
+<meta property="og:image" content="http://yoursite.com/images/pasted-293.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-294.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-295.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-296.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-297.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-298.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-299.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-300.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-301.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-302.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-303.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-304.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-305.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-306.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-307.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-308.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-309.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-310.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-311.png">
+<meta property="og:updated_time" content="2018-11-01T13:13:25.231Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="华为模拟器eNSP 安装教程">
-<meta name="twitter:description" content="随着华为网络设备的日渐普遍，华为网络设备的使用越来越多，学习华为网络路由知识的人也越来越多，华为提供的eNSP模拟软件，能够很好的为初学者提供很好的模拟学习软件。一、准备工作    软件：   ensp软件为免费软件，可以在华为官网上进行下载，版本：eNSP V100R002C00B320   windows10 操作系统二、安装步骤    1、下载eNSP软件：该软件为免费软件，可以在华为">
-<meta name="twitter:image" content="http://yoursite.com/images/pasted-280.png">
+<meta name="twitter:title" content="Centos6.5 使用光盘镜像系统源安装数据库mysql5.7">
+<meta name="twitter:description" content="一、光盘挂载镜像配置yum源    1、挂载光盘镜像   mount /dev/cdrom/media  #将光盘系统文件挂载到/media文件夹下     2、配置光盘yum源 repo配置文件   cd /etc/yum.repo.d    #切换到yum配置文件目录    mkdir repos_bak      #创建repos配置文件备份文件夹   mv *.repo repos_bak">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-293.png">
   
     <link rel="alternative" href="/atom.xml" title="Melvin の blog" type="application/atom+xml">
   
@@ -168,20 +174,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-华为模拟器eNSP-安装教程" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-Centos6-5-使用光盘镜像系统源安装数据库mysql5-7" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      华为模拟器eNSP 安装教程
+      Centos6.5 使用光盘镜像系统源安装数据库mysql5.7
     </h1>
   
 
         
-        <a href="/2018/11/01/华为模拟器eNSP-安装教程/" class="archive-article-date">
-  	<time datetime="2018-11-01T12:06:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
+        <a href="/2018/11/01/Centos6-5-使用光盘镜像系统源安装数据库mysql5-7/" class="archive-article-date">
+  	<time datetime="2018-11-01T12:37:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
 </a>
         
       </header>
@@ -194,20 +200,26 @@
       
        
        
-        <p>   随着华为网络设备的日渐普遍，华为网络设备的使用越来越多，学习华为网络路由知识的人也越来越多，华为提供的eNSP模拟软件，能够很好的为初学者提供很好的模拟学习软件。<br>一、准备工作<br>    软件：<br>   ensp软件为免费软件，可以在华为官网上进行下载，版本：eNSP V100R002C00B320<br>   windows10 操作系统<br>二、安装步骤<br>    1、下载eNSP软件：该软件为免费软件，可以在华为官网下载-技术支持-工具-企业网络-eNSP-eNSPV100R002C00B320</p>
-<p><img src="/images/pasted-280.png" alt="upload successful"><br>    2、打开下载好的软件包，选择使用的语言，在这里选择的是中午，然后点击“确定”：</p>
-<p><img src="/images/pasted-281.png" alt="upload successful"><br>    3、出现安装向导，然后直接点击“下一步”：</p>
-<p><img src="/images/pasted-282.png" alt="upload successful"><br>    4、选择安装目标位置，然后点击“下一步”：</p>
-<p><img src="/images/pasted-283.png" alt="upload successful"><br>    5、选择开始菜单文件夹，在这里直接点击“下一步”即可：</p>
-<p><img src="/images/pasted-284.png" alt="upload successful"><br>    6、选择附加任务，根据自己的选择是否创建桌面图标，然后点击下一步：</p>
-<p><img src="/images/pasted-285.png" alt="upload successful"><br>    7、选择安装其他程序，再次全部勾选，全部安装，然后点击“下一步”：</p>
-<p><img src="/images/pasted-286.png" alt="upload successful"><br>    8、准备安装，然后点击“安装”：</p>
-<p><img src="/images/pasted-287.png" alt="upload successful"><br>    9、正在安装，需要等待一段时间：</p>
-<p><img src="/images/pasted-288.png" alt="upload successful"><br>    10、提示安装 winPcap 4.1.2 点击“Next”</p>
-<p><img src="/images/pasted-289.png" alt="upload successful"><br>    11、安装wireshark1.4.3，直接点击“Next”，后期一直点击“下一步”：</p>
-<p><img src="/images/pasted-290.png" alt="upload successful"><br>    12、提示安装VirtualBox 4.2.8 ，然后点击“Next”，然后一直选择默认即可：</p>
-<p><img src="/images/pasted-291.png" alt="upload successful"></p>
-<p><img src="/images/pasted-292.png" alt="upload successful"><br>    13、完成安装</p>
+        <p>一、光盘挂载镜像配置yum源<br>    1、挂载光盘镜像<br>   mount /dev/cdrom/media  #将光盘系统文件挂载到/media文件夹下</p>
+<p><img src="/images/pasted-293.png" alt="upload successful"><br>    2、配置光盘yum源 repo配置文件<br>   cd /etc/yum.repo.d    #切换到yum配置文件目录<br>    mkdir repos_bak      #创建repos配置文件备份文件夹<br>   mv *.repo repos_bak   #将原repo配置文件移动到repos_bak备份文件夹中<br>   touch Centos-Base.repo #创建Centos-Base.repo文件<br>   vi /Centos-Base.repo  #编辑Centos-Base.repo文件</p>
+<p><img src="/images/pasted-294.png" alt="upload successful"><br>    [base]<br>   name=Base<br>   baseurl=file:///media<br>   gpgcheck=0</p>
+<p><img src="/images/pasted-295.png" alt="upload successful"><br>    yum clean all  #清除缓存<br>   yum makecache  #建立新缓存<br>   yum repolist  #查看yum的repo列表</p>
+<p><img src="/images/pasted-296.png" alt="upload successful"><br>二、本地yum源安装相应软件包和数据库<br>    1、需要提前安装依赖的安装包：libaio ,perl , numactl<br>    yum -y install libaio</p>
+<p><img src="/images/pasted-297.png" alt="upload successful"><br>    yum -y install perl</p>
+<p><img src="/images/pasted-298.png" alt="upload successful"><br>    yum -y install numactl</p>
+<p><img src="/images/pasted-299.png" alt="upload successful"><br>    2、搜索是否存在mysql文件<br>    rpm -qa | grep mysql   #查询mysql文件<br>   rpm -e mysql-libs-5.1.71.-1.el6.x86_64 –nodeps  #强力删除模式</p>
+<p><img src="/images/pasted-300.png" alt="upload successful"><br>    3、上传mysql5.7的rpm包到/home/tools/mysql路径<br>    mkdir /home/tools/mysql   #创建/home/tools/mysql文件夹<br>    cd /home/tools/mysql    #切换到/home/tools/mysql文件夹</p>
+<p><img src="/images/pasted-301.png" alt="upload successful"><br>    4、下载mysql5.7.13rpm包<br>    下载地址：<a href="http://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.13-1.el6.x86_64.rpm-bundle.tar" target="_blank" rel="noopener">http://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.13-1.el6.x86_64.rpm-bundle.tar</a><br>    上传mysql5.7.13rpm包到/home/tools/mysql文件夹中</p>
+<p><img src="/images/pasted-302.png" alt="upload successful"><br>    tar -xvf mysql-5.7.13-1.el6.x86_64.rpm-bundle.tar</p>
+<p><img src="/images/pasted-303.png" alt="upload successful"><br>    5、安装mysql文件：<br>   rpm -ivh mysql-community-common-5.7.13-1.el6.x86_64.rpm<br>   rpm -ivh mysql-community-libs-5.7.13-1.el6.x86_64.rpm<br>   rpm -ivh mysql-community-client-5.7.13-1.el6.x86_64.rpm<br>   rpm -ivh mysql-community-server-5.7.13-1.el6.x86_64.rpm</p>
+<p><img src="/images/pasted-304.png" alt="upload successful"><br>    6、启动mysql服务<br>    cd /usr/bin<br>    mysqld –initialize –user=mysql  # 初始化数据库<br>    service mysqld start  #重启数据库</p>
+<p><img src="/images/pasted-305.png" alt="upload successful"><br>    7、查看mysql默认密码<br>    grep “root@localhost” /var/log/mysqld.log 查看数据库默认密码</p>
+<p><img src="/images/pasted-306.png" alt="upload successful"><br>三、登录数据库，设置初始密码等<br>    1、登录数据：<br>        mysql -u root -p</p>
+<p><img src="/images/pasted-307.png" alt="upload successful"><br>    2、更改数据库登陆密码：<br>   mysql&gt;alter user ‘root‘@’localhost’ identified by ‘passw0rd’;</p>
+<p><img src="/images/pasted-308.png" alt="upload successful"><br>    3、允许远程连接<br>    mysql&gt; use mysql;<br>    mysql&gt; update user set host=’%’where host=’localhost’ and user=’root’;<br>    mysql&gt; flush privileges;</p>
+<p><img src="/images/pasted-309.png" alt="upload successful"><br>四、卸载光驱<br>    unmonut /media/</p>
+<p><img src="/images/pasted-310.png" alt="upload successful"><br>五、验证数据库<br>    service mysqld stop<br>   service mysqld start<br>   mysql -uroot -ppassw0rd</p>
+<p><img src="/images/pasted-311.png" alt="upload successful"></p>
 
        
       
@@ -288,7 +300,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/01/华为模拟器eNSP-安装教程/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/01/Centos6-5-使用光盘镜像系统源安装数据库mysql5-7/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -302,18 +314,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/11/01/Centos6-5-使用光盘镜像系统源安装数据库mysql5-7/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Centos6.5 使用光盘镜像系统源安装数据库mysql5.7
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/11/01/挂载光驱-挂载yum源-从其他系统远程复制repo-配置文件/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">挂载光驱 挂载yum源 从其他系统远程复制repo 配置文件</div>
+    <a href="/2018/11/01/华为模拟器eNSP-安装教程/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">华为模拟器eNSP 安装教程</div>
       <i class="icon-circle-right"></i>
     </a>
   
