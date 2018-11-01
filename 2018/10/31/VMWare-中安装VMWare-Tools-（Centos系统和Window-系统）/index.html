@@ -205,6 +205,8 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
+       
+       
         <p>  VMWare Tools 是VMware虚拟机中自带的一种增强工具，相当于VirtualBox中的增强功能（Sun VirtualBox Guest Additions），是VMware提供的增强虚拟显卡和硬盘性能、以及同步虚拟机与主机时钟的驱动程序。<br>  只有在VMware虚拟机中安装好了VMWare Tools，才能实现主机与虚拟机之间的文件共享，同事可支持自由拖拽的功能，鼠标也可在虚拟机与主机中间自由移动（不用再按ctrl+alt），且虚拟机屏幕也可实现全屏化。<br>  安装过VMware Tools的虚拟机，通过VMware vSphere Client 中的摘要部分，可以查看虚拟机的IP地址等信息。<br>一、Centos 系统安装VMware Tools （本文章以Centos 6.5为例子）<br>        未安装VMware Tools工具的虚拟机，在vSphere Client 中，摘要选项的显示如下：</p>
 <p><img src="/images/pasted-141.png" alt="upload successful"><br>    本文档以Centos 6.5为例子，本人测试Centos7.2 安装VMware Tools 步骤同Centos 6.5一致，此处不一一列举。<br>    1、打开需要安装VMware Tools工具的虚拟机控制端，选择“虚拟机”—&gt;“客户机”—&gt;“安装/升级 VMware Tools（M）”，然后点击“确定”：</p>
 <p><img src="/images/pasted-142.png" alt="upload successful"><br>    2、进入虚拟机系统，命令挂载VMware Tools 工具安装包：<br>    mount /dev/cdrom /media/    #将安装VMWare Tools镜像挂载到 /media 目录下：</p>
@@ -235,8 +237,9 @@
 <p><img src="/images/pasted-167.png" alt="upload successful"></p>
 <pre><code>备注： 以上方法为 centos系统和window系统安装 VMware Tools的步骤方法，亲测有用！！！
 </code></pre>
+       
       
-
+     </div>
       
         <div class="page-reward">
           <a href="javascript:;" class="page-reward-btn tooltip-top">
@@ -321,7 +324,7 @@
       
       <div class="clearfix"></div>
     </div>
-  </div>
+  
 </article>
 
   
