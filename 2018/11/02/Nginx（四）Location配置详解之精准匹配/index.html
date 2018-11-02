@@ -6,15 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018/11 | Melvin の blog</title>
+  <title>Nginx（四）Location配置详解之精准匹配 | Melvin の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Melvin の blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/11/index.html">
+  <meta name="description" content="一、location的定义    location 有“定位”的意思，根据Uri来进行不同的定位。   在虚拟主机的配置中，是必不可少得，location可以把网站的不同部分，定位到不同的处理方式上。二、location的语法     location [=|~|~*|^~] patt{     }      中括号可以不写任何参数，此时称为一般匹配，也可以写参数      因此，大类新可以分为3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nginx（四）Location配置详解之精准匹配">
+<meta property="og:url" content="http://yoursite.com/2018/11/02/Nginx（四）Location配置详解之精准匹配/index.html">
 <meta property="og:site_name" content="Melvin の blog">
+<meta property="og:description" content="一、location的定义    location 有“定位”的意思，根据Uri来进行不同的定位。   在虚拟主机的配置中，是必不可少得，location可以把网站的不同部分，定位到不同的处理方式上。二、location的语法     location [=|~|~*|^~] patt{     }      中括号可以不写任何参数，此时称为一般匹配，也可以写参数      因此，大类新可以分为3">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/pasted-468.png">
+<meta property="og:updated_time" content="2018-11-02T07:49:34.516Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Melvin の blog">
+<meta name="twitter:title" content="Nginx（四）Location配置详解之精准匹配">
+<meta name="twitter:description" content="一、location的定义    location 有“定位”的意思，根据Uri来进行不同的定位。   在虚拟主机的配置中，是必不可少得，location可以把网站的不同部分，定位到不同的处理方式上。二、location的语法     location [=|~|~*|^~] patt{     }      中括号可以不写任何参数，此时称为一般匹配，也可以写参数      因此，大类新可以分为3">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-468.png">
   
     <link rel="alternative" href="/atom.xml" title="Melvin の blog" type="application/atom+xml">
   
@@ -150,295 +156,293 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Nginx（四）Location配置详解之精准匹配" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Nginx（四）Location配置详解之精准匹配
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/02/Nginx（四）Location配置详解之精准匹配/" class="archive-article-date">
+
+        
+        <a href="/2018/11/02/Nginx（四）Location配置详解之精准匹配/" class="archive-article-date">
   	<time datetime="2018-11-02T07:47:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/02/Nginx（四）Location配置详解之精准匹配/">Nginx（四）Location配置详解之精准匹配</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+       
+       
+        <p>一、location的定义<br>    location 有“定位”的意思，根据Uri来进行不同的定位。<br>   在虚拟主机的配置中，是必不可少得，location可以把网站的不同部分，定位到不同的处理方式上。<br>二、location的语法<br>     location [=|~|~*|^~] patt{</p>
+<pre><code>    }
 
-        <div class="article-info info-on-right">
-          
-          
+    中括号可以不写任何参数，此时称为一般匹配，也可以写参数
 
+    因此，大类新可以分为3种：
+
+    location=patt{}[精准匹配]
+
+    location  patt{} [一般匹配]
+
+    location ~patt{}[正则匹配]
+
+1、如何发挥作用？
+
+    首先看有没有精准匹配，如果有，则停止匹配过程。
+
+    location=patt{
+
+                config A
+
+    }
+
+    如果$uri==patt,匹配成功，使用configA
+
+
+
+    location =/ {
+
+            root   /var/www/html;
+
+            index  index.htm index.html;
+
+       }
+
+
+
+        location / {
+
+            root   html;
+
+            index  index.html index.htm;
+
+        }
+
+    如果访问 http://xxx.com/
+
+    定位流程是：
+
+    1.精准匹配中 “/”,得到index页为 index.htm
+
+    2.再次访问 /index.htm,此次内部跳转uri已经是“/index.htm”
+
+        根目录为/usr/local/nginx/html
+
+    3.最终结果，访问了 /usr/local/nginx/html/index.htm
+
+
+
+2.正则表达式匹配：
+
+
+
+    location / {
+
+            root   html;
+
+            index  index.html index.htm;
+
+        }
+
+
+
+
+
+      location ~ image{
+
+               root /var/www/image;
+
+               index index.html;
+
+        }
+
+    如果访问 http://xx.com/image/logo.png
+
+    此时，“/”与“/image/logo.png”匹配
+
+    同时，“/image”正则与“image/logo.png”也能匹配，谁发挥作用？
+
+    正则表达式的成功将被使用
+
+
+
+    图片真正会访问 /var/www/image/logo.png
+
+
+
+
+
+
+
+
+
+   location / {
+
+            root   /usr/local/nginx/html;
+
+            index  index.html index.htm;
+
+        }
+
+
+
+    location /foo {
+
+            root /var/www/html;
+
+            index index.html;
+
+        }
+
+    此时我们访问 xxx.com/foo
+
+        对于uri “/foo”,两个location的patt都能匹配他们
+
+        既“/”能从左前缀匹配“/foo”,“/foo”也能左前缀匹配“/foo”,
+
+        此时，真正访问 /var/www/html/index.html
+
+        原因：“/foo”匹配的更长，因此使用之。
+</code></pre><p>三、总结：<br>    location匹配流程图：</p>
+<p><img src="/images/pasted-468.png" alt="upload successful"><br>    location的命中过程是这样的：<br>        1.先判断精准命中，如果命中，立即返回结果并结束解析过程。<br>        2.判断普通命中，如果有多个命中，记录下来最长的命中结果，（注意：记录但不结束，最长的为准）<br>        3.继续判断正则表达式的解析结果，按配置里的正则表达式顺序为准，由上到下开始匹配，一旦匹配成功1个，立即返回结果，并结束解析过程。<br>    延伸分析：<br>        1、普通命中，顺序无所谓，是因为按命中的长短来确定的。<br>        2、正则命中，顺序有所谓，因为是从前往后命中的。</p>
+
+       
+      
+     </div>
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
   </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/02/Nginx（四）Location配置详解之精准匹配/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/02/Nginx（三）日志管理-日志自动备份/" class="archive-article-date">
-  	<time datetime="2018-11-02T07:28:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/02/Nginx（三）日志管理-日志自动备份/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Nginx（三）日志管理 日志自动备份</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/02/Nginx（三）日志管理-日志自动备份/">Nginx（三）日志管理 日志自动备份</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/02/Nginx（二）-虚拟主机配置/" class="archive-article-date">
-  	<time datetime="2018-11-02T07:06:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/02/Nginx（二）-虚拟主机配置/">Nginx（二） 虚拟主机配置</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/02/bash常用命令与技巧/" class="archive-article-date">
-  	<time datetime="2018-11-02T06:53:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/02/bash常用命令与技巧/">bash常用命令与技巧</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/02/Nginx（一）安装配置/" class="archive-article-date">
-  	<time datetime="2018-11-02T06:23:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/02/Nginx（一）安装配置/">Nginx（一）安装配置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/Git-安装和使用/" class="archive-article-date">
-  	<time datetime="2018-11-02T03:21:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/Git-安装和使用/">Git 安装和使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/从Git玩转GitHub/" class="archive-article-date">
-  	<time datetime="2018-11-02T02:21:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/从Git玩转GitHub/">从Git玩转GitHub</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/Centos7-2-操作系统安装配置Samba服务文档/" class="archive-article-date">
-  	<time datetime="2018-11-02T01:47:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/Centos7-2-操作系统安装配置Samba服务文档/">Centos7.2 操作系统安装配置Samba服务文档</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/Foxmail-邮箱配置-腾讯企业邮箱/" class="archive-article-date">
-  	<time datetime="2018-11-02T01:16:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/Foxmail-邮箱配置-腾讯企业邮箱/">Foxmail 邮箱配置 腾讯企业邮箱</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/Wireshark-在Windows-下的安装/" class="archive-article-date">
-  	<time datetime="2018-11-01T13:54:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/Wireshark-在Windows-下的安装/">Wireshark 在Windows 下的安装</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2018/11/page/2/">2</a><a class="extend next" rel="next" href="/archives/2018/11/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -467,8 +471,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
