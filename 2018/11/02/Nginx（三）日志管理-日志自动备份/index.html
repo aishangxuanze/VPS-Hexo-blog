@@ -6,15 +6,32 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018/11 | Melvin の blog</title>
+  <title>Nginx（三）日志管理 日志自动备份 | Melvin の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Melvin の blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/11/index.html">
+  <meta name="description" content="一、Nginx日志描述   通过访问日志，可以得到用户地域来源、跳转来源、使用终端、某个URL访问量等相关信息；通过错误日志，可以得到系统某个服务或Server的性能瓶颈等。因此，将日志好好利用，可以得到很多有价值的信息。二、Nginx日志格式    1、 打开nginx.conf配置文件：    vim /usr/local/nginx/conf/nginx.conf     通过查看Nginx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nginx（三）日志管理 日志自动备份">
+<meta property="og:url" content="http://yoursite.com/2018/11/02/Nginx（三）日志管理-日志自动备份/index.html">
 <meta property="og:site_name" content="Melvin の blog">
+<meta property="og:description" content="一、Nginx日志描述   通过访问日志，可以得到用户地域来源、跳转来源、使用终端、某个URL访问量等相关信息；通过错误日志，可以得到系统某个服务或Server的性能瓶颈等。因此，将日志好好利用，可以得到很多有价值的信息。二、Nginx日志格式    1、 打开nginx.conf配置文件：    vim /usr/local/nginx/conf/nginx.conf     通过查看Nginx">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/pasted-456.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-457.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-458.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-459.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-460.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-461.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-462.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-463.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-464.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-465.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-466.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-467.png">
+<meta property="og:updated_time" content="2018-11-02T07:41:16.835Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Melvin の blog">
+<meta name="twitter:title" content="Nginx（三）日志管理 日志自动备份">
+<meta name="twitter:description" content="一、Nginx日志描述   通过访问日志，可以得到用户地域来源、跳转来源、使用终端、某个URL访问量等相关信息；通过错误日志，可以得到系统某个服务或Server的性能瓶颈等。因此，将日志好好利用，可以得到很多有价值的信息。二、Nginx日志格式    1、 打开nginx.conf配置文件：    vim /usr/local/nginx/conf/nginx.conf     通过查看Nginx">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-456.png">
   
     <link rel="alternative" href="/atom.xml" title="Melvin の blog" type="application/atom+xml">
   
@@ -150,295 +167,183 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Nginx（三）日志管理-日志自动备份" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Nginx（三）日志管理 日志自动备份
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/02/Nginx（三）日志管理-日志自动备份/" class="archive-article-date">
+
+        
+        <a href="/2018/11/02/Nginx（三）日志管理-日志自动备份/" class="archive-article-date">
   	<time datetime="2018-11-02T07:28:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/02/Nginx（三）日志管理-日志自动备份/">Nginx（三）日志管理 日志自动备份</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+       
+       
+        <p>一、Nginx日志描述<br>   通过访问日志，可以得到用户地域来源、跳转来源、使用终端、某个URL访问量等相关信息；通过错误日志，可以得到系统某个服务或Server的性能瓶颈等。因此，将日志好好利用，可以得到很多有价值的信息。<br>二、Nginx日志格式<br>    1、 打开nginx.conf配置文件：<br>    vim /usr/local/nginx/conf/nginx.conf<br>     通过查看Nginx配置文件中的server段，可以查看到如下类似信息：</p>
+<pre><code># access_log  logs/host.access.log    main;         #这说明，该Server，它的访问日志的文件是   logs/host.access.log  ,默认使用的格式“main”格式。
+除了“main” 格式，还可以自定义其他格式。
+“main”的主要格式：
+#log_format  main  &apos;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &apos;
+#     &apos;$status $body_bytes_sent &quot;$http_referer&quot; &apos;
+#   &apos;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&apos;;
+</code></pre><p>   main格式是我们定义好的一种日志格式，并起个名字，便于引用。以上面的例子，main类型的日志，记录的 remote_addr …. http_x_forwarded_for 等选项。<br>   如默认的main日志格式，记录以下几项；<br>      远程IP-远程用户/用户时间  请求方式  （如GET/POST） 请求body长度 referer来源信息<br>      http-user-agent  用户代理/蜘蛛 ，被转发的请求的原始IP<br>   http_x_forwarded_for:在经过代理时，代理把你的本来的IP加在此头信息中，传输你的原始IP。</p>
+<p><img src="/images/pasted-456.png" alt="upload successful"><br> Nginx允许针对不同的Server做不同的log，（有的web服务器不支持，）<br>    2、实际配置信息<br>    打开conf/nginx.conf配置文件，在Server段下方添加以下信息：<br>    access_log  logs/z.com.access.log  main;</p>
+<p><img src="/images/pasted-457.png" alt="upload successful"> </p>
+<p><img src="/images/pasted-458.png" alt="upload successful"></p>
+<p><img src="/images/pasted-459.png" alt="upload successful"><br>三、Nginx日志分隔<br>    Nginx得日志文件没有rotate功能。编写每天生成一个日志，我们可以写一个Nginx日志分隔脚本来自动切割日志文件。<br>   第一步需要对日志文件重命名，一般日志文件的命名根据时间日期进行命名。<br>   第二步向Nginx主进程发送USR1信号。Nginx主进程接到信号后会从配置文件中读取日志文件名称，重新打开日志文件（以配置文件中的日志名称命名），并以工作进程的用户作为日志文件的所有者。重新打开日志文件后，Nginx主进程会关闭重名的日志文件并通知工作进程使用新打开的日志文件。工作进程立即打开新的日志文件并关闭重命名的日志文件。<br>    1、以日期命名日志文件名：<br>   查看时间、日期：date命令   时间、日期格式化命令：date -d yesterday +%Y%M%d    昨天的日期</p>
+<p><img src="/images/pasted-460.png" alt="upload successful"><br>    2、编写一个shell脚本，自动切割日志文件<br>    创建一个data文件夹，存放日志文件<br>    mkdir /data<br>    cd /data</p>
+<p><img src="/images/pasted-461.png" alt="upload successful"></p>
+<p><img src="/images/pasted-462.png" alt="upload successful"></p>
+<p><img src="/images/pasted-463.png" alt="upload successful"><br>    知识扩展：<br>  crontab 详细用法  定时任务<br> 使用crontab可以在指定的时间执行一个shell脚本或者一系列Linux命令。<br>  往cron中添加作业，例如：crontab -e       0 5 *** /usr/bin/backup.sh         # 每天早上5点运行 /usr/bin/backup.sh 脚本<br>   crontab 文件的格式：{minute}{hour}{day-of-month}{month}{day-of-week}{full-path-to-shell-script}</p>
+<pre><code># minute:区间为0-59        #hour：区间为0-23      #day-of-mouth：区间为0-31       #mouth：区间为1-12  1是1月 12是12月 。
+day-of-week:区间为0-7，周日可以是0或7；
+</code></pre><p><img src="/images/pasted-464.png" alt="upload successful"></p>
+<p><img src="/images/pasted-465.png" alt="upload successful"></p>
+<p><img src="/images/pasted-466.png" alt="upload successful"></p>
+<p><img src="/images/pasted-467.png" alt="upload successful"></p>
 
-        <div class="article-info info-on-right">
-          
-          
-
+       
+      
+     </div>
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
   </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/02/Nginx（三）日志管理-日志自动备份/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/02/Nginx（二）-虚拟主机配置/" class="archive-article-date">
-  	<time datetime="2018-11-02T07:06:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/02/Nginx（二）-虚拟主机配置/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Nginx（二） 虚拟主机配置</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/02/Nginx（二）-虚拟主机配置/">Nginx（二） 虚拟主机配置</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/02/bash常用命令与技巧/" class="archive-article-date">
-  	<time datetime="2018-11-02T06:53:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/02/bash常用命令与技巧/">bash常用命令与技巧</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/02/Nginx（一）安装配置/" class="archive-article-date">
-  	<time datetime="2018-11-02T06:23:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/02/Nginx（一）安装配置/">Nginx（一）安装配置</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/Git-安装和使用/" class="archive-article-date">
-  	<time datetime="2018-11-02T03:21:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/Git-安装和使用/">Git 安装和使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/从Git玩转GitHub/" class="archive-article-date">
-  	<time datetime="2018-11-02T02:21:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/从Git玩转GitHub/">从Git玩转GitHub</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/Centos7-2-操作系统安装配置Samba服务文档/" class="archive-article-date">
-  	<time datetime="2018-11-02T01:47:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/Centos7-2-操作系统安装配置Samba服务文档/">Centos7.2 操作系统安装配置Samba服务文档</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/Foxmail-邮箱配置-腾讯企业邮箱/" class="archive-article-date">
-  	<time datetime="2018-11-02T01:16:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/Foxmail-邮箱配置-腾讯企业邮箱/">Foxmail 邮箱配置 腾讯企业邮箱</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/Wireshark-在Windows-下的安装/" class="archive-article-date">
-  	<time datetime="2018-11-01T13:54:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/Wireshark-在Windows-下的安装/">Wireshark 在Windows 下的安装</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/Outlook-配置企业邮箱文档/" class="archive-article-date">
-  	<time datetime="2018-11-01T13:42:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/Outlook-配置企业邮箱文档/">Outlook 配置企业邮箱文档</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2018/11/page/2/">2</a><a class="extend next" rel="next" href="/archives/2018/11/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -467,8 +372,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
