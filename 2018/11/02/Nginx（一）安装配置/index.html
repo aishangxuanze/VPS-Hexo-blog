@@ -6,15 +6,38 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Melvin の blog</title>
+  <title>Nginx（一）安装配置 | Melvin の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Melvin の blog">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+  <meta name="description" content="一、Nginx介绍    Nginx（engine x）是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/SMTP服务器。Nginx是由伊戈尔·赛索耶夫为俄罗斯访问量第二的Rambler.ru站点（俄文：Рамблер）开发的。Nginx是一款轻量级的web服务器反向代理服务器及电子邮件（IMAP/POP3）代理服务器，并在一个BSD-like协议下发行。其特点是占有内存少，并发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nginx（一）安装配置">
+<meta property="og:url" content="http://yoursite.com/2018/11/02/Nginx（一）安装配置/index.html">
 <meta property="og:site_name" content="Melvin の blog">
+<meta property="og:description" content="一、Nginx介绍    Nginx（engine x）是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/SMTP服务器。Nginx是由伊戈尔·赛索耶夫为俄罗斯访问量第二的Rambler.ru站点（俄文：Рамблер）开发的。Nginx是一款轻量级的web服务器反向代理服务器及电子邮件（IMAP/POP3）代理服务器，并在一个BSD-like协议下发行。其特点是占有内存少，并发">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/pasted-434.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-435.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-436.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-437.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-438.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-439.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-440.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-441.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-442.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-443.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-444.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-445.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-446.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-447.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-449.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-450.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-451.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-452.png">
+<meta property="og:updated_time" content="2018-11-02T06:50:03.461Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Melvin の blog">
+<meta name="twitter:title" content="Nginx（一）安装配置">
+<meta name="twitter:description" content="一、Nginx介绍    Nginx（engine x）是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/SMTP服务器。Nginx是由伊戈尔·赛索耶夫为俄罗斯访问量第二的Rambler.ru站点（俄文：Рамблер）开发的。Nginx是一款轻量级的web服务器反向代理服务器及电子邮件（IMAP/POP3）代理服务器，并在一个BSD-like协议下发行。其特点是占有内存少，并发">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-434.png">
   
     <link rel="alternative" href="/atom.xml" title="Melvin の blog" type="application/atom+xml">
   
@@ -150,295 +173,180 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Nginx（一）安装配置" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Nginx（一）安装配置
+    </h1>
+  
+
+        
+        <a href="/2018/11/02/Nginx（一）安装配置/" class="archive-article-date">
+  	<time datetime="2018-11-02T06:23:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
+</a>
+        
+      </header>
     
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+       
+       
+        <p>一、Nginx介绍<br>    Nginx（engine x）是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/SMTP服务器。Nginx是由伊戈尔·赛索耶夫为俄罗斯访问量第二的Rambler.ru站点（俄文：Рамблер）开发的。Nginx是一款轻量级的web服务器反向代理服务器及电子邮件（IMAP/POP3）代理服务器，并在一个BSD-like协议下发行。其特点是占有内存少，并发能力强，事实上Nginx的并发能力确实在同类型的网页服务器中表现较好，大陆使用Nginx网站用户有：百度、京东、新浪、网易、腾讯、淘宝等。<br>二、Nginx常用功能<br>    1、Http代理，反向代理：作为web服务器最常用的功能之一，尤其是反向代理。下面通过两张图对正向代理与反向代理做个诠释。</p>
+<p><img src="/images/pasted-434.png" alt="upload successful"><br>    正向代理，就是客户端需要访问一个网站，客户端先将请求发送到某一个代理服务器，由代理服务器去访问客户端需要访问的网站，再将访问到的数据传递给用户客户端。</p>
+<p><img src="/images/pasted-435.png" alt="upload successful"><br>   反向代理：客户端通过互联网访问某网站服务器，某网站服务器以代理服务器的方式来接受Internet上的连接请求，然后将请求转发给内部网络上的服务器，并将从服务器上得到的结果返回给Internet上请求连接的客户端，此次代理服务器对外就表现为一个反向代理服务器。<br>   Nginx在做反向代理时，×××能稳定，并且能够提供配置灵活的转发功能。Nginx可以根据不同的正则匹配，采取不同的转发策略。如图片文件结尾的走文件服务器，动态页面走web服务器，只要正则写的没问题，又有相应的服务器解决方案，则可以正确的访问服务器。并且Nginx对返回结果进行错误页跳转，异常判断。如果被分发的服务器存在异常，则可以将请求重新转发给另外一台服务器，然后自动去除异常服务器。<br>    2、负载均衡<br>    Nginx支持得负载均衡调度算法方式如下：<br>   weight轮询（默认）：接收到得请求按照顺序逐一分配到不同得后端服务器，即使在使用过程中，某一台后端服务器宕机，nginx会自动将该服务器剔除队列，请求受理情况不受到任何影响。这种方式下，可以给不同得后端服务器设置一个权重值（weight），用于调整不同得服务器上请求得分配率；权重数据越大，被分配到请求的几率越大；该权重值，主要是针对实际工作环境中不同的后端服务器硬件配置进行调整的。<br>   ip_hash：每个请求按照发起客户端的ip的hash结果进行匹配，这样的算法下一个固定ip地址的客户端总会访问到同一个后端服务器，这也在一定程度上解决了集群部署环境下session共享的问题。<br>   fair：智能调整调度算法，动态的根据后端服务器的请求处理到响应的时间进行均衡分配，响应时间短处理效率高的服务器分配到请求的概率高，响应时间长处理效率低的服务器分配到的请求少；结合了前两者的优点的一种调度算法。但是需要注意的是nginx默认不支持fair算法，如果要使用这种调度算法，请安装upstream_fair模块<br>   url_hash:按照访问的url的hash结果分配请求，每个请求的url会指向后端固定的某个服务器，可以在nginx作为静态服务器的情况下提高缓存效率。同样要注意nginx默认不支持这种调度算法，要使用的话需要安装nginx的hash软件包.<br>   3、web缓存<br>   Nginx可以对不同的文件做不同的缓存处理，配置灵活，并且支持FastCGI_Cache，主要用于对FastCGI的动态程序进行缓存。配合着第三方的ngx_cache_purge,对制定的URL缓存内容可以的进行增删管理。<br>三、环境及软件<br>    安装环境：Centos 6.5<br>    Nginx：Nginx-1.14.0<br>    下载地址：<a href="http://nginx.org/download/nginx-1.14.0.tar.gz" target="_blank" rel="noopener">http://nginx.org/download/nginx-1.14.0.tar.gz</a><br>四、安装步骤：<br>    1、安装Centos6.5操作系统，以前文章有介绍，在此不做具体介绍：</p>
+<p><img src="/images/pasted-436.png" alt="upload successful"><br>    2、下载Nginx安装包：<br>   下载地址：<a href="http://nginx.org/download/nginx-1.14.0.tar.gz" target="_blank" rel="noopener">http://nginx.org/download/nginx-1.14.0.tar.gz</a></p>
+<p><img src="/images/pasted-437.png" alt="upload successful"></p>
+<p><img src="/images/pasted-438.png" alt="upload successful"><br>    再次下载Nginx<br>    wget <a href="http://nginx.org/download/nginx-1.14.0.tar.gz" target="_blank" rel="noopener">http://nginx.org/download/nginx-1.14.0.tar.gz</a></p>
+<p><img src="/images/pasted-439.png" alt="upload successful"><br>    3、解压安装包：<br>    tar zxvf nginx-1.14.0.tar.gz</p>
+<p><img src="/images/pasted-440.png" alt="upload successful"><br>    4、编辑安装</p>
+<p><img src="/images/pasted-441.png" alt="upload successful"></p>
+<p><img src="/images/pasted-442.png" alt="upload successful"></p>
+<p><img src="/images/pasted-443.png" alt="upload successful"></p>
+<p><img src="/images/pasted-444.png" alt="upload successful"></p>
+<p><img src="/images/pasted-445.png" alt="upload successful"></p>
+<p><img src="/images/pasted-446.png" alt="upload successful"></p>
+<p><img src="/images/pasted-447.png" alt="upload successful"><br>    5、Nginx启动与关闭</p>
+<p><img src="/images/pasted-449.png" alt="upload successful"></p>
+<p><img src="/images/pasted-450.png" alt="upload successful"><br>五、知识扩展</p>
+<p><img src="/images/pasted-451.png" alt="upload successful"><br>六、验证安装是否成功<br>    1、启动Nginx服务：<br>    /usr/local/nginx/sbin/nginx<br>   2、打开浏览器，输入Nginx服务器地址：</p>
+<p><img src="/images/pasted-452.png" alt="upload successful"></p>
+
+       
+      
+     </div>
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/挂载光驱-挂载yum源-从其他系统远程复制repo-配置文件/" class="archive-article-date">
-  	<time datetime="2018-11-01T11:50:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/挂载光驱-挂载yum源-从其他系统远程复制repo-配置文件/">挂载光驱 挂载yum源 从其他系统远程复制repo 配置文件</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
   </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/02/Nginx（一）安装配置/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/vsftp服务搭建配置/" class="archive-article-date">
-  	<time datetime="2018-11-01T10:46:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/01/Git-安装和使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Git 安装和使用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/vsftp服务搭建配置/">vsftp服务搭建配置</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/Centos7-配置SNMP服务/" class="archive-article-date">
-  	<time datetime="2018-11-01T10:29:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/Centos7-配置SNMP服务/">Centos7 配置SNMP服务</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/31/Centos-6-5-安装教程及网络信息配置/" class="archive-article-date">
-  	<time datetime="2018-11-01T01:07:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/31/Centos-6-5-安装教程及网络信息配置/">Centos 6.5 安装教程及网络信息配置</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/31/Centos7-firewall防火墙常用配置/" class="archive-article-date">
-  	<time datetime="2018-10-31T10:55:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/31/Centos7-firewall防火墙常用配置/">Centos7 firewall防火墙常用配置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/31/Centos7-安装Python3-6-5-及安装ipython6-1-0/" class="archive-article-date">
-  	<time datetime="2018-10-31T10:15:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/31/Centos7-安装Python3-6-5-及安装ipython6-1-0/">Centos7 安装Python3.6.5 及安装ipython6.1.0</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/31/VMwareWorkstation-创建新的虚拟机/" class="archive-article-date">
-  	<time datetime="2018-10-31T09:56:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/31/VMwareWorkstation-创建新的虚拟机/">VMwareWorkstation 创建新的虚拟机</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/31/VMWare-中安装VMWare-Tools-（Centos系统和Window-系统）/" class="archive-article-date">
-  	<time datetime="2018-10-31T09:06:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/31/VMWare-中安装VMWare-Tools-（Centos系统和Window-系统）/">VMWare 中安装VMWare Tools （Centos系统和Window 系统）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/31/在vSphere-Client-使用模板部署虚拟机-系统硬盘空间扩展/" class="archive-article-date">
-  	<time datetime="2018-10-31T05:04:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/31/在vSphere-Client-使用模板部署虚拟机-系统硬盘空间扩展/">在vSphere Client 使用模板部署虚拟机 系统硬盘空间扩展</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/安装虚拟机和windows-server-2012-系统操作文档/" class="archive-article-date">
-  	<time datetime="2018-10-31T00:35:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/安装虚拟机和windows-server-2012-系统操作文档/">安装虚拟机和windows server 2012 系统操作文档</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/3/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -467,8 +375,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
