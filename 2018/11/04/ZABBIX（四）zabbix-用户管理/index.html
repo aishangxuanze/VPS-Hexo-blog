@@ -6,15 +6,31 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Melvin の blog</title>
+  <title>ZABBIX（四）zabbix 用户管理 | Melvin の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Melvin の blog">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+  <meta name="description" content="本文章主要介绍zabbix用户管理，包括用户增删改查、用户报警媒介管理、用户权限管理    安装完zabbix后，系统会自带两个用户，分别为：Admin和Guests一、超级管理员    zabbix安装完成后，超级管理员账号默认为：   用户名：Admin   密码：zabbix。   管理员账号下的仪表盘： 二、Guest用户    zabbix系统安装完成后，默认会有一个guest账号：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ZABBIX（四）zabbix 用户管理">
+<meta property="og:url" content="http://yoursite.com/2018/11/04/ZABBIX（四）zabbix-用户管理/index.html">
 <meta property="og:site_name" content="Melvin の blog">
+<meta property="og:description" content="本文章主要介绍zabbix用户管理，包括用户增删改查、用户报警媒介管理、用户权限管理    安装完zabbix后，系统会自带两个用户，分别为：Admin和Guests一、超级管理员    zabbix安装完成后，超级管理员账号默认为：   用户名：Admin   密码：zabbix。   管理员账号下的仪表盘： 二、Guest用户    zabbix系统安装完成后，默认会有一个guest账号：">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/pasted-670.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-671.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-672.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-673.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-674.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-675.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-676.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-677.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-678.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-679.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-680.png">
+<meta property="og:updated_time" content="2018-11-04T06:28:47.450Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Melvin の blog">
+<meta name="twitter:title" content="ZABBIX（四）zabbix 用户管理">
+<meta name="twitter:description" content="本文章主要介绍zabbix用户管理，包括用户增删改查、用户报警媒介管理、用户权限管理    安装完zabbix后，系统会自带两个用户，分别为：Admin和Guests一、超级管理员    zabbix安装完成后，超级管理员账号默认为：   用户名：Admin   密码：zabbix。   管理员账号下的仪表盘： 二、Guest用户    zabbix系统安装完成后，默认会有一个guest账号：">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-670.png">
   
     <link rel="alternative" href="/atom.xml" title="Melvin の blog" type="application/atom+xml">
   
@@ -150,22 +166,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Nginx（三）日志管理-日志自动备份" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+            <article id="post-ZABBIX（四）zabbix-用户管理" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/02/Nginx（三）日志管理-日志自动备份/">Nginx（三）日志管理 日志自动备份</a>
+    <h1 class="article-title" itemprop="name">
+      ZABBIX（四）zabbix 用户管理
     </h1>
   
 
         
-        <a href="/2018/11/02/Nginx（三）日志管理-日志自动备份/" class="archive-article-date">
-  	<time datetime="2018-11-02T07:28:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
+        <a href="/2018/11/04/ZABBIX（四）zabbix-用户管理/" class="archive-article-date">
+  	<time datetime="2018-11-04T05:21:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-04</time>
 </a>
         
       </header>
@@ -178,16 +192,44 @@
       
        
        
-	<p>一、Nginx日志描述<br>   通过访问日志，可以得到用户地域来源、跳转来源、使用终端、某个URL访问量等相关信息；通过错误日志，可以得到系统某个服务或Server的性能瓶颈等。因此，将日志好好利用，可以得到很多有价值的信息。<br>二、Nginx日志格式<br>    1、 打开nginx.conf配置文件：<br>    vim /usr/local/nginx/conf/nginx.conf<br>     通过查看Nginx配置文件中的server段，可以查看到如下类似信息：</p>
-	
-	 <p class="article-more-link">
-	  <a class="article-more-a" href="/2018/11/02/Nginx（三）日志管理-日志自动备份/#more">more >></a>
-	 </p>
-	
+        <p>  本文章主要介绍zabbix用户管理，包括用户增删改查、用户报警媒介管理、用户权限管理<br>    安装完zabbix后，系统会自带两个用户，分别为：Admin和Guests<br>一、超级管理员<br>    zabbix安装完成后，超级管理员账号默认为：<br>   用户名：Admin   密码：zabbix。<br>   管理员账号下的仪表盘：</p>
+<p><img src="/images/pasted-670.png" alt="upload successful"><br>二、Guest用户<br>    zabbix系统安装完成后，默认会有一个guest账号：<br>   用户名：guest   密码为空  ，只能看到zabbix后台，没有具体内容<br>   guest账号下的仪表板，查看不到数据信息：</p>
+<p><img src="/images/pasted-671.png" alt="upload successful"><br>三、添加用户的三个属性<br>    用户信息：账号密码、所属组等基本信息<br>   示警媒介：报警相关信息，例如邮箱地址、接受报警时段<br>   许可权：权限，当前用户对哪些主机有权限，我们选择“超级管理员”<br>四、创建用户群组<br>    管理-用户群组-创建用户群组： </p>
+<p><img src="/images/pasted-672.png" alt="upload successful"><br>    添加组名，在此使用的组名“test”，然后可以选择用户，在此将Admin和guest用户添加到新创建的用户群组。</p>
+<p><img src="/images/pasted-673.png" alt="upload successful"><br>    点击“权限”，为新创建的用户群组添加权限：</p>
+<p><img src="/images/pasted-674.png" alt="upload successful"><br>    一些配置信息设置好后，点击“添加”，创建用户组完成：</p>
+<p><img src="/images/pasted-675.png" alt="upload successful"><br>五、创建zabbix用户<br>    1、创建用户<br>    “管理”-“用户”-“创建用户”<br>   2、填写新增用户的基本信息：</p>
+<p><img src="/images/pasted-676.png" alt="upload successful"><br>    3、添加媒介：<br>    为新创建的用户添加报警媒介：</p>
+<p><img src="/images/pasted-677.png" alt="upload successful"><br>    为新创建的用户添加权限，可以访问主机：<br>   因为我们在用户信息以及选择了超级管理员，所以这边默认加入了超级管理员权限，直接存档即可。</p>
+<p><img src="/images/pasted-678.png" alt="upload successful"><br>六、测试zabbix 用户<br>    输入用户名和密码：</p>
+<p><img src="/images/pasted-679.png" alt="upload successful"></p>
+<p><img src="/images/pasted-680.png" alt="upload successful"></p>
+
        
       
      </div>
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -195,16 +237,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/02/Nginx（三）日志管理-日志自动备份/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/04/ZABBIX（四）zabbix-用户管理/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/04/ZABBIX（三）-zabbix支持的主要监控方式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ZABBIX（三） zabbix支持的主要监控方式</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -224,678 +325,14 @@
 
 
 
-
-  
-    <article id="post-Nginx（二）-虚拟主机配置" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/02/Nginx（二）-虚拟主机配置/">Nginx（二） 虚拟主机配置</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/02/Nginx（二）-虚拟主机配置/" class="archive-article-date">
-  	<time datetime="2018-11-02T07:06:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
-</a>
-        
-      </header>
-    
-    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
-   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-       
-       
-	<p>一、Nginx的应用概述<br>    Nginx作为一款高性能的http服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器。主要有以下3方面的应用：<br>   1.http服务器：<br>    Nginx是一个http服务器可以独立提供http服务。可以做网页静态服务器。<br>   2.虚拟主机：<br>    可以实现在一台服务器虚拟出多个网站。例如个人网站使用的虚拟主机。<br>   3.反向代理，负载均衡：<br>    当网站的访问量达到一定程度后，单台服务器不能满足用户的请求时，需要用多台服务器集群可以使用nginx做反向代理。并且多台服务器可以平均分担负载，不会因为某台服务器负载高宕机而某台服务器闲置的情况。<br>二、虚拟主机概述<br>     虚拟主机使用的是特殊的软硬件技术，它把一台服务器主机分成一台台“虚拟”的主机，每天虚拟主机都可以具有独立的域名，具有完整的Internet服务器功能（www、FTP、Email等），同一台主机上的虚拟主机之间是完全独立的。从网站访问者来看，每一台虚拟主机和一台独立的主机完全一样。<br>   利用虚拟主机，不必为每个要运行的网站提供一台单独的Nginx服务器或单独运行一组Nginx进程。虚拟主机提供了在同一台服务器、同一组Nginx进程上运行多个网站的功能。<br>   可以实现在同一台服务器上运行多个网站，并且网站之间相互独立各不干扰。<br>三、Nginx虚拟主机的配置<br>    Nginx下，一个Server标签就是一个虚拟主机，有三种方式进行配置：<br>  （1）、基于域名的虚拟主机，通过域名来区分虚拟主机——应用：外部网站；<br>  （2）、基于端口的虚拟主机，通过端口来区分虚拟主机——应用：公司内部网站，外部网站的管理后台。<br>  （3）、基于IP的虚拟主机，几乎不太常用。<br>四、Nginx配置文件<br>    cd /usr/local/nginx/conf<br>    ls<br>    vim nginx.conf</p>
-	
-	 <p class="article-more-link">
-	  <a class="article-more-a" href="/2018/11/02/Nginx（二）-虚拟主机配置/#more">more >></a>
-	 </p>
-	
-       
-      
-     </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/02/Nginx（二）-虚拟主机配置/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-bash常用命令与技巧" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/02/bash常用命令与技巧/">bash常用命令与技巧</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/02/bash常用命令与技巧/" class="archive-article-date">
-  	<time datetime="2018-11-02T06:53:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
-</a>
-        
-      </header>
-    
-    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
-   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-       
-       
-	<p>一、bash介绍：<br>    bash是一个为GNU计划编写的Unix shell，它的名字是一系列缩写：Bourne-Again SHell。 Bash是许多Linux发行版默认的Shell。还有许多其他传统UNIX上用的Shell，如：tcsh、csh、ash、bsh、ksh等。<br>二、bash特性：<br>    1、bash：<br>    （1）、命令历、命令补全<br>    （2）、管道、重定向<br>    （3）、命令别名<br>    （4）、命令行编辑<br>    （5）、命令行展开<br>    （6）、文件名通配<br>    （7）、支持使用变量<br>    （8）、支持编程（脚本）<br>    2、命令行编辑：<br>    光标跳转：<br>    （1）、Ctrl+a：跳到命令行首<br>    （2）、Ctrl+e：跳到命令行尾<br>    （3）、Ctrl+u：删除光标至命令行首得内容<br>    （4）、Ctrl+k：删除光标至命令行尾得内容<br>    （5）、Ctrl+l：清屏<br>   3、命令历史<br>        查看命令历史：history<br>     （1）、-c：清空命令历史<br>     （2）、-d OFFSET [n]：删除指定位置得命令<br>     （3）、-w:保存命令历史至历史文件中<br>   4、环境变量<br>    PATH：命令搜索路径<br>    HISTSIZT：命令历史缓存区大小<br>   5、命令历史的使用技巧<br>       （1）、！n：执行命令历史中的第n条命令<br>    （2）、！-n：执行命令历史中的倒数第n条命令；<br>    （3）、！！：执行上一条命令；<br>    （4）、！string：执行命令历史中最近一个指定字符串开头的命令<br>    （5）、！$(另外一种方法：先按esc，松开后再按.)：引用前一条命令的最后一个参数<br>    （6）、Esc ，.:引用前一条命令的最后一个参数<br>   6、命令补全：tab键<br>         搜索PATH环境变量中指定的每个路径下以我们给出的字符串开头的可执行文件，如果多余一个，两次tab，可以给出列表；否则将直接补全。<br>     PATH:<br>        路径补全：tab键<br>       搜索我们给出的起始路径下的每个文件名，并试图补全。<br>    7、命令别名：<br>    alias  CMDALIAS=‘COMMAND’[options] [arguments]<br>    在shell中定义的别名尽在当前shell生命周期中有效；别名的有效范围仅为当前shell进程。<br>    ualias  CMDALIAS ：撤销命令<br>   8、命令替换：$(COMMAND),反引号：<code>COMMAND</code></p>
-	
-	 <p class="article-more-link">
-	  <a class="article-more-a" href="/2018/11/02/bash常用命令与技巧/#more">more >></a>
-	 </p>
-	
-       
-      
-     </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/02/bash常用命令与技巧/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Nginx（一）安装配置" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/02/Nginx（一）安装配置/">Nginx（一）安装配置</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/02/Nginx（一）安装配置/" class="archive-article-date">
-  	<time datetime="2018-11-02T06:23:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
-</a>
-        
-      </header>
-    
-    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
-   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-       
-       
-	<p>一、Nginx介绍<br>    Nginx（engine x）是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/SMTP服务器。Nginx是由伊戈尔·赛索耶夫为俄罗斯访问量第二的Rambler.ru站点（俄文：Рамблер）开发的。Nginx是一款轻量级的web服务器反向代理服务器及电子邮件（IMAP/POP3）代理服务器，并在一个BSD-like协议下发行。其特点是占有内存少，并发能力强，事实上Nginx的并发能力确实在同类型的网页服务器中表现较好，大陆使用Nginx网站用户有：百度、京东、新浪、网易、腾讯、淘宝等。<br>二、Nginx常用功能<br>    1、Http代理，反向代理：作为web服务器最常用的功能之一，尤其是反向代理。下面通过两张图对正向代理与反向代理做个诠释。</p>
-	
-	 <p class="article-more-link">
-	  <a class="article-more-a" href="/2018/11/02/Nginx（一）安装配置/#more">more >></a>
-	 </p>
-	
-       
-      
-     </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/02/Nginx（一）安装配置/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Git-安装和使用" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/01/Git-安装和使用/">Git 安装和使用</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/01/Git-安装和使用/" class="archive-article-date">
-  	<time datetime="2018-11-02T03:21:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        
-      </header>
-    
-    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
-   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-       
-       
-	<p>一、Git介绍<br>    Git是一个开源的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。Git是Linux Torvalds为了帮助管理Linux内核开发而开发的一个开放源码的版本控制软件。<br>二、Git的特点<br>    分布式相比于集中式的最大区别在于开发者可以提交到本地，每个开发者通过克隆（Git clone），在本地机器上拷贝一个完整的Git仓库。<br>   Git的功能特性：</p>
-	
-	 <p class="article-more-link">
-	  <a class="article-more-a" href="/2018/11/01/Git-安装和使用/#more">more >></a>
-	 </p>
-	
-       
-      
-     </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/01/Git-安装和使用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-从Git玩转GitHub" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/01/从Git玩转GitHub/">从Git玩转GitHub</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/01/从Git玩转GitHub/" class="archive-article-date">
-  	<time datetime="2018-11-02T02:21:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        
-      </header>
-    
-    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
-   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-       
-       
-	<p>一、了解Git和Github<br>    1、什么事Git：<br>    Git：是一个免费、开源的版本控制软件<br>   2、什么是版本控制系统：<br>   版本控制：是一种记录一个或若干个文件内容变化，以便将来查阅特定版本修订情况的系统<br>   3、版本控制系统的功能：<br>   记录文件的所有历史变化；随时可恢复到任何一个历史状态；多人协作开发或修改；错误恢复。<br>   4、什么是Github：<br>   Github是全球最大的社交编程及代码托管网站（<a href="https://github.com/）" target="_blank" rel="noopener">https://github.com/）</a><br>   Github可以托管各种git库，并提供一个web界面（用户名.github.io/仓库名）<br>   5、Github和Git的关系：<br>   Git是版本控制软件；  Github是项目 代码托管的平台，借助git来管理项目代码<br>   6、使用Github的目的：<br>   借助github托管项目代码<br>   7、常用的基本概念：<br>   仓库（Repository）：仓库用来存放项目代码，每个项目对应一个仓库，多个开源项目 则有多个仓库 。<br>   收藏（Star）：收藏项目，方便下次查看<br>   复制克隆项目（Fork）：举例说明，你开源了一个项目，别人想在你这个项目的基础上做些改进，别人可以Fork你的项目（方法：打开项目主要，点击右上角的fork按钮即可），然后应用到自己的项目中，这样他的Github主页上就多了一个项目，只不过这个项目是基于你的项目基础（本质上是在你原来项目的基础上复制了一份）。别人可以随心所欲的改进，但不会影响原有项目的代码与结构。<br>   发起请求（Pull Request）：发送请求是基于Fork的基础 ，别人在 你的基础上做了改进，后期认为改进不错，应该把这些改进让更多的人收益，于是就想把自己的改进合并到原有项目，这时候 会发起一个Pull Request，原始创建人，也就是你会收到这个请求，你仔细revlew他的代码，并且进行测试，合适的话介绍他的发送请求，这样你就拥有了他的改进代码。<br>   关注（Wath）：关注项目，当项目更新可以接受到通知。<br>   事务卡片（Issue）：发现代码BUG，但是目前没有成型代码，需要讨论时用；<br>   8、基本概念：<br>   Github主页：账号创建成功或点击网址导航栏Github图标就可以进入Github主页；该主页左侧主要显示用户动态以及关注用户或 关注仓库的动态；右侧则显示所有的git库。<br>   仓库主页：主要显示项目的信息，如：项目代码，版本，收藏/关注/fork情况等<br>   个人主页：个人信息，头像、个人简历、关注我的人，我关注的git库，我的开源项目，我贡献的开源项目等信息。<br>二、注册GitHub账号<br>    1、官方网站：github.com</p>
-	
-	 <p class="article-more-link">
-	  <a class="article-more-a" href="/2018/11/01/从Git玩转GitHub/#more">more >></a>
-	 </p>
-	
-       
-      
-     </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/01/从Git玩转GitHub/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Centos7-2-操作系统安装配置Samba服务文档" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/01/Centos7-2-操作系统安装配置Samba服务文档/">Centos7.2 操作系统安装配置Samba服务文档</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/01/Centos7-2-操作系统安装配置Samba服务文档/" class="archive-article-date">
-  	<time datetime="2018-11-02T01:47:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        
-      </header>
-    
-    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
-   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-       
-       
-	<p>一、Samba介绍<br>    Samba是在Linux和Unix系统上实现SMB协议的一个免费软件 ，由服务器及客户端程序构成。SMB（Server Messages Block，信息服务块）是一种在局域网上共享文件和打印机的一种通信协议，它为局域网内的不同计算机之间提供文件及打印机等资源的共享服务。SMB协议是客户机/服务器型协议，客户机通过该协议可以访问服务器上的共享文件系统、打印机及其他资源。通过设置“NetBIOS over TCP/IP”使得Samba不但能与局域网络主机分享资源，还能与全世界的电脑分享资源。<br>   Samba最大的功能就是可以用于Linux与windows系统直接的文件共享和打印共享，Samba既可以用于windows与Linux之间的文件共享，也可以用于Linux与Linux之间的资源共享。<br>   Samba由两个主要程序组成，它们是smbd和nmbd。这两个守护进程在服务器启动到停止期间持续运行，功能各异。Smbd和nmbd使用的全部配置信息全都保存在smb.conf文件中。Smb.conf向smbd和nmbd两个守护进程说明输出什么以便共享，共享输出给谁及如何进行输出。<br>   Samba提供了基于CIFS的四个服务：文件和打印服务、授权与被授权、名称解析、浏览服务。前两项服务由smbd提供，后两项服务则由nmbd提供。 简单地说，smbd进程的作用是处理到来的SMB软件包，为使用该软件包的资源与Linux进行协商，nmbd进程使主机(或工作站)能浏览Linux服务器。<br>二、Samba服务的安装与配置<br>    1、Samba服务的安装：<br>   使用系统yum安装，命令：yum -y install samba samba-client</p>
-	
-	 <p class="article-more-link">
-	  <a class="article-more-a" href="/2018/11/01/Centos7-2-操作系统安装配置Samba服务文档/#more">more >></a>
-	 </p>
-	
-       
-      
-     </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/01/Centos7-2-操作系统安装配置Samba服务文档/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Foxmail-邮箱配置-腾讯企业邮箱" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/01/Foxmail-邮箱配置-腾讯企业邮箱/">Foxmail 邮箱配置 腾讯企业邮箱</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/01/Foxmail-邮箱配置-腾讯企业邮箱/" class="archive-article-date">
-  	<time datetime="2018-11-02T01:16:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        
-      </header>
-    
-    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
-   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-       
-       
-	<p>Foxmail为常见的邮件客户端程序，工作中经常会用到，通过Foxmail邮箱添加企业邮箱设置。<br>   工具：Foxmai软件<br>   QQ企业邮箱<br>一、Foxmail软件下载/安装<br>    1、软件下载，登录foxmail官网，下载最新版的foxmail软件，（也可供其他网站下载foxmail软件，在此不做强制要求）；<br>     下载地址：<a href="http://www.foxmail.com/" target="_blank" rel="noopener">http://www.foxmail.com/</a></p>
-	
-	 <p class="article-more-link">
-	  <a class="article-more-a" href="/2018/11/01/Foxmail-邮箱配置-腾讯企业邮箱/#more">more >></a>
-	 </p>
-	
-       
-      
-     </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/01/Foxmail-邮箱配置-腾讯企业邮箱/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Wireshark-在Windows-下的安装" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/01/Wireshark-在Windows-下的安装/">Wireshark 在Windows 下的安装</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/01/Wireshark-在Windows-下的安装/" class="archive-article-date">
-  	<time datetime="2018-11-01T13:54:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        
-      </header>
-    
-    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
-   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-       
-       
-	<p>  1、wireshark官网地址：https：//<a href="http://www.wireshark.ort/" target="_blank" rel="noopener">www.wireshark.ort/</a></p>
-	
-	 <p class="article-more-link">
-	  <a class="article-more-a" href="/2018/11/01/Wireshark-在Windows-下的安装/#more">more >></a>
-	 </p>
-	
-       
-      
-     </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/01/Wireshark-在Windows-下的安装/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Outlook-配置企业邮箱文档" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/01/Outlook-配置企业邮箱文档/">Outlook 配置企业邮箱文档</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/01/Outlook-配置企业邮箱文档/" class="archive-article-date">
-  	<time datetime="2018-11-01T13:42:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        
-      </header>
-    
-    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
-   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-       
-       
-	<pre><code>Outlook 配置企业邮箱文档
-	
-	 <p class="article-more-link">
-	  <a class="article-more-a" href="/2018/11/01/Outlook-配置企业邮箱文档/#more">more >></a>
-	 </p>
-	
-       
-      
-     </code></pre></div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/01/Outlook-配置企业邮箱文档/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -923,8 +360,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
