@@ -474,7 +474,7 @@
       
        
        
-	<pre><code>Zabbix提供了十几种监控类型，包括：Zabbix agent，Simple Checks,SNMP,Zabbix internal,IPMI,JMX monitoring等等。
+	<p> Zabbix提供了十几种监控类型，包括：Zabbix agent，Simple Checks,SNMP,Zabbix internal,IPMI,JMX monitoring等等。<br>   Item类型：Zabbix agent ；Zabbix agent（active）；Simple check ；SNMPv1 agent ；SNMPv2 agent ；SNMPv3 agent ；SNMP trap ；Zabbix internal ；Zabbix Trapper ；Zabbix aggregate ；External check ；Database monitor ；IPMI agent；SSH agent ；TELNET agent ；JXM agent ；Calculated ;<br>   下面具体介绍各个监控类型的用法：<br>    1、zabbix agent<br>     zabbix自带的客户端程序（被动模式），zabbix server主动向它收集监控数据。agent提供丰富的key，包括不限于cpu、内存、网络、磁盘、web等。如果系统能够安装，agent是首先。需要注意的是，server检索数据有超时限制，最大超时时间30秒，如果检索数据经常超过30秒，那么不建议使用主动模式的agent，可以使用agent active。<br>    2、zabbix agent（active）<br>     需要安装agent（主动模式），和上一个相同。但是数据由zabbix agent主动提交至zabbix server<br>   3、simple check<br>   基本的检测，可以检测网络、端口、fping这些，功能很少并且无需安装客户端。<br>   4、SNMP check<br>   客户基于安全考虑，不同意安装agent<br>   路由器、打印机等设备无法安装，但是支持snmp协议<br>   不喜欢频繁对agent升级<br>   5、zabbix internal<br>   zabbix系统内部用，比如趋势数据记录数了、历史记录数量等等。日常业务监控用不上。<br>   6、zabbix Trapper<br>   也需要安装agent（主动模式），需要借助bin/zabbix_sender将数据提交至zabbix server。如下情况适合使用：<br>   检索时间较长<br>   同一时间有大量的数据要提交，例如redis info信息，里面包含五六十项数据，通过zabbix-sender 来一次性提交，显然比agent来取几十次要方便。<br>   7、zabbix aggretage<br>   aggregate checks是一个聚合的检测，例如我想知道某个组的host负载平均值，硬盘剩余总量，或者某几台机器的这些数据，简单的来说，这个方法就是用来了解一个整体水平，而不需要我们一台台去看。这个方法的数据全部来之数据库，所以不需要agent。<br>   8、external check<br>    zabbix server运行脚本或者二进制文件来执行外部检测，外部检测不需要再被监控端运行任何agentd。<br>    备注：请不要过度使用外部检测，这会严重降低zabbix系统性能。<br>   9、database monitor<br>   zabbix通过调用ODBC来获取数据库的数据以及数据库状态等等信息。<br>   10、IPMI agent<br>   用于监控硬件设备，例如Dell或者hp服务器的主板温度、cpu电压、盖子是不是被打开等等。<br>   11、SSH agent<br>   zabbix 使用提供的ssh信息（服务器用户密码或者证书）登录服务器，执行指定的脚本来检索数据。对于以下人员比较使用：<br>   不会安装agent、不想安装agent<br>   不担心账号密码/证书放在zabbix里<br>   12、Telnet agent<br>    同上，windows不支持ssh，可以使用Telnet agent<br>   13、JMX agent<br>       通过jmx监控java jvm ，比如Tomcat 。目前有一个很大的不足，如果Tomcat多实例，jmx agent只能监控一个。如果是多实例，建议使用agent +cmdline-jmxclient-0.10.3.jar<br>二、zabbix 主动、被动检测的区别<br>    1、主动：agent请求server获取主动的监控项列表，并主动将监控项内容需要检测的数据提交给server/proxy<br>   2、被动：server想agent请求获取监控项的数据，agent返回数据。</p>
 	
 	 <p class="article-more-link">
 	  <a class="article-more-a" href="/2018/11/04/ZABBIX（七）zabbix-选择适合的监控类型/#more">more >></a>
@@ -482,7 +482,7 @@
 	
        
       
-     </code></pre></div>
+     </div>
       
     </div>
     <div class="article-info article-info-index">
