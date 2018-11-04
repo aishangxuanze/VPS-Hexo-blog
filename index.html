@@ -152,6 +152,80 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ZABBIX（三）-zabbix支持的主要监控方式" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/04/ZABBIX（三）-zabbix支持的主要监控方式/">ZABBIX（三） zabbix支持的主要监控方式</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/04/ZABBIX（三）-zabbix支持的主要监控方式/" class="archive-article-date">
+  	<time datetime="2018-11-04T05:17:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-04</time>
+</a>
+        
+      </header>
+    
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+       
+       
+	<p>一、zabbix支持的主要监控方式：<br>    zabbix主要Agent，Trapper，SNMP，JMX，IPMI这几种监控方式，本文章主要通过监控理论和实际操作测试等方式来简单介绍这几种方式的监控原理和优缺点等 。下面对几种监控方式的监控原理进行介绍：<br>    1、Agent监控方式<br>    在Agent监控方式下，zabbix-agent会主动收集本机的监控信息并通过TCP协议与zabbix-server传递信息。Agent监控方式分为主动和被动模式。在被动模式下，zabbix-agent监听10050端口，等待zabbix-server的监控信息收集信息请求；在主动模式下，zabbix-agent收集监控信息并通过10050端口主动将数据传给zabbix-server所在服务器的10051端口。<br>    优点：<br>     （1）是zabbix最常用的监控方式，监测指标深入细致有针对性。<br>     （2）内置监控功能强大，内置监控项目丰富。<br>     （3）TCP方式实现通讯，可靠性也有保证。<br>    缺点：<br>     （1）需要在被监控机器上安装zabbix-agent客户端，部署相对麻烦，最初需要逐个机器安装代理软件<br>     （2）zabbix-agent客户端运行在被监控机上，会收集本机信息<br>    2、Trapper监控方式<br>    Trapper监控方式使用zabbix-sender程序主动向zabbix-server发送数据。key的名称和发送的数据内容都可以灵活定义。发送的信息采用JSON格式，遵循zabbix-sender协议。可以自定义脚本利用zabbix-sender协议来zabbix-server发送信息。<br>    优点：<br>     （1）不需要在被监控机器上安装zabbix-agent<br>     （2）不收集被监控机器的信息<br>     （3）可以自定义发送的信息内容<br>     （4）可以使用自定义脚本发送信息<br>    缺点：<br>     （1） 需要自定义发送的信息内容<br>     （2）无内置监控项目<br>    3、SNMP监控方式<br>    SNMP全称Simple Network Management Protocol，即网络管理协议，包括进程管理和被管理设备两部分。作为一种国际通用的网络管理协议被广泛的应用于各种交换机，路由器等网络设备的管理上，而现在也越来越多被用于对服务器的监控上。<br>    优点：<br>    （1）服务器一旦部署SNMPAgent，任何能实现SNMP协议的软件都可以对其进行监测。<br>    （2）通过这种手段进行监测不需知道被监测服务器的用户名和密码，比较安全。<br>    缺点：<br>    （1）很多服务器并非默认安装SNMPAgent，如果通过这种方式监测则需要对所有服务器安装部署。<br>    （2）能监测的参数指标比较固定不够深入，无法满足用户的特殊需求。<br>    （3）由于SNMP协议是通过UDP方式实现的。在网络状况不佳的情况下其可靠性能以保证。<br>    4、JMX监控方式<br>     JMX，全称Java Management Extensions，即Java管理拓展，是Java平台为应用程序，设备，系统等植入管理功能的框架。在zabbix中，JMX数据的获取由zabbix-java-gateway代理程序来负责数据的采集。<br>    优点：<br>    （1） 可以详细的监控各类java程序的运行状态<br>    缺点：<br>    （1）被监控机上需要安装zabbix-java-gateway<br>    5、IPMI监控方式<br>    IPMI，全称Interlligent Platform Management Interface，即智能平台管理接口，原本是Intel架构中企业系统的周边设备所采用的一种工业标准，以后成为业界通用的标准。用户可以利用IPMI监控服务器的物理特性，如温度，电压，电扇工作状态，电源供应以及机箱** 等指标<br>    根据以上对zabbix各主要监控方式的梳理，结论如下：<br>    （1）根据被监控机器的环境和客户要求选用适当的监控方式，可同时配合多种监控方式。<br>    （2）有条件在监控机上部署zabbix-agent客户端时，该方法为第一选择，因为其功能强大且配置相对简便。<br>    （3）需要自定义脚本或者监控信息时，可使用Trapper方式，即使用zabbix-sender程序或者自定义脚本遵循zabbix-sender协议，已JSON形式，通过TCP发送自定义信息。<br>二、Agent监控方式<br>    1、通过Agent方式监控Linux服务器<br>    （1）需要在Linux服务器上安装zabbix-agent客户端安装包，需要先导入软件安装源：<br>     rpm -ivh <a href="http://repo.zabbix.com/zabbix/3.5/rhel/7/x86_64/zabbix-release-3.5-1.el7.noarch.rpm" target="_blank" rel="noopener">http://repo.zabbix.com/zabbix/3.5/rhel/7/x86_64/zabbix-release-3.5-1.el7.noarch.rpm</a></p>
+	
+	 <p class="article-more-link">
+	  <a class="article-more-a" href="/2018/11/04/ZABBIX（三）-zabbix支持的主要监控方式/#more">more >></a>
+	 </p>
+	
+       
+      
+     </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/04/ZABBIX（三）-zabbix支持的主要监控方式/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Centos7-2-安装和配置Tomcat8" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -789,80 +863,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/11/02/Nginx（二）-虚拟主机配置/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-bash常用命令与技巧" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/02/bash常用命令与技巧/">bash常用命令与技巧</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/02/bash常用命令与技巧/" class="archive-article-date">
-  	<time datetime="2018-11-02T06:53:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
-</a>
-        
-      </header>
-    
-    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
-   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-       
-       
-	<p>一、bash介绍：<br>    bash是一个为GNU计划编写的Unix shell，它的名字是一系列缩写：Bourne-Again SHell。 Bash是许多Linux发行版默认的Shell。还有许多其他传统UNIX上用的Shell，如：tcsh、csh、ash、bsh、ksh等。<br>二、bash特性：<br>    1、bash：<br>    （1）、命令历、命令补全<br>    （2）、管道、重定向<br>    （3）、命令别名<br>    （4）、命令行编辑<br>    （5）、命令行展开<br>    （6）、文件名通配<br>    （7）、支持使用变量<br>    （8）、支持编程（脚本）<br>    2、命令行编辑：<br>    光标跳转：<br>    （1）、Ctrl+a：跳到命令行首<br>    （2）、Ctrl+e：跳到命令行尾<br>    （3）、Ctrl+u：删除光标至命令行首得内容<br>    （4）、Ctrl+k：删除光标至命令行尾得内容<br>    （5）、Ctrl+l：清屏<br>   3、命令历史<br>        查看命令历史：history<br>     （1）、-c：清空命令历史<br>     （2）、-d OFFSET [n]：删除指定位置得命令<br>     （3）、-w:保存命令历史至历史文件中<br>   4、环境变量<br>    PATH：命令搜索路径<br>    HISTSIZT：命令历史缓存区大小<br>   5、命令历史的使用技巧<br>       （1）、！n：执行命令历史中的第n条命令<br>    （2）、！-n：执行命令历史中的倒数第n条命令；<br>    （3）、！！：执行上一条命令；<br>    （4）、！string：执行命令历史中最近一个指定字符串开头的命令<br>    （5）、！$(另外一种方法：先按esc，松开后再按.)：引用前一条命令的最后一个参数<br>    （6）、Esc ，.:引用前一条命令的最后一个参数<br>   6、命令补全：tab键<br>         搜索PATH环境变量中指定的每个路径下以我们给出的字符串开头的可执行文件，如果多余一个，两次tab，可以给出列表；否则将直接补全。<br>     PATH:<br>        路径补全：tab键<br>       搜索我们给出的起始路径下的每个文件名，并试图补全。<br>    7、命令别名：<br>    alias  CMDALIAS=‘COMMAND’[options] [arguments]<br>    在shell中定义的别名尽在当前shell生命周期中有效；别名的有效范围仅为当前shell进程。<br>    ualias  CMDALIAS ：撤销命令<br>   8、命令替换：$(COMMAND),反引号：<code>COMMAND</code></p>
-	
-	 <p class="article-more-link">
-	  <a class="article-more-a" href="/2018/11/02/bash常用命令与技巧/#more">more >></a>
-	 </p>
-	
-       
-      
-     </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/02/bash常用命令与技巧/">展开全文 >></a>
         </p>
       
 

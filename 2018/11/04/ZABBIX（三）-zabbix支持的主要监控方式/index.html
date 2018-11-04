@@ -6,33 +6,58 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Centos7.2 安装和配置Tomcat8 | Melvin の blog</title>
+  <title>ZABBIX（三） zabbix支持的主要监控方式 | Melvin の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、安装Centos7.2操作系统     由于以前操作文档中涉及到Centos系统的安装，在此不在详细介绍，    具体安装操作系统的详细教程如下：    http://blog.51cto.com/5001660/2085729    cd /etc/redhat-release    ip addr 二、安装JDK    因为安装Tomcat需要先安装jdk，在此简单介绍一下安装JDK">
+  <meta name="description" content="一、zabbix支持的主要监控方式：    zabbix主要Agent，Trapper，SNMP，JMX，IPMI这几种监控方式，本文章主要通过监控理论和实际操作测试等方式来简单介绍这几种方式的监控原理和优缺点等 。下面对几种监控方式的监控原理进行介绍：    1、Agent监控方式    在Agent监控方式下，zabbix-agent会主动收集本机的监控信息并通过TCP协议与zabbix-se">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Centos7.2 安装和配置Tomcat8">
-<meta property="og:url" content="http://yoursite.com/2018/11/03/Centos7-2-安装和配置Tomcat8/index.html">
+<meta property="og:title" content="ZABBIX（三） zabbix支持的主要监控方式">
+<meta property="og:url" content="http://yoursite.com/2018/11/04/ZABBIX（三）-zabbix支持的主要监控方式/index.html">
 <meta property="og:site_name" content="Melvin の blog">
-<meta property="og:description" content="一、安装Centos7.2操作系统     由于以前操作文档中涉及到Centos系统的安装，在此不在详细介绍，    具体安装操作系统的详细教程如下：    http://blog.51cto.com/5001660/2085729    cd /etc/redhat-release    ip addr 二、安装JDK    因为安装Tomcat需要先安装jdk，在此简单介绍一下安装JDK">
+<meta property="og:description" content="一、zabbix支持的主要监控方式：    zabbix主要Agent，Trapper，SNMP，JMX，IPMI这几种监控方式，本文章主要通过监控理论和实际操作测试等方式来简单介绍这几种方式的监控原理和优缺点等 。下面对几种监控方式的监控原理进行介绍：    1、Agent监控方式    在Agent监控方式下，zabbix-agent会主动收集本机的监控信息并通过TCP协议与zabbix-se">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/pasted-613.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-614.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-615.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-616.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-617.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-618.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-619.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-620.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-621.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-622.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-623.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-624.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-625.png">
-<meta property="og:updated_time" content="2018-11-04T04:17:27.097Z">
+<meta property="og:image" content="http://yoursite.com/images/pasted-626.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-627.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-628.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-629.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-630.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-631.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-632.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-633.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-634.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-635.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-636.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-637.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-638.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-639.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-640.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-641.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-642.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-643.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-644.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-645.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-646.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-647.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-648.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-649.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-650.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-651.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-652.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-653.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-654.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-655.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-656.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-657.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-658.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-659.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-660.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-661.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-662.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-663.png">
+<meta property="og:updated_time" content="2018-11-04T05:59:22.337Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Centos7.2 安装和配置Tomcat8">
-<meta name="twitter:description" content="一、安装Centos7.2操作系统     由于以前操作文档中涉及到Centos系统的安装，在此不在详细介绍，    具体安装操作系统的详细教程如下：    http://blog.51cto.com/5001660/2085729    cd /etc/redhat-release    ip addr 二、安装JDK    因为安装Tomcat需要先安装jdk，在此简单介绍一下安装JDK">
-<meta name="twitter:image" content="http://yoursite.com/images/pasted-613.png">
+<meta name="twitter:title" content="ZABBIX（三） zabbix支持的主要监控方式">
+<meta name="twitter:description" content="一、zabbix支持的主要监控方式：    zabbix主要Agent，Trapper，SNMP，JMX，IPMI这几种监控方式，本文章主要通过监控理论和实际操作测试等方式来简单介绍这几种方式的监控原理和优缺点等 。下面对几种监控方式的监控原理进行介绍：    1、Agent监控方式    在Agent监控方式下，zabbix-agent会主动收集本机的监控信息并通过TCP协议与zabbix-se">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-626.png">
   
     <link rel="alternative" href="/atom.xml" title="Melvin の blog" type="application/atom+xml">
   
@@ -168,20 +193,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Centos7-2-安装和配置Tomcat8" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-ZABBIX（三）-zabbix支持的主要监控方式" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Centos7.2 安装和配置Tomcat8
+      ZABBIX（三） zabbix支持的主要监控方式
     </h1>
   
 
         
-        <a href="/2018/11/03/Centos7-2-安装和配置Tomcat8/" class="archive-article-date">
-  	<time datetime="2018-11-04T03:30:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-03</time>
+        <a href="/2018/11/04/ZABBIX（三）-zabbix支持的主要监控方式/" class="archive-article-date">
+  	<time datetime="2018-11-04T05:17:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-04</time>
 </a>
         
       </header>
@@ -194,22 +219,46 @@
       
        
        
-        <p>一、安装Centos7.2操作系统<br>     由于以前操作文档中涉及到Centos系统的安装，在此不在详细介绍，<br>    具体安装操作系统的详细教程如下：<br>    <a href="http://blog.51cto.com/5001660/2085729" target="_blank" rel="noopener">http://blog.51cto.com/5001660/2085729</a><br>    cd /etc/redhat-release<br>    ip addr</p>
-<p><img src="/images/pasted-613.png" alt="upload successful"><br>二、安装JDK<br>    因为安装Tomcat需要先安装jdk，在此简单介绍一下安装JDK<br>    1、检查系统java版本<br>    java -version</p>
-<p><img src="/images/pasted-614.png" alt="upload successful"><br>    2、上传新的JDK软件安装包：<br>    mkdir -p /home/java<br>    cd /home/java<br>    ls</p>
-<p><img src="/images/pasted-615.png" alt="upload successful"><br>    3、安装JDK ，此处安装在/home/java 目录中：<br>    pwd<br>     rpm -ivh jdk-8u181-linux-x64.rpm </p>
-<p><img src="/images/pasted-616.png" alt="upload successful"><br>    4、JDK验证安装<br>    JDK 默认安装在/home/java<br>    java -version</p>
-<p><img src="/images/pasted-617.png" alt="upload successful"><br>    5、配置环境变量<br>    配置文件 /etc/profile<br>    vim /etc/profile<br>    在文件内最后追加以下内容：<br>    JAVA_HOME=/usr/java/jdk1.8.0_181-amd64<br>JRE_HOME=/usr/java/jdk1.8.0_181-amd64/jre<br>PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin<br> CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib<br> export JAVA_HOME JRE_HOME PATH CLASSPATH<br>     6、使其生效：<br>    source /etc/profile<br>    echo $PATH</p>
-<p><img src="/images/pasted-618.png" alt="upload successful"><br>三、下载Tomcat8 压缩包<br>    1、下载地址：<br>    <a href="http://tomcat.apache.org/download-80.cgi" target="_blank" rel="noopener">http://tomcat.apache.org/download-80.cgi</a></p>
-<p><img src="/images/pasted-619.png" alt="upload successful"><br>    2、Tomcat 安装包上传至/home/data<br>    mkdir -p /home/data<br>    cd /home/data<br>    ls</p>
-<p><img src="/images/pasted-620.png" alt="upload successful"><br>    3、解压以及新建目录<br>    ls /home/data<br>    cd /home/data<br>    tar -zxvf apache-tomcat-8.5.32.tar.gz<br>    ls</p>
-<p><img src="/images/pasted-621.png" alt="upload successful"><br>    4、新建/home/tomcat目录  把tomcat剪切进去<br>    mkdir -p /home/tomcat<br>    mv /home/data/apache-tomcat-8.5.32/ /home/tomcat/<br>    cd /home/tomcat/<br>    ls<br>    cd apache-tomcat-8.5.32/<br>    ls</p>
-<p><img src="/images/pasted-622.png" alt="upload successful"><br>    5、配置Tomcat server.xml<br>       server.xml 可以配置端口，编码以及配置项目等等，在此配置端口，把默认的8080，修改成80<br>    vi /home/tomcat/apache-tomcat-8.5.32/conf/server.xml </p>
-<p><img src="/images/pasted-623.png" alt="upload successful"><br>    把8080改为 80  然后保存 退出：<br>   6、配置防火墙，开放80端口<br>    firewall-cmd –zone=public –add-port=80/tcp –permanent<br>    firewall-cmd –reload<br>    （我使用的操作系统是关闭防火墙的）<br>   7、启动Tomcat<br>   /home/tomcat/apache-tomcat-8.5.32/bin/startup.sh</p>
-<p><img src="/images/pasted-624.png" alt="upload successful"><br>    8、浏览器测试<br>    地址栏输入：<a href="http://192.168.40.131/" target="_blank" rel="noopener">http://192.168.40.131/</a></p>
-<p><img src="/images/pasted-625.png" alt="upload successful"></p>
-<pre><code>Tomcat 安装配置成功 。
-</code></pre>
+        <p>一、zabbix支持的主要监控方式：<br>    zabbix主要Agent，Trapper，SNMP，JMX，IPMI这几种监控方式，本文章主要通过监控理论和实际操作测试等方式来简单介绍这几种方式的监控原理和优缺点等 。下面对几种监控方式的监控原理进行介绍：<br>    1、Agent监控方式<br>    在Agent监控方式下，zabbix-agent会主动收集本机的监控信息并通过TCP协议与zabbix-server传递信息。Agent监控方式分为主动和被动模式。在被动模式下，zabbix-agent监听10050端口，等待zabbix-server的监控信息收集信息请求；在主动模式下，zabbix-agent收集监控信息并通过10050端口主动将数据传给zabbix-server所在服务器的10051端口。<br>    优点：<br>     （1）是zabbix最常用的监控方式，监测指标深入细致有针对性。<br>     （2）内置监控功能强大，内置监控项目丰富。<br>     （3）TCP方式实现通讯，可靠性也有保证。<br>    缺点：<br>     （1）需要在被监控机器上安装zabbix-agent客户端，部署相对麻烦，最初需要逐个机器安装代理软件<br>     （2）zabbix-agent客户端运行在被监控机上，会收集本机信息<br>    2、Trapper监控方式<br>    Trapper监控方式使用zabbix-sender程序主动向zabbix-server发送数据。key的名称和发送的数据内容都可以灵活定义。发送的信息采用JSON格式，遵循zabbix-sender协议。可以自定义脚本利用zabbix-sender协议来zabbix-server发送信息。<br>    优点：<br>     （1）不需要在被监控机器上安装zabbix-agent<br>     （2）不收集被监控机器的信息<br>     （3）可以自定义发送的信息内容<br>     （4）可以使用自定义脚本发送信息<br>    缺点：<br>     （1） 需要自定义发送的信息内容<br>     （2）无内置监控项目<br>    3、SNMP监控方式<br>    SNMP全称Simple Network Management Protocol，即网络管理协议，包括进程管理和被管理设备两部分。作为一种国际通用的网络管理协议被广泛的应用于各种交换机，路由器等网络设备的管理上，而现在也越来越多被用于对服务器的监控上。<br>    优点：<br>    （1）服务器一旦部署SNMPAgent，任何能实现SNMP协议的软件都可以对其进行监测。<br>    （2）通过这种手段进行监测不需知道被监测服务器的用户名和密码，比较安全。<br>    缺点：<br>    （1）很多服务器并非默认安装SNMPAgent，如果通过这种方式监测则需要对所有服务器安装部署。<br>    （2）能监测的参数指标比较固定不够深入，无法满足用户的特殊需求。<br>    （3）由于SNMP协议是通过UDP方式实现的。在网络状况不佳的情况下其可靠性能以保证。<br>    4、JMX监控方式<br>     JMX，全称Java Management Extensions，即Java管理拓展，是Java平台为应用程序，设备，系统等植入管理功能的框架。在zabbix中，JMX数据的获取由zabbix-java-gateway代理程序来负责数据的采集。<br>    优点：<br>    （1） 可以详细的监控各类java程序的运行状态<br>    缺点：<br>    （1）被监控机上需要安装zabbix-java-gateway<br>    5、IPMI监控方式<br>    IPMI，全称Interlligent Platform Management Interface，即智能平台管理接口，原本是Intel架构中企业系统的周边设备所采用的一种工业标准，以后成为业界通用的标准。用户可以利用IPMI监控服务器的物理特性，如温度，电压，电扇工作状态，电源供应以及机箱** 等指标<br>    根据以上对zabbix各主要监控方式的梳理，结论如下：<br>    （1）根据被监控机器的环境和客户要求选用适当的监控方式，可同时配合多种监控方式。<br>    （2）有条件在监控机上部署zabbix-agent客户端时，该方法为第一选择，因为其功能强大且配置相对简便。<br>    （3）需要自定义脚本或者监控信息时，可使用Trapper方式，即使用zabbix-sender程序或者自定义脚本遵循zabbix-sender协议，已JSON形式，通过TCP发送自定义信息。<br>二、Agent监控方式<br>    1、通过Agent方式监控Linux服务器<br>    （1）需要在Linux服务器上安装zabbix-agent客户端安装包，需要先导入软件安装源：<br>     rpm -ivh <a href="http://repo.zabbix.com/zabbix/3.5/rhel/7/x86_64/zabbix-release-3.5-1.el7.noarch.rpm" target="_blank" rel="noopener">http://repo.zabbix.com/zabbix/3.5/rhel/7/x86_64/zabbix-release-3.5-1.el7.noarch.rpm</a></p>
+<p><img src="/images/pasted-626.png" alt="upload successful"><br>    （2）使用yum源安装zabbix-agent</p>
+<p><img src="/images/pasted-627.png" alt="upload successful"><br>    （3）zabbix 客户端配置<br>     编辑zabbix_server配置文件<br>        vim /etc/zabbix/zabbix_agent.conf<br>        修改以下配置信息：<br>        Server=192.168.40.134      #zabbix服务端IP地址<br>        ServerActive=192.168.40.134    #zabbix服务端IP地址<br>        ListenPort=10050          #监控服务端口<br>        启动zabbix-agent服务<br>        systemctl start zabbix-agent<br>      （4）zabbix服务器端添加被监控主机：<br>     选择“配置”-“主机”，然后选择“创建主机”：</p>
+<p><img src="/images/pasted-628.png" alt="upload successful"><br>        选择添加的模板：</p>
+<p><img src="/images/pasted-629.png" alt="upload successful"><br>        添加主机成功：</p>
+<p><img src="/images/pasted-630.png" alt="upload successful"><br>    2、通过Agent方式监控Windows服务器<br>    （1）下载Windows的zabbix客户端<br>    下载地址：<a href="https://www.zabbix.com/download_agents" target="_blank" rel="noopener">https://www.zabbix.com/download_agents</a><br>        选择需要下载的windows版本客户端：</p>
+<p><img src="/images/pasted-631.png" alt="upload successful"><br>    （2）Windows上安装agent<br>    准备好安装文件zabbix_agents_3.4.6.win.zip，可以从官网上下载，在此需要注意和server端一致。然后解压，解压后的文档结构如下：</p>
+<p><img src="/images/pasted-632.png" alt="upload successful"><br>     （3）进入conf目录，对配置文件进行配置<br>    找到conf下的配置文件zabbix——agent.win.conf,需要修改的内容为：LogFile、Server、Hostname、ServerActive这几个参数。具体配置如下：<br>       Server=192.168.40.134<br>       ServerActive=192.168.40.134<br>       Hostname=Windows host<br>       ListenPort=10050<br>       （4） 确定被监控主机的系统是32位还是64位：<br>     右键“此电脑”，查看操作系统版本，如果是32位，用bin\win32下的应用程序，否则用bin\win64下的应用程序。</p>
+<p><img src="/images/pasted-633.png" alt="upload successful"><br>     （5）安装zabbix-agent客户端程序<br>     用管理员权限打开CMD，进入到zabbix的应用程序目录，执行安装命令：<br>     zabbix_agentd.exe -c D:\zabbix-agent\conf\zabbix_agentd.win.conf -i<br>     安装成功后，执行运行命令：<br>     zabbix_agentd.exe -c D:\zabbix-agent\conf\zabbix_agentd.win.conf -s</p>
+<p><img src="/images/pasted-634.png" alt="upload successful"><br>     （6）在zabbix server端配置agent<br>   在server端，选择 配置-主机 界面，然后点击“创建主机”，在添加主机的界面，输入被监控主机客户端的信息。</p>
+<p><img src="/images/pasted-635.png" alt="upload successful"><br>    点击“添加”，然后过一段时间查看主机状态：</p>
+<p><img src="/images/pasted-636.png" alt="upload successful"><br>三、zabbix Trapper监控方式<br>    1、zabbix Trapper 工作原理<br>   zabbix获取数据时有时会出现超时，如果一些数据需要执行较长的时间才能获取的话，那么zabbix会出现异常，考虑到这种情况，zabbix增加了Trapper功能，客户端自己提交数据给zabbix。<br>   Trapper是被监控主机主动发送数据给zabbix server，与主动模式的区别是不需要安装客户端；Trapper方式发送数据是以主机名处理，不是IP地址，所以主机名要唯一。在配置监控项时候Type of information项要选择text，否则会报not support错误。<br>   Trapper工作模式中，使用zabbix监控类型zabbix Trapper（可以称为zabbix捕捉器），在zabbix服务器上必须有一个捕捉项目，然后需要配合zabbix_sender把数据推送给zabbix服务器，该程序由zabbix发行版本自带，源码包解压后在bin目录下，配合crontab定期发送数据给zabbix server。<br>   zabbix_sender是一个命令行工具，可以用来发送zabbix服务器处理性能数据。该工具通常用于长时间运行的用户 脚本，用于定期发送可用性和性能数据。<br>    2、zabbix_sender命令：<br>    rpm导入zabbix_sender安装源：<br>    rpm -ivh <a href="http://repo.zabbix.com/zabbix/3.5/rhel/7/x86_64/zabbix-sender-4.0.0-1.alpha1.el7.x86_64.rpm" target="_blank" rel="noopener">http://repo.zabbix.com/zabbix/3.5/rhel/7/x86_64/zabbix-sender-4.0.0-1.alpha1.el7.x86_64.rpm</a></p>
+<p><img src="/images/pasted-637.png" alt="upload successful"><br> 使用rpm安装，默认在/bin目录下：<br>    cd /bin<br>    ls<br>    ./zabbix_sender<br>    usage:zabbix_sender [-Vhv] {[-zpsl] -ko | [-zpl] -T -i <file> -r} [-c<file>]<br>   参数说明：<br>        -c –config<file>       配置文件绝对路径<br>        -z –zabbix-server<server>   zabbix server的IP地址<br>        -p –port<server port="">   zabbix server 端口默认10051<br>        -s –host <hostname>   主机名，zabbix客户端zabbix.agentd.conf配置文件中定义的Hostname（不是服务器的hostname），不是客户端主机的IP地址<br>        -l – source-address <ip address="">  源IP<br>        -k –key <key>  监控项的key值<br>        -o –value<key value=""> key值<br>        -i –input-file<input file="">  从文件里面读取hostname、key、value一行为一条数据，使用空格作为分隔符，如果主机名带空格，那么请使用双引号包起来<br>        -T –with-timestamps   一行一条数据，空格作为分隔符：<hostname> <key> <timestamp> <value>，配合 –input-file option，timestamp为unix时间戳<br>        -r –real-time      将数据实时提交给服务器<br>        -v –verbose     详细模式， -vv 更详细<br>    3、监控项配置<br>  创建监控项（Configuration –&gt; Template –&gt; Items –&gt; Create item 或Configuration –&gt; Host –&gt; Items –&gt; Create item）<br>  （1）选择“配置”-“主机”-“新建主机”,添加zabbix-Trapper 客户端的用户名：</value></timestamp></key></hostname></key></key></ip></hostname></server></server></file></file></file></p>
+<p><img src="/images/pasted-638.png" alt="upload successful"><br> （2） 添加完主机后，添加监控项，选择刚添加的主机，点击“监控项”，然后点击“创建监控项”：<br>        添加监控信息，然后点击更新：</p>
+<p><img src="/images/pasted-639.png" alt="upload successful"><br> （3）客户端使用zabbix_sender发送数据<br>     客户端设备操作：<br>     cd /bin<br>    ./zabbix_sender -s 192.168.40.134 -z 192.168.40.129 -k trappertest11 -o test</p>
+<p><img src="/images/pasted-640.png" alt="upload successful"><br>     -vv 可以显示具体信息，这里提示无法连接到zabbix server的10051端口</p>
+<p><img src="/images/pasted-641.png" alt="upload successful"><br>    客户端操作：</p>
+<p><img src="/images/pasted-642.png" alt="upload successful"><br>四、Zabbix SNMP监控方式<br>    1、SNMP监控介绍<br>   如果要监控打印机、路由器、交换机、UPS等设备，肯定不能使用zabbix agentd，因为他们不能安装软件，但是一般都支持SNMP协议，可以使用SNMP来监控。SNMP检查基于UDP协议。<br>   注意事项：如果监控基于SNMPv3协议的设备，确保msgAuthoritativeEngineID（通常叫做snmpEngineID或“Engine ID”）是唯一的。<br>   以前SNMPv3协议只支持MD5和DES加密，从zabbix2.2开始支持SHA与AES加密协议。<br>    2、Zabbix SNMP监控Linux操作系统<br>    （1）zabbix服务器端需要先安装SNMP服务<br>    使用yum源在线安装SNMP服务配置<br>    yum -y install net-snmp*</p>
+<p><img src="/images/pasted-643.png" alt="upload successful"><br>    配置SNMP配置文件：</p>
+<p><img src="/images/pasted-644.png" alt="upload successful"><br>     （2）zabbix服务器使用snmpwalk命令测试被监控计算机名<br>   2c是指采用SNMP V2版本，192.168.40.134是指监控设备开启了SNMP服务，否则会获取失败，sysName是指被监控设备的计算机名。  </p>
+<p><img src="/images/pasted-645.png" alt="upload successful"><br>     （3）被监控设备安装SNMP服务：<br>     yum install -y net-snmp*</p>
+<p><img src="/images/pasted-646.png" alt="upload successful"><br>    配置SNMP配置文件：</p>
+<p><img src="/images/pasted-647.png" alt="upload successful"><br>     （4）zabbix服务端web界面添加要被监控设备的主机信息：</p>
+<p><img src="/images/pasted-648.png" alt="upload successful"><br>    添加模块：</p>
+<p><img src="/images/pasted-649.png" alt="upload successful"><br>    添加宏：</p>
+<p><img src="/images/pasted-650.png" alt="upload successful"><br>    然后点击“添加”，主机通过SNMP添加成功；</p>
+<p><img src="/images/pasted-651.png" alt="upload successful"><br>    3、zabbix SNMP监控Windows系统<br>    （1）windows系统启动SNMP功能：<br>   选择“控制面板”-“程序”-“启用或关闭windows功能”，选择“简单网络管理协议（SNMP）”</p>
+<p><img src="/images/pasted-652.png" alt="upload successful"><br>     （2）右击“计算机”-“管理”-“服务”，选择“snmp server”服务器，右击“属性”：</p>
+<p><img src="/images/pasted-653.png" alt="upload successful"><br>     （3）zabbix 服务端web界面，选择“配置”-“主机”，然后点击“创建主机”</p>
+<p><img src="/images/pasted-654.png" alt="upload successful"><br>    大概需要等待五分钟左右，查看主机是否监控成功</p>
+<p><img src="/images/pasted-655.png" alt="upload successful"><br>    4、zabbix SNMP 监控网设备<br>  “配置”-“主机”-“创建主机”，添写要监控的设备信息：</p>
+<p><img src="/images/pasted-656.png" alt="upload successful"><br>五、 zabbix JMX 监控方式<br>    1、zabbix JMX 简介<br>      在企业中，很多程序是基于Java来编写的，java程序运行在JVM之上，而JVM自己就可以监听在某个套接字上，将自己内部的状态信息输出出去，所以监控服务器只需要直接连接JVM的套接字就可以获取到Java进程的相关信息，不需要通过Agent、SNMP；可是zabbix是没办法自己连接JVM套接字的，也就是说，zabbix自身是不能够作为客户端来链接该套接字的。所以，就需要额外安装一个服务来连接JVM套接字的。这个服务就是zabbix-java-gateway.x86_64(Java网关）；可以通过该网关来监听多个JVM；zabbix-agent-gateway可以是一个单独的主机，可以和zabbix server安装到一台主机上；<br>    2、zabbix server 安装java gateway<br>   zabbix提供了一个java gateway的应用去监控jmx（Java Management Extensions，即Java管理扩展）是一个为应用程序、设备、系统等植入管理功能的框架。JMX可以跨越一系列异构操作平台、系统体系结构和网络传输协议，灵活的开发无缝集成的系统、网络和服务管理应用。<br>   yum install -y java java-devel zabbix-java-gateway</p>
+<p><img src="/images/pasted-657.png" alt="upload successful"><br>    3、添加java环境<br>    vim /etc/profile</p>
+<p><img src="/images/pasted-658.png" alt="upload successful"><br>    4、修改java-gateway配置文件<br>    grep ^[a-Z] /etc/zabbix/zabbix_java_gateway.conf</p>
+<p><img src="/images/pasted-659.png" alt="upload successful"><br>    5、重启java-gateway服务<br>    systemctl restart zabbix-java-gateway<br>    6、修改zabbix_server配置文件<br>     find / -name zabbix_java_gateway</p>
+<p><img src="/images/pasted-660.png" alt="upload successful"><br>    7、重启zabbix_server服务<br>    systemctl restart zabbix-server<br>    8、客户端配置<br>     在Tomcat下的/bin/catalina.sh文件中添加以下内容：<br>        CATALINA_OPTS=”$CATALINA_OPTS<br>        -Djavax.management.builder.initial=<br>        -Dcom.sun.management.jmxremote=true<br>        -Dcom.sun.management.jmxremote.port=12345<br>        -Dcom.sun.management.jmxremote.authenticate=false<br>        -Dcom.sun.management.jmxremote.ssl=false<br>        -Djava.rmi.server.hostname=192.168.40.131”<br>     重启Tomcat进程：</p>
+<p><img src="/images/pasted-661.png" alt="upload successful"><br>    9、zabbix中添加监控<br>   选择配置：主机-模板-选择-模板-： </p>
+<p><img src="/images/pasted-662.png" alt="upload successful"></p>
+<p><img src="/images/pasted-663.png" alt="upload successful"><br>六、zabbix IPMI监控方式<br>    IPMI（Intelligent PlatformManagement Interface）既智能平台管理接口是使硬件管理具备“智能化”的新一代通用接口标准。用户可以利用IPMI监视服务器的物理特性，如温度、电压、电扇工作状态、电源供应以及机箱入侵等。Ipmi最大的优势在于它是独立于 CPU BIOS 和OS的，所以用户无论在开机还是关机的状态下，只要接通电源就可以实现对服务器的监控。Ipmi是一种规范的标准，其中最重要的物理部件就是BMC（Baseboard Management Controller），一种嵌入式管理微控制器，它相当于整个平台管理的“大脑”，通过它 ipmi 可以监控各个传感器的数据并记录各种事件的日志。<br>   使用 ipmi 的先决条件，想要实现对服务器的 ipmi 管理，必须在硬件、OS、管理工具等几个方面都满足：<br>    a.服务器硬件本身提供对 ipmi 的支持目前惠普、戴尔和 NEC 等大多数厂商的服务器都支持IPMI 1.5，但并不是所有服务器都支持，所以应该先通过产品手册或在 BIOS 中确定服务器是否支持 ipmi，也就是说服务器在主板上要具有 BMC 等嵌入式的管理微控制器。<br>    b.操作系统提供相应的 ipmi 驱动通过操作系统监控服务器自身的 ipmi 信息时需要系统内核提供相应的支持，linux 系统通过内核对OpenIPMI（ipmi 驱动）的支持来提供对 ipmi 的系统接口。<br>      日常监控中使用IPMI的方式不多，在此不举例说明了。</p>
+
        
       
      </div>
@@ -289,7 +338,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/03/Centos7-2-安装和配置Tomcat8/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/04/ZABBIX（三）-zabbix支持的主要监控方式/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -303,18 +352,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/11/04/ZABBIX（三）-zabbix支持的主要监控方式/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          ZABBIX（三） zabbix支持的主要监控方式
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/11/03/ZABBIX（二）zabbix-监控第一台服务器/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ZABBIX（二）zabbix 监控第一台服务器</div>
+    <a href="/2018/11/03/Centos7-2-安装和配置Tomcat8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Centos7.2 安装和配置Tomcat8</div>
       <i class="icon-circle-right"></i>
     </a>
   
