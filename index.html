@@ -226,6 +226,80 @@
 
 
   
+    <article id="post-ZABBIX（八）-zabbix-通知媒介" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/04/ZABBIX（八）-zabbix-通知媒介/">ZABBIX（八） zabbix 通知媒介</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/04/ZABBIX（八）-zabbix-通知媒介/" class="archive-article-date">
+  	<time datetime="2018-11-04T05:35:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-04</time>
+</a>
+        
+      </header>
+    
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+       
+       
+	<p>一、zabbix 报警媒介<br>    zabbix触发器到了要发送通知的情况下，需要一个中间介质来接收并传递消息给运维。以前使用的是nagios，通常用脚本发送邮件或者发送飞信来达到报警。在此脚本就是一个媒介了。<br>    1、E-mail<br>    使用sendmail发送邮件，从这边出去的邮件基本都是垃圾邮件，在此不详细介绍<br>   2、SMS<br>   使用SMS报警方式，需要一个硬件设备 短信网关。也就是短信猫设备，在此不具体介绍<br>   3、Jabber<br>   Jabber有第三方插件，能让Jabber用户和MSN、等IM用户相互通信，因为Google遵从Jabber协议，并且Google已经将Gtalk的服务器开放给其他的Jabber服务器。所以PSI、Giam等Jabber客户端软件支持GTalk用户。国内很少人使用。<br>   4、EzTexting<br>   给用户手机发短信，只支持美国和加拿大<br>   5、Custon alertscripts<br>   自定义脚本，把信息传递给脚本，我们在脚本里使用sendEmail（不要和sendmail搞混了）、飞信发短信、调用短信接口发送短信等。<br>二、zabbix 报警媒介 -email<br>    报警信息将会使用系统自带的sendmail发送，配置比较简单<br>    1、配置媒介Email<br>    点击“管理”-“报警媒介”，显示系统已经存在的报警媒介方式：</p>
+	
+	 <p class="article-more-link">
+	  <a class="article-more-a" href="/2018/11/04/ZABBIX（八）-zabbix-通知媒介/#more">more >></a>
+	 </p>
+	
+       
+      
+     </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/04/ZABBIX（八）-zabbix-通知媒介/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-ZABBIX（五）-zabbix-主机与组的配置" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -789,80 +863,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/11/02/ZABBIX（一）Centos7-安装Zabbix-3-5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Centos6-5-Nginx-mysql-php-安装配置文档" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/02/Centos6-5-Nginx-mysql-php-安装配置文档/">Centos6.5 + Nginx + mysql + php 安装配置文档</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/02/Centos6-5-Nginx-mysql-php-安装配置文档/" class="archive-article-date">
-  	<time datetime="2018-11-02T09:12:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
-</a>
-        
-      </header>
-    
-    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
-   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-       
-       
-	<p>一、安装环境准备<br>    yum -y install vim lrzsz</p>
-	
-	 <p class="article-more-link">
-	  <a class="article-more-a" href="/2018/11/02/Centos6-5-Nginx-mysql-php-安装配置文档/#more">more >></a>
-	 </p>
-	
-       
-      
-     </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/02/Centos6-5-Nginx-mysql-php-安装配置文档/">展开全文 >></a>
         </p>
       
 
