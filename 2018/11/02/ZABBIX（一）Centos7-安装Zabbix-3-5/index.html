@@ -6,15 +6,65 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | Melvin の blog</title>
+  <title>bZABBIX（一）Centos7 安装Zabbix 3.5 | Melvin の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Melvin の blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/page/4/index.html">
+  <meta name="description" content="一、zabbix简介：    zabbix（音同 zæbix）是一个基于WEB界面的提供分布式系统监视以及网络监视功能的企业级的开源解决方案。   zabbix能监视各种网络参数，保证服务器系统的安全运营；并提供灵活的通知机制以让系统管理员快速定位/解决存在的各种问题。   zabbix由2部分构成，zabbix server与可选组件zabbix agent。   zabbix server可以">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bZABBIX（一）Centos7 安装Zabbix 3.5">
+<meta property="og:url" content="http://yoursite.com/2018/11/02/ZABBIX（一）Centos7-安装Zabbix-3-5/index.html">
 <meta property="og:site_name" content="Melvin の blog">
+<meta property="og:description" content="一、zabbix简介：    zabbix（音同 zæbix）是一个基于WEB界面的提供分布式系统监视以及网络监视功能的企业级的开源解决方案。   zabbix能监视各种网络参数，保证服务器系统的安全运营；并提供灵活的通知机制以让系统管理员快速定位/解决存在的各种问题。   zabbix由2部分构成，zabbix server与可选组件zabbix agent。   zabbix server可以">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/pasted-558.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-559.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-560.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-561.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-562.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-563.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-564.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-565.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-566.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-567.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-568.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-569.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-570.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-571.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-572.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-573.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-575.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-576.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-577.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-578.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-579.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-580.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-581.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-582.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-583.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-584.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-585.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-586.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-587.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-588.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-589.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-590.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-591.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-592.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-593.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-594.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-595.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-596.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-597.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-598.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-599.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-600.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-601.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-602.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-603.png">
+<meta property="og:updated_time" content="2018-11-04T01:50:00.322Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Melvin の blog">
+<meta name="twitter:title" content="bZABBIX（一）Centos7 安装Zabbix 3.5">
+<meta name="twitter:description" content="一、zabbix简介：    zabbix（音同 zæbix）是一个基于WEB界面的提供分布式系统监视以及网络监视功能的企业级的开源解决方案。   zabbix能监视各种网络参数，保证服务器系统的安全运营；并提供灵活的通知机制以让系统管理员快速定位/解决存在的各种问题。   zabbix由2部分构成，zabbix server与可选组件zabbix agent。   zabbix server可以">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-558.png">
   
     <link rel="alternative" href="/atom.xml" title="Melvin の blog" type="application/atom+xml">
   
@@ -150,133 +200,209 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-ZABBIX（一）Centos7-安装Zabbix-3-5" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      bZABBIX（一）Centos7 安装Zabbix 3.5
+    </h1>
+  
+
+        
+        <a href="/2018/11/02/ZABBIX（一）Centos7-安装Zabbix-3-5/" class="archive-article-date">
+  	<time datetime="2018-11-02T11:15:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
+</a>
+        
+      </header>
     
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+       
+       
+        <p>一、zabbix简介：<br>    zabbix（音同 zæbix）是一个基于WEB界面的提供分布式系统监视以及网络监视功能的企业级的开源解决方案。<br>   zabbix能监视各种网络参数，保证服务器系统的安全运营；并提供灵活的通知机制以让系统管理员快速定位/解决存在的各种问题。<br>   zabbix由2部分构成，zabbix server与可选组件zabbix agent。<br>   zabbix server可以通过SNMP，zabbix agent，ping，端口监视等方法提供对远程服务器/网络状态的监视，数据收集等功能，它可以运行在Linux，Solaris，HP-UX，AIX，Free BSD，Open BSD，OS X等平台上。<br>   zabbix server可以单独监视远程服务器的服务状态；同时也可以与zabbix agent配合，可以轮询zabbix agent主动接收监视数据（agent方式），同时还可被动接收zabbix agent发送的数据（trapping方式）。另外zabbix server还支持SNMP (v1,v2)，可以与SNMP软件(例如：net-snmp)等配合使用。<br>二、安装操作系统Centos 7<br>    网易下载系统源：<a href="http://mirrors.163.com/centos/" target="_blank" rel="noopener">http://mirrors.163.com/centos/</a><br>   本次试验实在虚拟机上安装的Centos 7.2版本的操作系统。由于安装操作系统比较交单，在此不做详细介绍：</p>
+<p><img src="/images/pasted-558.png" alt="upload successful"><br>    1、关闭selinux：（注：关闭selinux功能后，需要重启系统）<br>    vim /etc/sysconfing/selinux</p>
+<p><img src="/images/pasted-559.png" alt="upload successful"><br>    2、关闭防火墙：<br>    systemctl start firewalld.service   # 启动防火墙<br>    systemctl stop  firewalld.service   # 关闭防火墙<br>    systemctl disable firewalld.service   #禁止firewall开机启动<br>   3、安装yum源<br>       cd /etc/yum.repos.d/<br>    ls</p>
+<p><img src="/images/pasted-560.png" alt="upload successful"><br>    备份原来的.repo 文件</p>
+<p><img src="/images/pasted-561.png" alt="upload successful"><br>    下载最新的centos7 的repo包文件：</p>
+<p><img src="/images/pasted-562.png" alt="upload successful"><br>    更新yum源：<br>    yum clean all<br>    yum makecache</p>
+<p><img src="/images/pasted-563.png" alt="upload successful"><br>    yum repolist</p>
+<p><img src="/images/pasted-564.png" alt="upload successful"><br>三、安装LAMP服务：<br>    1、安装mysql：<br>    从最新版本的Linux系统开始，默认的数据库是Mariadb，不是mysql<br>    在此使用系统自带的 Mariadb数据，使用repos安装，比较简单<br>   （1）使用yum源安装Mariadb数据库：<br>   yum install -y mariadb mariadb-server</p>
+<p><img src="/images/pasted-565.png" alt="upload successful"><br>    （2）qidong mariadb ,以前的服务管理命令还可以使用<br>    systemctl start mariadb</p>
+<p><img src="/images/pasted-566.png" alt="upload successful"><br>     （3）设置开机启动<br>     systemctl enable mariadb</p>
+<p><img src="/images/pasted-567.png" alt="upload successful"><br>     （4）完全初始化，设置root密码等：<br>     mysql_secure_installation</p>
+<p><img src="/images/pasted-568.png" alt="upload successful"></p>
+<p><img src="/images/pasted-569.png" alt="upload successful"><br>     （5）测试登录数据库：<br>     mysql -u root  -p</p>
+<p><img src="/images/pasted-570.png" alt="upload successful"><br>     （6）配置Mariadb数据库的字符集<br>     vim /etc/my.cnf</p>
+<p><img src="/images/pasted-571.png" alt="upload successful"><br>     vim /etc/my.cnf.d/client.cnf</p>
+<p><img src="/images/pasted-572.png" alt="upload successful"><br>    全部配置完成，重启Mariadb<br>    2、安装Apache软件：<br>    （1）使用yum源安装apache软件；<br>    yum -y install httpd</p>
+<p><img src="/images/pasted-573.png" alt="upload successful"><br>     （2）启动httpd服务：<br>     systemctl start httpd.service<br>    （3）添加开机自启动服务：</p>
+<p><img src="/images/pasted-575.png" alt="upload successful"><br>     （4）查看服务状态：<br>     systemctl status httpd.service</p>
+<p><img src="/images/pasted-576.png" alt="upload successful"><br>    3、安装PHP服务<br>    （1）yum源安装PHP服务：<br>    yum -y install php</p>
+<p><img src="/images/pasted-577.png" alt="upload successful"><br>     （2）安装php-mysql:<br>     php-mysql是一个用于让PHP程序使用MYSQL数据库的模块。需要安装改模块，使用命令：<br>     yum install -y php-mysql</p>
+<p><img src="/images/pasted-578.png" alt="upload successful"><br>     （3）重启httpd服务：<br>     systemctl restart httpd<br>     ps aux | grep httpd</p>
+<p><img src="/images/pasted-579.png" alt="upload successful"><br>     （4）测试Apache能够调用PHP<br>   安装完成后，PHP会生成配置文件/etc/httpd/conf.d/php.conf，因为该配置文件在/etc/httpd/conf.d目录下，所以它会被Apache所读取。PHP还会生成配置文件/etc/httpd/conf.modules.d/10-php.conf，该配置文件也会被Apache所读取，它的设定让Apache可以加载PHP模块。不过，PHP软件本身的配置文件其实是/etc/php.ini。<br>   可以测试： 为了测试Apache能不能正常调用PHP，在/var/www/html目录下新建一个phpinfo.php文档，内容如下所示：</p>
+<p><img src="/images/pasted-580.png" alt="upload successful"></p>
+<p><img src="/images/pasted-581.png" alt="upload successful"><br>四、安装Zabbix<br>    1、zabbix安装包下载地址：<br>   <a href="https://www.zabbix.com/download_sources" target="_blank" rel="noopener">https://www.zabbix.com/download_sources</a><br>   2、官方文档说明：<br>   <a href="https://www.zabbix.com/documentation/3.4/manual/installation/install_from_package" target="_blank" rel="noopener">https://www.zabbix.com/documentation/3.4/manual/installation/install_from_package</a><br>   3、导入软件安装源：<br>   rpm -ivh <a href="http://repo.zabbix.com/zabbix/3.5/rhel/7/x86_64/zabbix-release-3.5-1.el7.noarch.rpm" target="_blank" rel="noopener">http://repo.zabbix.com/zabbix/3.5/rhel/7/x86_64/zabbix-release-3.5-1.el7.noarch.rpm</a></p>
+<p><img src="/images/pasted-582.png" alt="upload successful"><br>    4、安装zabbix包：<br>    yum -y install zabbix-sever-mysql zabbix-web-mysql</p>
+<p><img src="/images/pasted-583.png" alt="upload successful"><br>    5、给zabbix服务端安装上客户端服务：<br>    yum install -y zabbix-agent</p>
+<p><img src="/images/pasted-584.png" alt="upload successful"><br>    6、初始化数据库：<br>    create database zabbix character set utf8 collate utf8_bin;      #创建数据库；<br>   grant all privileges on zabbix.* to zabbix@localhost identified by ‘zabbix’;</p>
+<p><img src="/images/pasted-585.png" alt="upload successful"><br>    7、数据库配置：<br>    进入到这个目录：<br>     cd /usr/share/doc/zabbix-server-mysql-4.0.0/<br>     ls<br>    zcat create.sql.gz | mysql -uroot -p zabbix   （输入数据库的密码）</p>
+<p><img src="/images/pasted-586.png" alt="upload successful"><br>    8、启动zabbix server服务<br>    vim /etc/zabbix/zabbix_server.conf </p>
+<p><img src="/images/pasted-587.png" alt="upload successful"><br>    启动zabbix服务，设置开机启动：<br>    systemctl start zabbix-server<br>    systemctl enable zabbix-server</p>
+<p><img src="/images/pasted-588.png" alt="upload successful"><br>    9、编辑zabbix前端的PHP配置</p>
+<p><img src="/images/pasted-589.png" alt="upload successful"><br>    10、设置始终同步：<br>    安装ntpdate服务： yum install -y ntp</p>
+<p><img src="/images/pasted-590.png" alt="upload successful"><br>    配置ntp配置文件：<br>    vim /etc/ntp.conf<br>    ntpdate cn.pool.ntp.org<br>     11、启动apache服务：<br>    systemctl start httpd<br>    systemctl enable httpd</p>
+<p>五、网页登录zabbix进行配置：<br>    1、使用浏览器，输入IP地址，登录zabbix：<br>    <a href="http://192.168.40.134/zabbix/setup.php" target="_blank" rel="noopener">http://192.168.40.134/zabbix/setup.php</a></p>
+<p><img src="/images/pasted-591.png" alt="upload successful"><br>    2、点击下一步，然后检测配置是否正确：</p>
+<p><img src="/images/pasted-592.png" alt="upload successful"><br>    3、然后点击下一步，配置数据库连接：<br>       用户名：zabbix   密码：zabbix   </p>
+<p><img src="/images/pasted-593.png" alt="upload successful"><br>    4、然后点击下一步，设置zabbix-server地址和端口：</p>
+<p><img src="/images/pasted-594.png" alt="upload successful"><br>    5、查看已配置的信息：</p>
+<p><img src="/images/pasted-595.png" alt="upload successful"><br>    6、zabbix服务安装成功，点击完成：</p>
+<p><img src="/images/pasted-596.png" alt="upload successful"><br>    7、显示登录界面（默认用户名：Admin   默认密码：zabbix）：</p>
+<p><img src="/images/pasted-597.png" alt="upload successful"><br>六、zabbix语言设置：<br>    1、将语言设置为中文：<br>   vim /usr/share/zabbix/include/locales.inc.php</p>
+<p><img src="/images/pasted-598.png" alt="upload successful"><br>     Win+R打开运行窗口，输入fonts，回车进入window系统的字体目录，然后找到 微软雅黑-常规字体，复制出来将其文件名修改为msyh.ttf,然后上传到/usr/share/zabbix/fonts<br>     cd /usr/share/zabbix/fonts/<br>        ls</p>
+<p><img src="/images/pasted-599.png" alt="upload successful"><br>上传成功后，编辑文件<br> vim /usr/share/zabbix/include/defines.inc.php</p>
+<p><img src="/images/pasted-600.png" alt="upload successful"><br>七、zabbix基本设置：<br>    1、页面设置成中文：<br>     点击usr按钮，然后设置为中文界面：</p>
+<p><img src="/images/pasted-601.png" alt="upload successful"><br>    更改背景为黑色：</p>
+<p><img src="/images/pasted-602.png" alt="upload successful"><br>    2、新版本的zabbix，能够对仪表盘进行编辑，对各个模块进行编辑：</p>
+<p><img src="/images/pasted-603.png" alt="upload successful"></p>
+<p>   以上演示了 zabbix server的搭建方法，后继会提供zabbix的一系列配置教程。<br>        希望能够帮助有需要的朋友，在此欢迎大家 关注评论。</p>
+
+       
+      
+     </div>
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/Windows10-64位安装Python-3-6-4/" class="archive-article-date">
-  	<time datetime="2018-10-30T11:30:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/Windows10-64位安装Python-3-6-4/">Windows10 64位安装Python 3.6.4</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
   </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/02/ZABBIX（一）Centos7-安装Zabbix-3-5/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/Linux系统常用命令/" class="archive-article-date">
-  	<time datetime="2018-10-30T09:40:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/02/Centos6-5-Nginx-mysql-php-安装配置文档/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Centos6.5 + Nginx + mysql + php 安装配置文档</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/Linux系统常用命令/">Linux系统常用命令</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/Mysql-学习笔记/" class="archive-article-date">
-  	<time datetime="2018-10-30T08:15:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/Mysql-学习笔记/">Mysql 学习笔记</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/25/hello-world/" class="archive-article-date">
-  	<time datetime="2018-10-25T07:59:52.692Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/25/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2018/page/3/">&laquo; Prev</a><a class="page-number" href="/archives/2018/">1</a><a class="page-number" href="/archives/2018/page/2/">2</a><a class="page-number" href="/archives/2018/page/3/">3</a><span class="page-number current">4</span>
-    </nav>
   
 
 
@@ -305,8 +431,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
