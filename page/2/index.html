@@ -152,6 +152,80 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Nginx（二）-虚拟主机配置" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/02/Nginx（二）-虚拟主机配置/">Nginx（二） 虚拟主机配置</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/02/Nginx（二）-虚拟主机配置/" class="archive-article-date">
+  	<time datetime="2018-11-02T07:06:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
+</a>
+        
+      </header>
+    
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+       
+       
+	<p>一、Nginx的应用概述<br>    Nginx作为一款高性能的http服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器。主要有以下3方面的应用：<br>   1.http服务器：<br>    Nginx是一个http服务器可以独立提供http服务。可以做网页静态服务器。<br>   2.虚拟主机：<br>    可以实现在一台服务器虚拟出多个网站。例如个人网站使用的虚拟主机。<br>   3.反向代理，负载均衡：<br>    当网站的访问量达到一定程度后，单台服务器不能满足用户的请求时，需要用多台服务器集群可以使用nginx做反向代理。并且多台服务器可以平均分担负载，不会因为某台服务器负载高宕机而某台服务器闲置的情况。<br>二、虚拟主机概述<br>     虚拟主机使用的是特殊的软硬件技术，它把一台服务器主机分成一台台“虚拟”的主机，每天虚拟主机都可以具有独立的域名，具有完整的Internet服务器功能（www、FTP、Email等），同一台主机上的虚拟主机之间是完全独立的。从网站访问者来看，每一台虚拟主机和一台独立的主机完全一样。<br>   利用虚拟主机，不必为每个要运行的网站提供一台单独的Nginx服务器或单独运行一组Nginx进程。虚拟主机提供了在同一台服务器、同一组Nginx进程上运行多个网站的功能。<br>   可以实现在同一台服务器上运行多个网站，并且网站之间相互独立各不干扰。<br>三、Nginx虚拟主机的配置<br>    Nginx下，一个Server标签就是一个虚拟主机，有三种方式进行配置：<br>  （1）、基于域名的虚拟主机，通过域名来区分虚拟主机——应用：外部网站；<br>  （2）、基于端口的虚拟主机，通过端口来区分虚拟主机——应用：公司内部网站，外部网站的管理后台。<br>  （3）、基于IP的虚拟主机，几乎不太常用。<br>四、Nginx配置文件<br>    cd /usr/local/nginx/conf<br>    ls<br>    vim nginx.conf</p>
+	
+	 <p class="article-more-link">
+	  <a class="article-more-a" href="/2018/11/02/Nginx（二）-虚拟主机配置/#more">more >></a>
+	 </p>
+	
+       
+      
+     </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/02/Nginx（二）-虚拟主机配置/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-bash常用命令与技巧" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -789,80 +863,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/11/01/Centos6-5-安装-JDK-tomcat-mysql-安装教程/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Centos6-5-使用光盘镜像系统源安装数据库mysql5-7" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/01/Centos6-5-使用光盘镜像系统源安装数据库mysql5-7/">Centos6.5 使用光盘镜像系统源安装数据库mysql5.7</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/01/Centos6-5-使用光盘镜像系统源安装数据库mysql5-7/" class="archive-article-date">
-  	<time datetime="2018-11-01T12:37:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        
-      </header>
-    
-    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
-   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-       
-       
-	<p>一、光盘挂载镜像配置yum源<br>    1、挂载光盘镜像<br>   mount /dev/cdrom/media  #将光盘系统文件挂载到/media文件夹下</p>
-	
-	 <p class="article-more-link">
-	  <a class="article-more-a" href="/2018/11/01/Centos6-5-使用光盘镜像系统源安装数据库mysql5-7/#more">more >></a>
-	 </p>
-	
-       
-      
-     </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/01/Centos6-5-使用光盘镜像系统源安装数据库mysql5-7/">展开全文 >></a>
         </p>
       
 

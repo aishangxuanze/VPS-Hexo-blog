@@ -6,33 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Centos7.2 安装和配置Tomcat8 | Melvin の blog</title>
+  <title>Windows 系统下安装dig命令 | Melvin の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、安装Centos7.2操作系统     由于以前操作文档中涉及到Centos系统的安装，在此不在详细介绍，    具体安装操作系统的详细教程如下：    http://blog.51cto.com/5001660/2085729    cd /etc/redhat-release    ip addr 二、安装JDK    因为安装Tomcat需要先安装jdk，在此简单介绍一下安装JDK">
+  <meta name="description" content="dig是一个Linux下用来DNS查询信息的工具，全称是Domain Information Groper，与nslookup类似，但比nslookup功能更强大。Windows下只有nslookup，如果需要用到dig命令，需要自行安装。一、软件下载：    dig作为bind的一部分，在此需要下载最新版本的软件，选择一个镜像站点，点击进入，比如：        ftp://ftp.nom">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Centos7.2 安装和配置Tomcat8">
-<meta property="og:url" content="http://yoursite.com/2018/11/03/Centos7-2-安装和配置Tomcat8/index.html">
+<meta property="og:title" content="Windows 系统下安装dig命令">
+<meta property="og:url" content="http://yoursite.com/2018/11/04/Windows-系统下安装dig命令/index.html">
 <meta property="og:site_name" content="Melvin の blog">
-<meta property="og:description" content="一、安装Centos7.2操作系统     由于以前操作文档中涉及到Centos系统的安装，在此不在详细介绍，    具体安装操作系统的详细教程如下：    http://blog.51cto.com/5001660/2085729    cd /etc/redhat-release    ip addr 二、安装JDK    因为安装Tomcat需要先安装jdk，在此简单介绍一下安装JDK">
+<meta property="og:description" content="dig是一个Linux下用来DNS查询信息的工具，全称是Domain Information Groper，与nslookup类似，但比nslookup功能更强大。Windows下只有nslookup，如果需要用到dig命令，需要自行安装。一、软件下载：    dig作为bind的一部分，在此需要下载最新版本的软件，选择一个镜像站点，点击进入，比如：        ftp://ftp.nom">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/pasted-613.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-614.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-615.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-616.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-617.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-618.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-619.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-620.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-621.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-622.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-623.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-624.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-625.png">
-<meta property="og:updated_time" content="2018-11-04T04:17:27.097Z">
+<meta property="og:image" content="http://yoursite.com/images/pasted-664.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-665.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-666.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-667.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-668.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-669.png">
+<meta property="og:updated_time" content="2018-11-04T06:07:04.296Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Centos7.2 安装和配置Tomcat8">
-<meta name="twitter:description" content="一、安装Centos7.2操作系统     由于以前操作文档中涉及到Centos系统的安装，在此不在详细介绍，    具体安装操作系统的详细教程如下：    http://blog.51cto.com/5001660/2085729    cd /etc/redhat-release    ip addr 二、安装JDK    因为安装Tomcat需要先安装jdk，在此简单介绍一下安装JDK">
-<meta name="twitter:image" content="http://yoursite.com/images/pasted-613.png">
+<meta name="twitter:title" content="Windows 系统下安装dig命令">
+<meta name="twitter:description" content="dig是一个Linux下用来DNS查询信息的工具，全称是Domain Information Groper，与nslookup类似，但比nslookup功能更强大。Windows下只有nslookup，如果需要用到dig命令，需要自行安装。一、软件下载：    dig作为bind的一部分，在此需要下载最新版本的软件，选择一个镜像站点，点击进入，比如：        ftp://ftp.nom">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-664.png">
   
     <link rel="alternative" href="/atom.xml" title="Melvin の blog" type="application/atom+xml">
   
@@ -168,20 +161,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Centos7-2-安装和配置Tomcat8" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-Windows-系统下安装dig命令" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Centos7.2 安装和配置Tomcat8
+      Windows 系统下安装dig命令
     </h1>
   
 
         
-        <a href="/2018/11/03/Centos7-2-安装和配置Tomcat8/" class="archive-article-date">
-  	<time datetime="2018-11-04T03:30:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-03</time>
+        <a href="/2018/11/04/Windows-系统下安装dig命令/" class="archive-article-date">
+  	<time datetime="2018-11-04T05:03:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-04</time>
 </a>
         
       </header>
@@ -194,22 +187,15 @@
       
        
        
-        <p>一、安装Centos7.2操作系统<br>     由于以前操作文档中涉及到Centos系统的安装，在此不在详细介绍，<br>    具体安装操作系统的详细教程如下：<br>    <a href="http://blog.51cto.com/5001660/2085729" target="_blank" rel="noopener">http://blog.51cto.com/5001660/2085729</a><br>    cd /etc/redhat-release<br>    ip addr</p>
-<p><img src="/images/pasted-613.png" alt="upload successful"><br>二、安装JDK<br>    因为安装Tomcat需要先安装jdk，在此简单介绍一下安装JDK<br>    1、检查系统java版本<br>    java -version</p>
-<p><img src="/images/pasted-614.png" alt="upload successful"><br>    2、上传新的JDK软件安装包：<br>    mkdir -p /home/java<br>    cd /home/java<br>    ls</p>
-<p><img src="/images/pasted-615.png" alt="upload successful"><br>    3、安装JDK ，此处安装在/home/java 目录中：<br>    pwd<br>     rpm -ivh jdk-8u181-linux-x64.rpm </p>
-<p><img src="/images/pasted-616.png" alt="upload successful"><br>    4、JDK验证安装<br>    JDK 默认安装在/home/java<br>    java -version</p>
-<p><img src="/images/pasted-617.png" alt="upload successful"><br>    5、配置环境变量<br>    配置文件 /etc/profile<br>    vim /etc/profile<br>    在文件内最后追加以下内容：<br>    JAVA_HOME=/usr/java/jdk1.8.0_181-amd64<br>JRE_HOME=/usr/java/jdk1.8.0_181-amd64/jre<br>PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin<br> CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib<br> export JAVA_HOME JRE_HOME PATH CLASSPATH<br>     6、使其生效：<br>    source /etc/profile<br>    echo $PATH</p>
-<p><img src="/images/pasted-618.png" alt="upload successful"><br>三、下载Tomcat8 压缩包<br>    1、下载地址：<br>    <a href="http://tomcat.apache.org/download-80.cgi" target="_blank" rel="noopener">http://tomcat.apache.org/download-80.cgi</a></p>
-<p><img src="/images/pasted-619.png" alt="upload successful"><br>    2、Tomcat 安装包上传至/home/data<br>    mkdir -p /home/data<br>    cd /home/data<br>    ls</p>
-<p><img src="/images/pasted-620.png" alt="upload successful"><br>    3、解压以及新建目录<br>    ls /home/data<br>    cd /home/data<br>    tar -zxvf apache-tomcat-8.5.32.tar.gz<br>    ls</p>
-<p><img src="/images/pasted-621.png" alt="upload successful"><br>    4、新建/home/tomcat目录  把tomcat剪切进去<br>    mkdir -p /home/tomcat<br>    mv /home/data/apache-tomcat-8.5.32/ /home/tomcat/<br>    cd /home/tomcat/<br>    ls<br>    cd apache-tomcat-8.5.32/<br>    ls</p>
-<p><img src="/images/pasted-622.png" alt="upload successful"><br>    5、配置Tomcat server.xml<br>       server.xml 可以配置端口，编码以及配置项目等等，在此配置端口，把默认的8080，修改成80<br>    vi /home/tomcat/apache-tomcat-8.5.32/conf/server.xml </p>
-<p><img src="/images/pasted-623.png" alt="upload successful"><br>    把8080改为 80  然后保存 退出：<br>   6、配置防火墙，开放80端口<br>    firewall-cmd –zone=public –add-port=80/tcp –permanent<br>    firewall-cmd –reload<br>    （我使用的操作系统是关闭防火墙的）<br>   7、启动Tomcat<br>   /home/tomcat/apache-tomcat-8.5.32/bin/startup.sh</p>
-<p><img src="/images/pasted-624.png" alt="upload successful"><br>    8、浏览器测试<br>    地址栏输入：<a href="http://192.168.40.131/" target="_blank" rel="noopener">http://192.168.40.131/</a></p>
-<p><img src="/images/pasted-625.png" alt="upload successful"></p>
-<pre><code>Tomcat 安装配置成功 。
-</code></pre>
+        <p>   dig是一个Linux下用来DNS查询信息的工具，全称是Domain Information Groper，与nslookup类似，但比nslookup功能更强大。Windows下只有nslookup，如果需要用到dig命令，需要自行安装。<br>一、软件下载：<br>    dig作为bind的一部分，在此需要下载最新版本的软件，选择一个镜像站点，点击进入，比如：<br>        <a href="ftp://ftp.nominum.com/pub/isc/bind9/" target="_blank" rel="noopener">ftp://ftp.nominum.com/pub/isc/bind9/</a></p>
+<p><img src="/images/pasted-664.png" alt="upload successful"><br>    如果你的电脑是64位的，需要下载64位的软件，下载地址：<br>    <a href="ftp://ftp.nominum.com/pub/isc/bind9/9.9.9/BIND9.9.9.x64.zip" target="_blank" rel="noopener">ftp://ftp.nominum.com/pub/isc/bind9/9.9.9/BIND9.9.9.x64.zip</a><br>    如果你的电脑是32位的，需要下载32位的软件，下载地址：<br>     <a href="ftp://ftp.nominum.com/pub/isc/bind9/9.9.9/BIND9.9.9.x32.zip" target="_blank" rel="noopener">ftp://ftp.nominum.com/pub/isc/bind9/9.9.9/BIND9.9.9.x32.zip</a><br>    因为我的电脑系统是64位的，在此我下载的是64位的软件</p>
+<p><img src="/images/pasted-665.png" alt="upload successful"><br>    解压下载好的软件包，然后右击vcredist_x64.exe，然后将所有的dll文件复制至C:\Windows\System32\ 目录下</p>
+<p><img src="/images/pasted-666.png" alt="upload successful"><br>    然后将dig.exe 也复制到 C:\Windows\System32\ 目录下：</p>
+<p><img src="/images/pasted-667.png" alt="upload successful"><br>    在此，dig安装完成，打开cmd进行验证：</p>
+<p><img src="/images/pasted-668.png" alt="upload successful"><br>    如果需要使用Google Public DNS来进行dig查询的话，需要在C：\Windows\Systemctl32\drivers\etc\目录下添加一个名为resolv.conf的文件。内容如下：<br>       nameserver 8.8.8.8<br>       nameserver 8.8.4.4<br>       dig <a href="http://www.google.com" target="_blank" rel="noopener">www.google.com</a></p>
+<p><img src="/images/pasted-669.png" alt="upload successful">  </p>
+<p>  在此，windows系统安装dig命令已经完成。</p>
+
        
       
      </div>
@@ -289,7 +275,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/03/Centos7-2-安装和配置Tomcat8/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/04/Windows-系统下安装dig命令/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -303,18 +289,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/11/04/Windows-系统下安装dig命令/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/11/04/ZABBIX（三）-zabbix支持的主要监控方式/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Windows 系统下安装dig命令
+          ZABBIX（三） zabbix支持的主要监控方式
         
       </div>
     </a>
   
   
-    <a href="/2018/11/03/ZABBIX（二）zabbix-监控第一台服务器/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ZABBIX（二）zabbix 监控第一台服务器</div>
+    <a href="/2018/11/03/Centos7-2-安装和配置Tomcat8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Centos7.2 安装和配置Tomcat8</div>
       <i class="icon-circle-right"></i>
     </a>
   
