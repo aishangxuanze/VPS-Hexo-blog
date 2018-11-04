@@ -6,32 +6,46 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>ZABBIX（五） zabbix 主机与组的配置 | Melvin の blog</title>
+  <title>ZABBIX（六） zabbix 配置介绍 | Melvin の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在zabbix中，主机（host）的定义不单单指类Linux、Windows等服务器，还包括路由器、交换机等其他设备。在此我们将单独介绍各类设备主机的添加方法。一、创建主机方法    1、新建主机     “配置”-“主机”-“创建主机”：     具体配置方法，在我上次的博客ZABBIX（二）zabbix监控第一台服务器中有具体的方法     博客地址：http://blog.51cto.">
+  <meta name="description" content="一、创建主机群组    zabbix可以同时监控多台机器，当我们想要只查看某一类或者某一个项目的机器是，只需要将被监控的机器添加要相应的主机即可。我们可以根据自己的实际需要创建主机分组。例如可以根据被监控的设备的类型分类为：网络设备分组、服务器分组；网络设备分组还可以细分为：路由器分组、交换机分组、防火墙设备、无线设备分组等等。服务器分期可以细分为：Linux分组、Windows分组等。    点">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ZABBIX（五） zabbix 主机与组的配置">
-<meta property="og:url" content="http://yoursite.com/2018/11/04/ZABBIX（五）-zabbix-主机与组的配置/index.html">
+<meta property="og:title" content="ZABBIX（六） zabbix 配置介绍">
+<meta property="og:url" content="http://yoursite.com/2018/11/04/ZABBIX（六）-zabbix-配置介绍/index.html">
 <meta property="og:site_name" content="Melvin の blog">
-<meta property="og:description" content="在zabbix中，主机（host）的定义不单单指类Linux、Windows等服务器，还包括路由器、交换机等其他设备。在此我们将单独介绍各类设备主机的添加方法。一、创建主机方法    1、新建主机     “配置”-“主机”-“创建主机”：     具体配置方法，在我上次的博客ZABBIX（二）zabbix监控第一台服务器中有具体的方法     博客地址：http://blog.51cto.">
+<meta property="og:description" content="一、创建主机群组    zabbix可以同时监控多台机器，当我们想要只查看某一类或者某一个项目的机器是，只需要将被监控的机器添加要相应的主机即可。我们可以根据自己的实际需要创建主机分组。例如可以根据被监控的设备的类型分类为：网络设备分组、服务器分组；网络设备分组还可以细分为：路由器分组、交换机分组、防火墙设备、无线设备分组等等。服务器分期可以细分为：Linux分组、Windows分组等。    点">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/pasted-681.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-682.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-683.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-684.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-685.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-686.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-687.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-688.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-689.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-690.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-691.png">
-<meta property="og:image" content="http://yoursite.com/images/pasted-692.png">
-<meta property="og:updated_time" content="2018-11-04T06:39:50.711Z">
+<meta property="og:image" content="http://yoursite.com/images/pasted-693.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-694.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-695.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-696.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-697.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-698.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-699.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-700.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-701.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-702.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-703.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-704.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-705.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-706.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-707.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-708.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-709.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-710.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-711.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-712.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-713.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-714.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-715.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-716.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-717.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-718.png">
+<meta property="og:updated_time" content="2018-11-04T07:14:18.299Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ZABBIX（五） zabbix 主机与组的配置">
-<meta name="twitter:description" content="在zabbix中，主机（host）的定义不单单指类Linux、Windows等服务器，还包括路由器、交换机等其他设备。在此我们将单独介绍各类设备主机的添加方法。一、创建主机方法    1、新建主机     “配置”-“主机”-“创建主机”：     具体配置方法，在我上次的博客ZABBIX（二）zabbix监控第一台服务器中有具体的方法     博客地址：http://blog.51cto.">
-<meta name="twitter:image" content="http://yoursite.com/images/pasted-681.png">
+<meta name="twitter:title" content="ZABBIX（六） zabbix 配置介绍">
+<meta name="twitter:description" content="一、创建主机群组    zabbix可以同时监控多台机器，当我们想要只查看某一类或者某一个项目的机器是，只需要将被监控的机器添加要相应的主机即可。我们可以根据自己的实际需要创建主机分组。例如可以根据被监控的设备的类型分类为：网络设备分组、服务器分组；网络设备分组还可以细分为：路由器分组、交换机分组、防火墙设备、无线设备分组等等。服务器分期可以细分为：Linux分组、Windows分组等。    点">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-693.png">
   
     <link rel="alternative" href="/atom.xml" title="Melvin の blog" type="application/atom+xml">
   
@@ -167,20 +181,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ZABBIX（五）-zabbix-主机与组的配置" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-ZABBIX（六）-zabbix-配置介绍" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      ZABBIX（五） zabbix 主机与组的配置
+      ZABBIX（六） zabbix 配置介绍
     </h1>
   
 
         
-        <a href="/2018/11/04/ZABBIX（五）-zabbix-主机与组的配置/" class="archive-article-date">
-  	<time datetime="2018-11-04T05:31:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-04</time>
+        <a href="/2018/11/04/ZABBIX（六）-zabbix-配置介绍/" class="archive-article-date">
+  	<time datetime="2018-11-04T05:41:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-04</time>
 </a>
         
       </header>
@@ -193,19 +207,33 @@
       
        
        
-        <p>   在zabbix中，主机（host）的定义不单单指类Linux、Windows等服务器，还包括路由器、交换机等其他设备。在此我们将单独介绍各类设备主机的添加方法。<br>一、创建主机方法<br>    1、新建主机<br>     “配置”-“主机”-“创建主机”：<br>     具体配置方法，在我上次的博客ZABBIX（二）zabbix监控第一台服务器中有具体的方法<br>     博客地址：<a href="http://blog.51cto.com/5001660/2136303" target="_blank" rel="noopener">http://blog.51cto.com/5001660/2136303</a><br>    2、克隆/完全克隆主机<br>     添加新的主机还可以通过已经添加的主机进行克隆或完全克隆方式进行添加新的主机。当使用克隆的方式创建一个新的主机的时候，只保留原来主机上配置的参数和链接的模板；使用完全克隆的方式添加新的主机，除了保留原来主机上的配置的参数和链接的模板之外还会保留在该主机上配置的监控项组、监控项、触发器、图形、low-level discovery 和 web场景。<br>      通过克隆或完全克隆的方式创建一个新主机后，克隆的源主机配置发生变化，例如改变了监控项收集的时间，这种变化只对源主机有效，不会影响克隆后的新主机。直接在主机页面点击源主机名进入主机配置页面，在主机标签中页面的最下方点击克隆或完全克隆按钮就可以完成克隆。<br> 二、主机参数<br>     1、当新添加一台主机时，需要输入一些被添加的主机的基本信息和参数设置：</p>
-<p><img src="/images/pasted-681.png" alt="upload successful"></p>
-<p><img src="/images/pasted-682.png" alt="upload successful"><br>三、主机模板：<br>    切换到模板选项界面：</p>
-<p><img src="/images/pasted-683.png" alt="upload successful"><br>    点击“选择”会列出系统中已存在的模板，根据被监控的设备选择相应的模板：</p>
-<p><img src="/images/pasted-684.png" alt="upload successful"><br>     选择好要使用的模板后，点击添加，将选择的模板添加到主机中：</p>
-<p><img src="/images/pasted-685.png" alt="upload successful"><br>四、配置IPMI<br>    在IPMI标签中，包含了IPMI相关的配置参数，如下图：</p>
-<p><img src="/images/pasted-686.png" alt="upload successful"></p>
-<p><img src="/images/pasted-687.png" alt="upload successful"><br>五、配置宏变量<br>    在Macros标签中允许我们添加主机级别的宏变量。</p>
-<p><img src="/images/pasted-688.png" alt="upload successful"><br>    如上图所示，点击Host macros按钮后可以看到主机中定义的宏变量，也可以添加新的宏变量。在MACRO字段中输入宏变量的名称，格式为{$MACRO-NAME}，在VALUE字段中输入该宏变量的值，点击Add添加。<br>    当点击Inhented and host macros按钮后，不仅可以看到主机中定义的宏变量，还可以看到继承自模板和全局的宏变量。</p>
-<p><img src="/images/pasted-689.png" alt="upload successful"><br>六、主机资产记录配置：<br>    在Host Inventory标签中你可以点击Manual按钮手工输入主机相关的资产记录信息，也可以点击Automatic按钮自动填写主机相关的资产记录信息。<br>   主机资产可以手动录入，也可以自动获取，在此不详细介绍</p>
-<p><img src="/images/pasted-690.png" alt="upload successful"><br>七、配置主机加密通道<br>    在Encryption标签中可以设置被监控主机与Zabbixserver或proxy之间的加密通信，这个是3.0中新增的功能，实际环境中这个功能非常有用也很重要，在以前的版本中需要借助其他工具实现数据的安全传输。</p>
-<p><img src="/images/pasted-691.png" alt="upload successful"></p>
-<p><img src="/images/pasted-692.png" alt="upload successful"></p>
+        <p>一、创建主机群组<br>    zabbix可以同时监控多台机器，当我们想要只查看某一类或者某一个项目的机器是，只需要将被监控的机器添加要相应的主机即可。我们可以根据自己的实际需要创建主机分组。例如可以根据被监控的设备的类型分类为：网络设备分组、服务器分组；网络设备分组还可以细分为：路由器分组、交换机分组、防火墙设备、无线设备分组等等。服务器分期可以细分为：Linux分组、Windows分组等。<br>    点击“配置”-“主机群组”，然后点击“创建主机群组”，在此我创建的是test主机群组。</p>
+<p><img src="/images/pasted-693.png" alt="upload successful"><br>二、创建模板<br>    模板：在模板里面可以配置监控项、触发器、图形等。模板的作用是在主机上可以直接link模板，继承模板中的配置。主机套用后，就拥有了模板中的配置：监控项、触发器、图形。<br>   比如创建了一个监控磁盘大小的监控项，然后创建了触发器和图形。如要后期需要添加新的监控机器中也需要监控磁盘的大小，然后直接套用模板就好。在日常工作中，我们需要监控web、mysql、redis、neginx等一些常用服务，在一切服务器中这些服务都是一样的，我们只需要创建好模板，然后所有的服务器链接到这个模板中即可。<br>   点击“配置”-“模板”-“创建模板”：</p>
+<p><img src="/images/pasted-694.png" alt="upload successful"><br>    创建的模板还可以链接其他模板；</p>
+<p><img src="/images/pasted-695.png" alt="upload successful"><br>  一切设置好后，点击“添加”完成模板的添加：</p>
+<p><img src="/images/pasted-696.png" alt="upload successful"><br>三、创建主机<br>    上一篇文章详细介绍了zabbix主机与组的配置<br>   博客的链接为：<a href="http://blog.51cto.com/5001660/2154692" target="_blank" rel="noopener">http://blog.51cto.com/5001660/2154692</a><br>四、zabbix维护配置<br>    zabbix可以给某些组或者某些Hosts设置维护时间，zabbix提供两种维护类型：依旧收集数据、暂停收集数据。<br>   在服务器维护期间不会生成报警（前提：触发器设置了‘Maintenance status=not in “maintenance”’），如果在维护期间出现故障，并且没有解决掉，那么在维护周期结束之后，服务器会生成报警。如果你想再维护期间也能收到报警，那么触发器不需要设置‘Maintenance status=not in “maintenance”’。<br>    点击“配置”-“维护”-“创建维护期间”</p>
+<p><img src="/images/pasted-697.png" alt="upload successful"><br>五、zabbix中item监控项配置<br>    1、item介绍<br>    Item是从主机里面获取要被监控的数据。在此我们叫做item为监控项。<br>    item由key+参数组成。例如监控项中需要获取cpu信息，则需要一个对应的监控项key：system.cpu.load。如果是获取网卡流量，需要获取这个监控项需要的key：net.if.in或者net.if.out。<br>    一般情况下key要与参数结合起来使用，例如获取5分钟的负载情况：system.cpu.load[avg5],avg5是对应的参数等。<br>    想要在zabbix管理页面创建一个监控项，“配置”-“主机”会出现被监控的主机的列表。添加监控项可以在某个模板中添加监控项，也可以在某个主机中添加监控 。<br>    2、创建监控项<br>    （1）首先创建一个监控Linux系统的空白模板</p>
+<p><img src="/images/pasted-698.png" alt="upload successful"><br>     （2）在空白的模板中添加具体的监控项<br>      “配置”-“模板”，点击刚刚新建的空白监控模板“监控Linux系统”，然后点击“监控项”</p>
+<p><img src="/images/pasted-699.png" alt="upload successful"><br>    根据要创建的监控项，填写监控项的详细信息：</p>
+<p><img src="/images/pasted-700.png" alt="upload successful"><br>    具体信息如下：</p>
+<p><img src="/images/pasted-701.png" alt="upload successful"></p>
+<p><img src="/images/pasted-702.png" alt="upload successful"><br>     （3）上面介绍了在模板上创建监控项，下面介绍在主机上创建监控项：<br>        点击“配置”-“主机”，选择要添加监控项的主机，然后点击该主机的监控项。在此我选择的是zabbix-agent主机添加监控项：</p>
+<p><img src="/images/pasted-703.png" alt="upload successful"><br>    添加监控项的具体信息；</p>
+<p><img src="/images/pasted-704.png" alt="upload successful"><br>    输入完监控项详细信息，然后点击“添加”，完成监控项的添加：</p>
+<p><img src="/images/pasted-705.png" alt="upload successful"><br>六、zabbix中创建触发器<br>    1、触发器介绍<br>    触发器使用逻辑表达式来评估通过item获取到的数据是处于那种状态，通过item获取数据，然后交给触发器进行评估状态。<br>    在触发器表达式中我们可以定义那些值范围是合理的，哪些是不合理的，如果出现不合理的值，触发器会把状态改为PROBLEM。<br>    2、触发器状态<br>    触发器一般有两个状态：OK状态和PROBLEM状态。<br>     OK状态：触发器的正常状态。<br>     PROBLEM状态：非正常状态，例如数据挂了，系统负载高了，都是非正常状态。<br>    3、创建触发器<br>    触发器和监控项是相互的，监控项是获取数据的，触发器是检测获取的数据是否正常。对于创建触发器从模板中创建触发器，也可以通过主机中的监控项创建触发器。<br>    （1）模板中创建触发器<br>   点击“配置”-“模板”，选择要创建触发器的模板，然后点击“触发器”：</p>
+<p><img src="/images/pasted-706.png" alt="upload successful"><br>    填入创建触发器的详细信息：</p>
+<p><img src="/images/pasted-707.png" alt="upload successful"><br>     （2）某个主机中创建触发器：<br>     点击“配置”-“主机”，选择要创建触发器的主机，然后点击“触发器”  </p>
+<p><img src="/images/pasted-708.png" alt="upload successful"><br>    显示该主机已经存在的触发器的信息，然后点击“创建触发器”：</p>
+<p><img src="/images/pasted-709.png" alt="upload successful"></p>
+<p><img src="/images/pasted-710.png" alt="upload successful"><br>七、zabbix中创建图形<br>    zabbix中创建图形 跟上面介绍的 创建模板 创建监控项、创建触发器的性质是一样的，也分为两种：模板中添加图形和主机中添加图形，在此我只演示在主机中添加图形：<br>    点击“配置”-“主机”，选择要创建图形的主机，然后点击图形：</p>
+<p><img src="/images/pasted-711.png" alt="upload successful"><br>     罗列出了改主机已经存在的图形，然后我们点击“创建图形”：</p>
+<p><img src="/images/pasted-712.png" alt="upload successful"><br>    添加完成后，查看预览：</p>
+<p><img src="/images/pasted-713.png" alt="upload successful"><br>八、zabbix中创建动作（action）<br>    zabbix的功能就是用来进行监控的，当监控的对象出现问题时我们就需要告知维修人员及时过来维修，那么从监控到出现监控异常，将监控异常报告给维修人员这一系列动作需要zabbix的Action来关联完成。<br>    1、zabbix动作的创建<br>    点击“配置”-“动作”-“创建动作”，这里需要填写三个部分（动作、操作、恢复操作）：<br>    （1）动作：<br>    这一部分主要填写动作的名称，选择触发器，这里的触发器可以选择多个，当选择多个时需要明确这几个触发器之间的关系，与或或者是自定义关系。</p>
+<p><img src="/images/pasted-714.png" alt="upload successful"><br>     （2）操作：<br>    这里主要填写发送内容，以及通过何种方式将消息发送给谁</p>
+<p><img src="/images/pasted-715.png" alt="upload successful"></p>
+<p><img src="/images/pasted-716.png" alt="upload successful"><br>     （3）恢复操作：就是指当监控对象恢复到OK状态时的操作</p>
+<p><img src="/images/pasted-717.png" alt="upload successful"><br>    updated操作：</p>
+<p><img src="/images/pasted-718.png" alt="upload successful"><br>    操作可以添加多个，当出现告警的时候，可以先触发第一个动作，然后再触发第二个动作。</p>
 
        
       
@@ -286,7 +314,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/04/ZABBIX（五）-zabbix-主机与组的配置/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/04/ZABBIX（六）-zabbix-配置介绍/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -300,18 +328,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/11/04/ZABBIX（六）-zabbix-配置介绍/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          ZABBIX（六） zabbix 配置介绍
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/11/04/ZABBIX（四）zabbix-用户管理/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ZABBIX（四）zabbix 用户管理</div>
+    <a href="/2018/11/04/ZABBIX（五）-zabbix-主机与组的配置/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ZABBIX（五） zabbix 主机与组的配置</div>
       <i class="icon-circle-right"></i>
     </a>
   
