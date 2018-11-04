@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Melvin の blog</title>
+  <title>ZABBIX（七）zabbix 选择适合的监控类型 | Melvin の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Melvin の blog">
-<meta property="og:url" content="http://yoursite.com/archives/page/3/index.html">
+  <meta name="description" content="Zabbix提供了十几种监控类型，包括：Zabbix agent，Simple Checks,SNMP,Zabbix internal,IPMI,JMX monitoring等等。   Item类型：Zabbix agent ；Zabbix agent（active）；Simple check ；SNMPv1 agent ；SNMPv2 agent ；SNMPv3 agent ；SNMP t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ZABBIX（七）zabbix 选择适合的监控类型">
+<meta property="og:url" content="http://yoursite.com/2018/11/04/ZABBIX（七）zabbix-选择适合的监控类型/index.html">
 <meta property="og:site_name" content="Melvin の blog">
+<meta property="og:description" content="Zabbix提供了十几种监控类型，包括：Zabbix agent，Simple Checks,SNMP,Zabbix internal,IPMI,JMX monitoring等等。   Item类型：Zabbix agent ；Zabbix agent（active）；Simple check ；SNMPv1 agent ；SNMPv2 agent ；SNMPv3 agent ；SNMP t">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-11-04T07:21:50.065Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Melvin の blog">
+<meta name="twitter:title" content="ZABBIX（七）zabbix 选择适合的监控类型">
+<meta name="twitter:description" content="Zabbix提供了十几种监控类型，包括：Zabbix agent，Simple Checks,SNMP,Zabbix internal,IPMI,JMX monitoring等等。   Item类型：Zabbix agent ；Zabbix agent（active）；Simple check ；SNMPv1 agent ；SNMPv2 agent ；SNMPv3 agent ；SNMP t">
   
     <link rel="alternative" href="/atom.xml" title="Melvin の blog" type="application/atom+xml">
   
@@ -150,295 +154,171 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-ZABBIX（七）zabbix-选择适合的监控类型" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ZABBIX（七）zabbix 选择适合的监控类型
+    </h1>
+  
+
+        
+        <a href="/2018/11/04/ZABBIX（七）zabbix-选择适合的监控类型/" class="archive-article-date">
+  	<time datetime="2018-11-04T05:16:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-04</time>
+</a>
+        
+      </header>
     
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+       
+       
+        <p>   Zabbix提供了十几种监控类型，包括：Zabbix agent，Simple Checks,SNMP,Zabbix internal,IPMI,JMX monitoring等等。<br>   Item类型：Zabbix agent ；Zabbix agent（active）；Simple check ；SNMPv1 agent ；SNMPv2 agent ；SNMPv3 agent ；SNMP trap ；Zabbix internal ；Zabbix Trapper ；Zabbix aggregate ；External check ；Database monitor ；IPMI agent；SSH agent ；TELNET agent ；JXM agent ；Calculated ;<br>   下面具体介绍各个监控类型的用法：<br>    1、zabbix agent<br>     zabbix自带的客户端程序（被动模式），zabbix server主动向它收集监控数据。agent提供丰富的key，包括不限于cpu、内存、网络、磁盘、web等。如果系统能够安装，agent是首先。需要注意的是，server检索数据有超时限制，最大超时时间30秒，如果检索数据经常超过30秒，那么不建议使用主动模式的agent，可以使用agent active。<br>    2、zabbix agent（active）<br>     需要安装agent（主动模式），和上一个相同。但是数据由zabbix agent主动提交至zabbix server<br>   3、simple check<br>   基本的检测，可以检测网络、端口、fping这些，功能很少并且无需安装客户端。<br>   4、SNMP check<br>   客户基于安全考虑，不同意安装agent<br>   路由器、打印机等设备无法安装，但是支持snmp协议<br>   不喜欢频繁对agent升级<br>   5、zabbix internal<br>   zabbix系统内部用，比如趋势数据记录数了、历史记录数量等等。日常业务监控用不上。<br>   6、zabbix Trapper<br>   也需要安装agent（主动模式），需要借助bin/zabbix_sender将数据提交至zabbix server。如下情况适合使用：<br>   检索时间较长<br>   同一时间有大量的数据要提交，例如redis info信息，里面包含五六十项数据，通过zabbix-sender 来一次性提交，显然比agent来取几十次要方便。<br>   7、zabbix aggretage<br>   aggregate checks是一个聚合的检测，例如我想知道某个组的host负载平均值，硬盘剩余总量，或者某几台机器的这些数据，简单的来说，这个方法就是用来了解一个整体水平，而不需要我们一台台去看。这个方法的数据全部来之数据库，所以不需要agent。<br>   8、external check<br>    zabbix server运行脚本或者二进制文件来执行外部检测，外部检测不需要再被监控端运行任何agentd。<br>    备注：请不要过度使用外部检测，这会严重降低zabbix系统性能。<br>   9、database monitor<br>   zabbix通过调用ODBC来获取数据库的数据以及数据库状态等等信息。<br>   10、IPMI agent<br>   用于监控硬件设备，例如Dell或者hp服务器的主板温度、cpu电压、盖子是不是被打开等等。<br>   11、SSH agent<br>   zabbix 使用提供的ssh信息（服务器用户密码或者证书）登录服务器，执行指定的脚本来检索数据。对于以下人员比较使用：<br>   不会安装agent、不想安装agent<br>   不担心账号密码/证书放在zabbix里<br>   12、Telnet agent<br>    同上，windows不支持ssh，可以使用Telnet agent<br>   13、JMX agent<br>       通过jmx监控java jvm ，比如Tomcat 。目前有一个很大的不足，如果Tomcat多实例，jmx agent只能监控一个。如果是多实例，建议使用agent +cmdline-jmxclient-0.10.3.jar<br>二、zabbix 主动、被动检测的区别<br>    1、主动：agent请求server获取主动的监控项列表，并主动将监控项内容需要检测的数据提交给server/proxy<br>   2、被动：server想agent请求获取监控项的数据，agent返回数据。</p>
+
+       
+      
+     </div>
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/Foxmail-邮箱配置-腾讯企业邮箱/" class="archive-article-date">
-  	<time datetime="2018-11-02T01:16:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/Foxmail-邮箱配置-腾讯企业邮箱/">Foxmail 邮箱配置 腾讯企业邮箱</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
   </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/04/ZABBIX（七）zabbix-选择适合的监控类型/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/Wireshark-在Windows-下的安装/" class="archive-article-date">
-  	<time datetime="2018-11-01T13:54:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2018/11/04/ZABBIX（三）-zabbix支持的主要监控方式/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          ZABBIX（三） zabbix支持的主要监控方式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/11/04/Windows-系统下安装dig命令/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Windows 系统下安装dig命令</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/Wireshark-在Windows-下的安装/">Wireshark 在Windows 下的安装</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/Outlook-配置企业邮箱文档/" class="archive-article-date">
-  	<time datetime="2018-11-01T13:42:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/Outlook-配置企业邮箱文档/">Outlook 配置企业邮箱文档</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/Centos6-5-安装-JDK-tomcat-mysql-安装教程/" class="archive-article-date">
-  	<time datetime="2018-11-01T13:16:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/Centos6-5-安装-JDK-tomcat-mysql-安装教程/">Centos6.5 安装 JDK + tomcat + mysql 安装教程</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/Centos6-5-使用光盘镜像系统源安装数据库mysql5-7/" class="archive-article-date">
-  	<time datetime="2018-11-01T12:37:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/Centos6-5-使用光盘镜像系统源安装数据库mysql5-7/">Centos6.5 使用光盘镜像系统源安装数据库mysql5.7</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/华为模拟器eNSP-安装教程/" class="archive-article-date">
-  	<time datetime="2018-11-01T12:06:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/华为模拟器eNSP-安装教程/">华为模拟器eNSP 安装教程</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/挂载光驱-挂载yum源-从其他系统远程复制repo-配置文件/" class="archive-article-date">
-  	<time datetime="2018-11-01T11:50:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/挂载光驱-挂载yum源-从其他系统远程复制repo-配置文件/">挂载光驱 挂载yum源 从其他系统远程复制repo 配置文件</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/vsftp服务搭建配置/" class="archive-article-date">
-  	<time datetime="2018-11-01T10:46:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/vsftp服务搭建配置/">vsftp服务搭建配置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/Centos7-配置SNMP服务/" class="archive-article-date">
-  	<time datetime="2018-11-01T10:29:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/Centos7-配置SNMP服务/">Centos7 配置SNMP服务</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/31/Centos-6-5-安装教程及网络信息配置/" class="archive-article-date">
-  	<time datetime="2018-11-01T01:07:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/31/Centos-6-5-安装教程及网络信息配置/">Centos 6.5 安装教程及网络信息配置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/2/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><a class="extend next" rel="next" href="/archives/page/4/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -467,8 +347,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
