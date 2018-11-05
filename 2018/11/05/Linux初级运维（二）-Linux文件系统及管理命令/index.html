@@ -6,15 +6,33 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018/11 | Melvin の blog</title>
+  <title>Linux初级运维（二） Linux文件系统及管理命令 | Melvin の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Melvin の blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/11/index.html">
+  <meta name="description" content="一、文件系统    1、根文件系统     rootfs：根文件系统：     2、/boot: 系统启动相关的文件，如内核、initd、以及grub （BootLoader）     3、/dev:设备文件     4、 /etc: 配置文件     5、/home：用户的家目录，每一个用户的家目录通常默认为/home/USERNAME    6、/root:管理员的家目录   7、/lib:库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux初级运维（二） Linux文件系统及管理命令">
+<meta property="og:url" content="http://yoursite.com/2018/11/05/Linux初级运维（二）-Linux文件系统及管理命令/index.html">
 <meta property="og:site_name" content="Melvin の blog">
+<meta property="og:description" content="一、文件系统    1、根文件系统     rootfs：根文件系统：     2、/boot: 系统启动相关的文件，如内核、initd、以及grub （BootLoader）     3、/dev:设备文件     4、 /etc: 配置文件     5、/home：用户的家目录，每一个用户的家目录通常默认为/home/USERNAME    6、/root:管理员的家目录   7、/lib:库">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/pasted-791.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-792.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-793.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-794.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-795.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-796.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-797.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-798.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-799.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-800.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-801.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-802.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-803.png">
+<meta property="og:updated_time" content="2018-11-05T08:20:53.267Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Melvin の blog">
+<meta name="twitter:title" content="Linux初级运维（二） Linux文件系统及管理命令">
+<meta name="twitter:description" content="一、文件系统    1、根文件系统     rootfs：根文件系统：     2、/boot: 系统启动相关的文件，如内核、initd、以及grub （BootLoader）     3、/dev:设备文件     4、 /etc: 配置文件     5、/home：用户的家目录，每一个用户的家目录通常默认为/home/USERNAME    6、/root:管理员的家目录   7、/lib:库">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-791.png">
   
     <link rel="alternative" href="/atom.xml" title="Melvin の blog" type="application/atom+xml">
   
@@ -150,295 +168,179 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Linux初级运维（二）-Linux文件系统及管理命令" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Linux初级运维（二） Linux文件系统及管理命令
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/05/Linux初级运维（二）-Linux文件系统及管理命令/" class="archive-article-date">
+
+        
+        <a href="/2018/11/05/Linux初级运维（二）-Linux文件系统及管理命令/" class="archive-article-date">
   	<time datetime="2018-11-05T07:38:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-05</time>
 </a>
+        
+      </header>
+    
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+       
+       
+        <p>一、文件系统<br>    1、根文件系统<br>     rootfs：根文件系统：</p>
+<p><img src="/images/pasted-791.png" alt="upload successful"><br>    2、/boot: 系统启动相关的文件，如内核、initd、以及grub （BootLoader）</p>
+<p><img src="/images/pasted-792.png" alt="upload successful"><br>    3、/dev:设备文件</p>
+<p><img src="/images/pasted-793.png" alt="upload successful"><br>    4、 /etc: 配置文件</p>
+<p><img src="/images/pasted-794.png" alt="upload successful"><br>    5、/home：用户的家目录，每一个用户的家目录通常默认为/home/USERNAME<br>    6、/root:管理员的家目录<br>   7、/lib:库文件</p>
+<p><img src="/images/pasted-795.png" alt="upload successful"><br>    8、/media：挂载点目录，挂载移动设备<br>     /mnt:挂载点目录，挂载额外的临时文件系统。<br>      9、其他<br>     /opt:可选目录，第三方程序的安装目录<br>     proc：伪文件系统，内核映射文件<br>     /sys:伪文件系统，跟硬件设备相关的属性映射<br>      /tmp:临时文件 ，/var/tmp<br>      /var:可变化的文件<br>      /bin: 可执行文件，用户命令<br>      /sbin:管理命令<br>   10、删除命令：rm<br>           删除文件：rm<br>        -i：<br>        -f:强行删除<br>        -r：删除目录及目录下所有的文件<br>        rm -rf / :删除目录及目录下所有的文件  （此命令不要执行）<br>   11、移动文件：move<br>           mv SRC （源） DEST （目标）<br>      mv -t DEST  SRC<br>二、文本管理<br>    1、查看文本<br>    常用的查看文本命令有：cat  tac  more  less  head   tail<br>    （1）cat：连接并显示</p>
+<p><img src="/images/pasted-796.png" alt="upload successful"><br>     （2）分屏显示：more 、less<br>       more:支持向后翻<br>       less:支持 前翻、后翻，不会自动退出，按q退出。<br>       head：查看前n行<br>       tail：-n  查看后n行<br>        -f ：查看文件尾部，不退出 ，等待后续追加至此文件的新内容。<br>    2、文本处理命令<br>        常用的文本处理命令有：cut  join  sed   awk<br>    （1）文本排序：sort<br>            -n:数值排序<br>       -r：降序<br>       -t：字段分隔符<br>       -k：以哪个字段为关键字进行排序<br>       -u：排序后相同的行只显示一次<br>       -f：排序时忽略字符大小写</p>
+<p><img src="/images/pasted-797.png" alt="upload successful"><br>     （2）uniq：<br>     -c：显示文本中重复的次数<br>     -d：只显示重复的行<br>    （3）文本统计：wc（word count）<br>     -c：只显示字节数<br>     -l：只显示行数<br>     -w：只显示字符数<br>     -L：最后一行包含多少个字符</p>
+<p><img src="/images/pasted-798.png" alt="upload successful"><br>     （4）字符处理命令：tr -转换或删除字符<br>      tr [OPTION] … SET1 [SET2]<br>      tr ab AB<br>     tr -d ：删除出现在字符集中的所有字符<br>三、bash及其特性<br>     （1）shell :外壳<br>     GUI：Gnome，KDE，Xfce<br>     GLI：sh,csh,ksh,bash</p>
+<p><img src="/images/pasted-799.png" alt="upload successful"><br>     （2）bash的特性<br>     1.命令历史；2.管道、重定向；3.命令别名；4.命令行编辑 （）；5. 命令行展开；6.文件名通配；7.变量；8.编程；<br>    （3）命令行编辑<br>             Ctrl+a：跳转到命令行首<br>       Ctrl+e：跳转到命令行尾<br>       Ctrl+u：删除光标至命令行首的内容<br>       Ctrl+k：删除光标至命令行尾的内容<br>       Ctrl+ 左右箭头 ：向左右跳转一个词<br>       Ctrl+l ：清屏<br>     （4）命令历史：history<br>         查看命令历史：history<br>         history -c ：清空历史命令<br>         history -d 10 :删除第10条命令<br>         history -w:保存命令历史至历史文件中<br>     （5）命令历史使用技巧</p>
+<p><img src="/images/pasted-800.png" alt="upload successful"><br>四、命令别名<br>    alias   CMDALIAS=COMMAND  [options]  [arguments]</p>
+<p><img src="/images/pasted-801.png" alt="upload successful"><br>在shell中定义的别名仅在当前shell生命周期中有效，别名的有效范围为当前shell进程。</p>
+<p><img src="/images/pasted-802.png" alt="upload successful"><br>五、命令替换<br>     命令替换：$(COMMAND) , ‘COMMAND’<br>    把命令中某个子命令替换为其执行结果的过程</p>
+<p><img src="/images/pasted-803.png" alt="upload successful"><br>六、文件名通配<br>       文件名通配，globbing</p>
+<pre><code>* ：任意长度的任意字符
+? : 任意单个字符
+[]: 匹配指定范围内的任意单个字符   
+[^] :匹配指定范围之外的任意字符
+</code></pre>
+       
+      
+     </div>
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/05/Linux初级运维（二）-Linux文件系统及管理命令/">Linux初级运维（二） Linux文件系统及管理命令</a>
-    </h1>
-  
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
   </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/05/Linux初级运维（二）-Linux文件系统及管理命令/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/05/Linux初级运维（一）-Linux操作系统及常用命令/" class="archive-article-date">
-  	<time datetime="2018-11-05T05:50:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-05</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/05/Linux初级运维（一）-Linux操作系统及常用命令/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Linux初级运维（一） Linux操作系统及常用命令</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/05/Linux初级运维（一）-Linux操作系统及常用命令/">Linux初级运维（一） Linux操作系统及常用命令</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/04/Centos7-2-OpenVPN-2-4-4-easy-rsa-3-0-服务器搭建教程/" class="archive-article-date">
-  	<time datetime="2018-11-04T05:53:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/04/Centos7-2-OpenVPN-2-4-4-easy-rsa-3-0-服务器搭建教程/">Centos7.2 + OpenVPN-2.4.4 + easy-rsa-3.0 服务器搭建教程</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/04/ZABBIX（六）-zabbix-配置介绍/" class="archive-article-date">
-  	<time datetime="2018-11-04T05:41:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/04/ZABBIX（六）-zabbix-配置介绍/">ZABBIX（六） zabbix 配置介绍</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/04/ZABBIX（八）-zabbix-通知媒介/" class="archive-article-date">
-  	<time datetime="2018-11-04T05:35:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/04/ZABBIX（八）-zabbix-通知媒介/">ZABBIX（八） zabbix 通知媒介</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/04/ZABBIX（五）-zabbix-主机与组的配置/" class="archive-article-date">
-  	<time datetime="2018-11-04T05:31:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/04/ZABBIX（五）-zabbix-主机与组的配置/">ZABBIX（五） zabbix 主机与组的配置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/04/ZABBIX（四）zabbix-用户管理/" class="archive-article-date">
-  	<time datetime="2018-11-04T05:21:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/04/ZABBIX（四）zabbix-用户管理/">ZABBIX（四）zabbix 用户管理</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/04/ZABBIX（三）-zabbix支持的主要监控方式/" class="archive-article-date">
-  	<time datetime="2018-11-04T05:17:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/04/ZABBIX（三）-zabbix支持的主要监控方式/">ZABBIX（三） zabbix支持的主要监控方式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/04/ZABBIX（七）zabbix-选择适合的监控类型/" class="archive-article-date">
-  	<time datetime="2018-11-04T05:16:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/04/ZABBIX（七）zabbix-选择适合的监控类型/">ZABBIX（七）zabbix 选择适合的监控类型</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/04/Windows-系统下安装dig命令/" class="archive-article-date">
-  	<time datetime="2018-11-04T05:03:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/04/Windows-系统下安装dig命令/">Windows 系统下安装dig命令</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2018/11/page/2/">2</a><a class="page-number" href="/archives/2018/11/page/3/">3</a><a class="page-number" href="/archives/2018/11/page/4/">4</a><a class="extend next" rel="next" href="/archives/2018/11/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -467,8 +369,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
