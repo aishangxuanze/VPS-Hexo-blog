@@ -6,15 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | Melvin の blog</title>
+  <title>Linux初级运维（四） grep的用法及正则表达式 | Melvin の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Melvin の blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/page/5/index.html">
+  <meta name="description" content="一、grep的定义    Grep的全写：（global search regular expression（RE）and print out the line），全面搜索正则表达式并把行打印出来。是一个可以从文件或流中查找字符串的一个命令行工具，它可以通过使用正则表达式来更灵活的查找一个字符串，就是通过复杂的模式进行查找已满足你的需求。    grep是一种强大的文本搜索工具，它能使用正则表达式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux初级运维（四） grep的用法及正则表达式">
+<meta property="og:url" content="http://yoursite.com/2018/11/05/Linux初级运维（四）-grep的用法及正则表达式/index.html">
 <meta property="og:site_name" content="Melvin の blog">
+<meta property="og:description" content="一、grep的定义    Grep的全写：（global search regular expression（RE）and print out the line），全面搜索正则表达式并把行打印出来。是一个可以从文件或流中查找字符串的一个命令行工具，它可以通过使用正则表达式来更灵活的查找一个字符串，就是通过复杂的模式进行查找已满足你的需求。    grep是一种强大的文本搜索工具，它能使用正则表达式">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/pasted-816.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-817.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-818.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-819.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-820.png">
+<meta property="og:updated_time" content="2018-11-05T09:26:53.546Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Melvin の blog">
+<meta name="twitter:title" content="Linux初级运维（四） grep的用法及正则表达式">
+<meta name="twitter:description" content="一、grep的定义    Grep的全写：（global search regular expression（RE）and print out the line），全面搜索正则表达式并把行打印出来。是一个可以从文件或流中查找字符串的一个命令行工具，它可以通过使用正则表达式来更灵活的查找一个字符串，就是通过复杂的模式进行查找已满足你的需求。    grep是一种强大的文本搜索工具，它能使用正则表达式">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-816.png">
   
     <link rel="alternative" href="/atom.xml" title="Melvin の blog" type="application/atom+xml">
   
@@ -150,241 +160,170 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Linux初级运维（四）-grep的用法及正则表达式" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux初级运维（四） grep的用法及正则表达式
+    </h1>
+  
+
+        
+        <a href="/2018/11/05/Linux初级运维（四）-grep的用法及正则表达式/" class="archive-article-date">
+  	<time datetime="2018-11-05T09:08:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-05</time>
+</a>
+        
+      </header>
     
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+       
+       
+        <p>一、grep的定义<br>    Grep的全写：（global search regular expression（RE）and print out the line），全面搜索正则表达式并把行打印出来。是一个可以从文件或流中查找字符串的一个命令行工具，它可以通过使用正则表达式来更灵活的查找一个字符串，就是通过复杂的模式进行查找已满足你的需求。<br>    grep是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹配的行打印出来。Unix的grep家族包括grep、egrep、fgrep。<br>二、grep的语法及其用法<br>    grep [options] PATTERN [FILE…]<br>       -i ：表示忽略字符大小写<br>       –color ：加颜色</p>
+<p><img src="/images/pasted-816.png" alt="upload successful"><br>三、正则表达式<br>    正则表达式，又称规则表达式。（Regular Expression，在代码中常简写为regex、regexp或RE）。正则表达式通常被用来检索、替换那些符合某个（规则）的文本。<br>   正则表达式是对字符串操作的一种逻辑公式，就是用事先定义好的一些特定字符、及这些特定字符的组合，组成一个“规则字符串”，这个规则字符串用来表达对字符串的一种过滤逻辑。<br>    1、元字符<br>    （1） . : 匹配任意单个字符</p>
+<p><img src="/images/pasted-817.png" alt="upload successful"><br>     （2）表示字符个数的元字符</p>
+<pre><code>* ：表示匹配其前面的字符任意次
+. * : 任意长度的任意字符
+</code></pre><p><img src="/images/pasted-818.png" alt="upload successful"><br>     （3）问号的使用<br>    \？ ：匹配其前面的字符1次或0次<br>    {m,n} :匹配其前面的字符至少m次，至多n次<br>    （4）位置锚定<br>    ^ :锚定行首，此字符后面的任意内容必须出现在行首<br>    $ :锚定行尾，此字符前面的任意内容必须出现在行尾</p>
+<p><img src="/images/pasted-819.png" alt="upload successful"><br>     （5）分组</p>
+<p><img src="/images/pasted-820.png" alt="upload successful"><br>四、正则表达式<br>    正则表达式分为两类：Basic REGEXP （基本正则表达式） ； Extended REGEXP ：扩展正则表达式<br>    （1）基本正则表达式元字符：<br>       . ：任意单个字符<br>      [] :指定范围内的任意字符<br>      [^] ：指定范围外的任意单个字符<br>     次数匹配：<br>        <em>：表示匹配其前面的字符任意次<br>        \?：表示匹配其前的字符是可有可无的<br>        {m,n} :匹配其前面的字符至少m次，至多n次<br>    grep：使用基本正则表达式定义的模式来过滤文本的命令。<br>五、扩展正则表达式<br>         字符匹配：<br>     . ：匹配任意单个字符<br>     [] ：匹配指定范围内的任意单个字符<br>     [^]:匹配指定范围外的任意单个字符<br>        次数匹配：
+     </em>：表示匹配其前字符任意次<br>    ？：表示匹配其前字符0次或1次<br>    +：表示匹配其前字符至少1次<br>    {m,n} :匹配其前面的字符至少m次，至多n次<br>    位置锚定：<br>        ^ :锚定行首，此字符后面的任意内容必须出现在行首<br>        $ :锚定行尾，此字符前面的任意内容必须出现在行尾<br>          \&lt; 或\b :锚定词首，其后面的任意字符必须作为单词首部出现<br>        > 或 \b:锚定词尾，其前面的任意字符必须作为单词的尾部出现</p>
+
+       
+      
+     </div>
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/31/在vSphere-Client-使用模板部署虚拟机-系统硬盘空间扩展/" class="archive-article-date">
-  	<time datetime="2018-10-31T05:04:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/31/在vSphere-Client-使用模板部署虚拟机-系统硬盘空间扩展/">在vSphere Client 使用模板部署虚拟机 系统硬盘空间扩展</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
   </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/05/Linux初级运维（四）-grep的用法及正则表达式/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/安装虚拟机和windows-server-2012-系统操作文档/" class="archive-article-date">
-  	<time datetime="2018-10-31T00:35:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/05/Linux初级运维（三）-Linux用户权限及管理/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Linux初级运维（三） Linux用户权限及管理</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/安装虚拟机和windows-server-2012-系统操作文档/">安装虚拟机和windows server 2012 系统操作文档</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/VM-创建Centos-7-操作系统及防火墙配置/" class="archive-article-date">
-  	<time datetime="2018-10-30T12:35:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/VM-创建Centos-7-操作系统及防火墙配置/">VM 创建Centos 7 操作系统及防火墙配置</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/Windows-10-系统-PyCharm软件的安装、激活、汉化-详细教程/" class="archive-article-date">
-  	<time datetime="2018-10-30T11:42:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/Windows-10-系统-PyCharm软件的安装、激活、汉化-详细教程/">Windows 10 系统 PyCharm软件的安装、激活、汉化 详细教程</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/Windows10-64位安装Python-3-6-4/" class="archive-article-date">
-  	<time datetime="2018-10-30T11:30:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/Windows10-64位安装Python-3-6-4/">Windows10 64位安装Python 3.6.4</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/Linux系统常用命令/" class="archive-article-date">
-  	<time datetime="2018-10-30T09:40:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/Linux系统常用命令/">Linux系统常用命令</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/Mysql-学习笔记/" class="archive-article-date">
-  	<time datetime="2018-10-30T08:15:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/Mysql-学习笔记/">Mysql 学习笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/25/hello-world/" class="archive-article-date">
-  	<time datetime="2018-10-25T07:59:52.692Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/25/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2018/page/4/">&laquo; Prev</a><a class="page-number" href="/archives/2018/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2018/page/3/">3</a><a class="page-number" href="/archives/2018/page/4/">4</a><span class="page-number current">5</span>
-    </nav>
   
 
 
@@ -413,8 +352,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
