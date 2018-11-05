@@ -6,15 +6,29 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Melvin の blog</title>
+  <title>Linux初级运维（六） bash脚本编程（条件判断） | Melvin の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Melvin の blog">
-<meta property="og:url" content="http://yoursite.com/archives/page/3/index.html">
+  <meta name="description" content="一、bash中如何实现条件判断    1、条件测试类型     整数测试     字符测试     文件测试   2、条件测试的表达式             [expression]        [[expression]]        test expression   3、整数比较            -eq：测试两个整数是否相等：比如 $A -eq $B         -ne :测">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux初级运维（六） bash脚本编程（条件判断）">
+<meta property="og:url" content="http://yoursite.com/2018/11/05/Linux初级运维（六）-bash脚本编程（条件判断）/index.html">
 <meta property="og:site_name" content="Melvin の blog">
+<meta property="og:description" content="一、bash中如何实现条件判断    1、条件测试类型     整数测试     字符测试     文件测试   2、条件测试的表达式             [expression]        [[expression]]        test expression   3、整数比较            -eq：测试两个整数是否相等：比如 $A -eq $B         -ne :测">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/pasted-830.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-831.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-832.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-833.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-834.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-835.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-836.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-837.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-838.png">
+<meta property="og:updated_time" content="2018-11-05T12:23:53.684Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Melvin の blog">
+<meta name="twitter:title" content="Linux初级运维（六） bash脚本编程（条件判断）">
+<meta name="twitter:description" content="一、bash中如何实现条件判断    1、条件测试类型     整数测试     字符测试     文件测试   2、条件测试的表达式             [expression]        [[expression]]        test expression   3、整数比较            -eq：测试两个整数是否相等：比如 $A -eq $B         -ne :测">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-830.png">
   
     <link rel="alternative" href="/atom.xml" title="Melvin の blog" type="application/atom+xml">
   
@@ -150,295 +164,171 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Linux初级运维（六）-bash脚本编程（条件判断）" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux初级运维（六） bash脚本编程（条件判断）
+    </h1>
+  
+
+        
+        <a href="/2018/11/05/Linux初级运维（六）-bash脚本编程（条件判断）/" class="archive-article-date">
+  	<time datetime="2018-11-05T10:26:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-05</time>
+</a>
+        
+      </header>
     
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+       
+       
+        <p>一、bash中如何实现条件判断<br>    1、条件测试类型<br>     整数测试<br>     字符测试<br>     文件测试<br>   2、条件测试的表达式<br>             [expression]<br>        [[expression]]<br>        test expression<br>   3、整数比较<br>            -eq：测试两个整数是否相等：比如 $A -eq $B</p>
+<p><img src="/images/pasted-830.png" alt="upload successful"><br>        -ne :测试两个整数是否不等，不等，为真，相等为<br>      -gt ：测试一个数是否大于另一个数：大于为真，否则为假<br>      -lt：测试一个数是否小于另一个数：小于为真，否则为假<br>      -ge：大于或等于<br>      -le：小于或等于<br>二、bash命令之间的逻辑关系<br>    逻辑与（&amp;&amp;）：只要一个为假，则结果一定为假<br>   （当第一个条件为假时，第二个条件不用再判断，最终结果已经有；当第一个条件为真时，第二个条件必须得判断。）</p>
+<p><img src="/images/pasted-831.png" alt="upload successful"><br>    逻辑或（||）：只要一个为真，则结果一定为真<br>   例子：如果用户user6不存在，就添加用户user6<br>   两种表达方式：（1）！id user6 &amp;&amp; useradd user6    （2）id user6 || useradd user6<br>    1、如果用户存在，就显示用户已存在，否则，就添加用户：<br>      id user1 &amp;&amp; echo “user1 exists.” || useradd user1<br>     如果用户不存在，就添加，否则，显示用户已存在：<br>     ！ id user1 &amp;&amp; useradd user1 || echo “user1 exists.”<br>     如果用户不存在，添加并且给密码，否则，显示其已经存在<br>     ！id user1 &amp;&amp; useradd user1 &amp;&amp; echo “user1” | passwd –stdin user1 || echo “user1 exists.”<br>    2、练习题：<br>    （1）、添加3个用户user1，user2，user3；但要先判断用户是否存在，不存在而后在添加<br>    （2）、添加完成后，显示一种添加了几个用户；当然，不能包括因为事先存在而没有添加的。<br>    （3）、最后显示当前系统上共有多少个用户。</p>
+<p><img src="/images/pasted-832.png" alt="upload successful"><br>    3、练习题<br>      写一个脚本，完成以下要求：<br>     （1）如果其UID为0，就显示为管理员；<br>     （2）否则，就显示其为普通用户；</p>
+<p><img src="/images/pasted-833.png" alt="upload successful"><br>三、条件判断，控制结构<br>    1、单分支if语句</p>
+<p><img src="/images/pasted-834.png" alt="upload successful"><br>    2、双分支的if语句</p>
+<p><img src="/images/pasted-835.png" alt="upload successful"><br>四、shell中进行算术运算<br>    （1）let 算术运算表达式<br>            A=3<br>            B=6<br>        let C=$A+$B<br>    （2）$[算术运算表达式]<br>            A=3<br>            B=6<br>            C=[$A+$B]</p>
+<p><img src="/images/pasted-836.png" alt="upload successful"><br>     （3）$((算术运算表达式))<br>            A=3<br>            B=6<br>            C=(($A+$B))<br>    （4）expr 算术运算表达式，表达式中各操作数及运算符之间要有空格，而且要使用命令引用。<br>           C=<code>expr $A + $B</code><br>五、练习题<br>    1、写一个脚本<br>    判断当前系统上是否有用户的默认shell为bash；<br>    如果有，就显示有多少个这类用户；否则，就显示没有这类用户。</p>
+<p><img src="/images/pasted-837.png" alt="upload successful"><br>    2、写一个脚本<br>   判断当前系统上是否有用户得默认shell为bash；<br>   如果有，就显示其中一个的用户名；否则，就显示没有这类用户。</p>
+<p><img src="/images/pasted-838.png" alt="upload successful"></p>
+
+       
+      
+     </div>
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/02/Nginx（四）Location配置详解之精准匹配/" class="archive-article-date">
-  	<time datetime="2018-11-02T07:47:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/02/Nginx（四）Location配置详解之精准匹配/">Nginx（四）Location配置详解之精准匹配</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
   </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/05/Linux初级运维（六）-bash脚本编程（条件判断）/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/02/Nginx（三）日志管理-日志自动备份/" class="archive-article-date">
-  	<time datetime="2018-11-02T07:28:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/05/Linux初级运维（五）-bash脚本编程（变量、变量类型）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Linux初级运维（五） bash脚本编程（变量、变量类型）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/02/Nginx（三）日志管理-日志自动备份/">Nginx（三）日志管理 日志自动备份</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/02/Nginx（二）-虚拟主机配置/" class="archive-article-date">
-  	<time datetime="2018-11-02T07:06:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/02/Nginx（二）-虚拟主机配置/">Nginx（二） 虚拟主机配置</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/02/bash常用命令与技巧/" class="archive-article-date">
-  	<time datetime="2018-11-02T06:53:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/02/bash常用命令与技巧/">bash常用命令与技巧</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/02/Nginx（一）安装配置/" class="archive-article-date">
-  	<time datetime="2018-11-02T06:23:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/02/Nginx（一）安装配置/">Nginx（一）安装配置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/Git-安装和使用/" class="archive-article-date">
-  	<time datetime="2018-11-02T03:21:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/Git-安装和使用/">Git 安装和使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/从Git玩转GitHub/" class="archive-article-date">
-  	<time datetime="2018-11-02T02:21:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/从Git玩转GitHub/">从Git玩转GitHub</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/Centos7-2-操作系统安装配置Samba服务文档/" class="archive-article-date">
-  	<time datetime="2018-11-02T01:47:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/Centos7-2-操作系统安装配置Samba服务文档/">Centos7.2 操作系统安装配置Samba服务文档</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/Foxmail-邮箱配置-腾讯企业邮箱/" class="archive-article-date">
-  	<time datetime="2018-11-02T01:16:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/Foxmail-邮箱配置-腾讯企业邮箱/">Foxmail 邮箱配置 腾讯企业邮箱</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/Wireshark-在Windows-下的安装/" class="archive-article-date">
-  	<time datetime="2018-11-01T13:54:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/Wireshark-在Windows-下的安装/">Wireshark 在Windows 下的安装</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/2/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><a class="extend next" rel="next" href="/archives/page/4/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -467,8 +357,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
