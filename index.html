@@ -152,6 +152,80 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Centos-7-搭建-wordpress" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/06/Centos-7-搭建-wordpress/">Centos 7 搭建 wordpress</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/06/Centos-7-搭建-wordpress/" class="archive-article-date">
+  	<time datetime="2018-11-06T08:52:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-06</time>
+</a>
+        
+      </header>
+    
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+       
+       
+	<p>一、wordpress简介<br>    1、简单诠释<br>   WordPress是使用PHP语言开发的博客平台，用户可以在支持PHP和MySQL数据库的服务上架设属于自己的网站。也可以把WordPress当做一个内容管理系统（CMS）来使用。<br>   WordPress是一款个人博客系统，并逐步演化成一款内容管理系统软件，它是使用PHP语言和MySQL数据库开发的。用户可以在支持 PHP 和 MySQL数据库的服务器上使用自己的博客。<br>    WordPress官方支持中文版，同时有爱好者开发的第三方中文语言包，如wopus中文语言包。WordPress拥有成千上万个各式插件和不计其数的主题模板样式。<br>    2、优缺点<br>    （1）优点：<br>   WordPress 功能强大、扩展性强，这主要得益于其插件众多，易于扩充功能，基本上一个完整网站该有的功能，通过其第三方插件都能实现所有功能；<br>   wordpress搭建的博客对seo搜索引擎友好，收录也快，排名靠前；<br>   适合DIY，如果你是喜欢丰富内容的网站，那么wordpress可以很好地符合你的胃口。<br>   主题很多，网站上一大片都是wordpress的主题，各色各样，应有尽有！<br>   wordpress备份和网站转移比较方便，原站点使用站内工具导出后，使用WordPress Importer插件就能方便地将内容导入新网站。<br>   wordpress有强大的社区支持，有上千万的开发者贡献和审查wordpress，所以wordpress是安全并且活跃的。<br>     （2）缺点：<br>   wordpress源码系统初始内容基本只是一个框架，需要时间自己搭建；<br>   插件虽多，但是不能安装太多插件，否则会拖累网站速度和降低用户体验；<br>   服务器空间选择自由较小！<br>   静态化较差，确切地说是真正静态化做得不好，如果要想对整个网站生成真正静态化页面，还做不好，最多只能生成首页和文章页静态页面，所以只能对整站实现伪静态化!<br>   wordpress的博客程序定位，简单的数据库层等都注定了他不能适应大数据。<br>    3、软件功能<br>    （1）介绍：<br>   因为Wordpress强大的扩展性，很多网站已经开始使用Wordpress作为内容管理系统来架设商业网站。WordPress提供的功能包括：<br>    1．文章发布、分类、归档、收藏，统计阅读次数。<br>    2．提供文章、评论、分类等多种形式的RSS聚合。<br>    3．提供链接的添加、归类功能。<br>    4．支持评论的管理，垃圾信息过滤功能。<br>    5．支持多样式CSS和PHP程序的直接编辑、修改。<br>    6．在Blog系统外，方便的添加所需页面。<br>    7．通过对各种参数进行设置，使Blog更具个性化。<br>    8．在某些插件的支持下实现静态html页面生成（如WP-SUPER-CACHE）。<br>    9．通过选择不同主题，方便地改变页面的显示效果。<br>    10．通过添加插件，可提供多种特殊的功能。<br>    11．支持Trackback和pingback。<br>    12．支持针对某些其它blog软件、平台的导入功能。<br>    13．支持会员注册登录，后台管理功能。<br>     （2）特色：<br>      所见即所得的文章编辑器<br>      模板系统，也成为主题系统<br>      统一的链接管理功能<br>      为搜索引擎而优化的永久链接（PermaLink）系统<br>      支持使用扩充其功能的插件<br>      对于文章可以进行嵌套的分类，同一文章也可属于多个分类<br>      TrackBack和Pingback的功能<br>      能产生适当的文字的格式和式样的排版滤镜<br>      生成和使用静态页面的功能<br>      多作者共同写作的功能<br>      可以保存访问过网志的用户列表<br>      可以禁止来自一定IP段的用户的访问<br>      支持使用标签（Tags）<br>二、搭建网站流程<br>    1、注册域名<br>    需要先注册自己的域名，可以通过阿里云、腾讯云等渠道注册域名，一般使用的域名是 xx.com ,费用大概不到70元/年。<br>    2、申请虚拟主机<br>   能够申请虚拟主机运营商很多。国内虚拟主机的特点是速度快，但是每年的费用比较高，空间一般比较小；国外也有很多运营商可以申请虚拟主机，国外虚拟主机的特点是主机便宜，且空间大多没有限制，但是在国内连接的速度比国内主机慢。如何取舍就 看大家对于自己博客的定位了。如果只是用博客写写文章的话，推荐还是用国内的主机，如果是建论坛或者资源站点，经常需要上传附件的话，最好选用国外的不限空间的主机。<br>   3、在虚拟主机上绑定自己的域名<br>  虚拟主机绑定域名，可以通过控制面板绑定域名。<br>      4、下载WordPress程序<br>   需要在WordPress官网上下载最新的WordPress程序。<br>    <a href="https://cn.wordpress.org/" target="_blank" rel="noopener">https://cn.wordpress.org/</a><br>   5、修改域名的DNS解析<br>   想通过域名能够访问自己的虚拟服务器，需要进行dns解析dns解析就是想域名解析为IP地址。域名注册商都会提供一个域名管理系统，在里面可以修改自己域名的DNS解析。将DNS解析到自己购买的虚拟主机上就可以了。虚拟主机的地址在虚拟主机提供商的控制面板上可以查到，一般在绑定域名的页面会显示。<br>   6、创建WordPress 数据库<br>   使用国外的虚拟主机，可以创建自己的数据库。而国内的虚拟主机一般不能创建数据库，需要另外购买。<br>   使用操作系统里的数据库，需要创建数据库  用户名 密码。<br>   7、修改WordPress的安装配置文件<br>   修改WordPress程序包中的wp-config-sample.php文件，将主机的IP地址、数据库名称、用户名、密码填入相应的位置，以下具体介绍。并重名为wp-config.php<br>   8、访问域名或IP地址，进行WordPress安装。填写博客信息及邮箱。<br>三、服务器环境（使用的国外虚拟主机）<br>     服务器操作系统：Centos 7.3；<br>    博客部署服务器： Apache  HTTP；<br>    数据库：MySQL；<br>    框架：WordPress<br>四、服务器搭建步骤<br>    1、查看服务器操作系统<br>    cat /etc/redhat-release</p>
+	
+	 <p class="article-more-link">
+	  <a class="article-more-a" href="/2018/11/06/Centos-7-搭建-wordpress/#more">more >></a>
+	 </p>
+	
+       
+      
+     </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/06/Centos-7-搭建-wordpress/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Linux初级运维（八）-sed命令的使用及for循环" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -789,80 +863,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/11/05/Linux初级运维（四）-grep的用法及正则表达式/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Linux初级运维（三）-Linux用户权限及管理" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/05/Linux初级运维（三）-Linux用户权限及管理/">Linux初级运维（三） Linux用户权限及管理</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/05/Linux初级运维（三）-Linux用户权限及管理/" class="archive-article-date">
-  	<time datetime="2018-11-05T08:30:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-05</time>
-</a>
-        
-      </header>
-    
-    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
-   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-       
-       
-	<p>  对于Linux用户的权限管理从以下几个方面介绍：用户、组、权限<br>  用户登录系统，发起进程，不同的 用户对于系统有不同的权限，组使得多个用户可以拥有相同权限的集合<br>一、权限<br>    权限主要有以下三种：<br>     r：可读权限，用户只具有查看的权限；<br>     w：可写权限，用户可以对文件进行编辑等权限<br>     x：可执行权限，用户可以对文件有执行的权限，能够直接运行文件<br>二、文件的权限<br>     r：可读，可以使用类似cat等命令查看文件内容；<br>    w:可写，可以编辑或删除此文件<br>    x：可执行，exacutable，可以命令提示符下当作命令提交给内核运行。</p>
-	
-	 <p class="article-more-link">
-	  <a class="article-more-a" href="/2018/11/05/Linux初级运维（三）-Linux用户权限及管理/#more">more >></a>
-	 </p>
-	
-       
-      
-     </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/05/Linux初级运维（三）-Linux用户权限及管理/">展开全文 >></a>
         </p>
       
 
