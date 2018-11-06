@@ -152,6 +152,80 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Centos7-5系统使用pptpd搭建服务器" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/05/Centos7-5系统使用pptpd搭建服务器/">Centos7.5系统使用pptpd搭建服务器</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/05/Centos7-5系统使用pptpd搭建服务器/" class="archive-article-date">
+  	<time datetime="2018-11-05T12:28:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-05</time>
+</a>
+        
+      </header>
+    
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+       
+       
+	<p>一、VPN介绍<br>    VPN（Virtual Private Network），虚拟专用网络，主要是在公用网络上建立专用网络，进行加密通讯。在企业网络中得到广泛应用。VPN网关通过对数据包的加密和数据包目标地址的转换实现远程访问。VPN有多种分类方式，主要是按照协议进行分类。<br>   VPN协议主要分为ppp协议、pptp协议、l2tp协议等。<br>  （1）、PPP协议<br>      ppp协议支持多种网络协议，可以把IP、IPX、AppleTalk或NetBEUI的数据包封装在PPP包中，将整个报文封装在PPTP（Point-to-Point Tunneling Protocol）隧道协议包中，再嵌入IP报文或帧中继或ATM中进行传输。<br>  （2）、PPTP协议<br>   PPTP（Point to Point Tunneling Protocol），即点对点隧道协议。该协议是在PPP协议的基础上开发的一种新的增强型安全协议，支持多协议虚拟专用网，可以通过密码验证协议，可扩展认证协议等方法增强安全性。远程用户可以通过ISP、直接连接Internet 或者其他网络安全地访问企业网；<br>   PPTP能够将PPP（点到点协议）帧封装成IP数据包，以便能够在基于IP的互联网上进程传输。PPTP使用TCP是实现隧道的创建、维护与终止，并使用GRE（通用路由封装）将PPP帧封装成隧道数据。被封装后的PPP帧的有效载荷可以被加密或压缩；<br>   PPTP通信过程中需要建立两种连接，一种是控制连接，一种是数据连接。控制连接用来协议通信过程中的参数和进行数据连接的维护。而真正的数据通信由数据连接完成。<br>   VPN工作原理图：</p>
+	
+	 <p class="article-more-link">
+	  <a class="article-more-a" href="/2018/11/05/Centos7-5系统使用pptpd搭建服务器/#more">more >></a>
+	 </p>
+	
+       
+      
+     </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/05/Centos7-5系统使用pptpd搭建服务器/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Linux初级运维（六）-bash脚本编程（条件判断）" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -818,83 +892,9 @@
 
 
   
-    <article id="post-ZABBIX（五）-zabbix-主机与组的配置" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/04/ZABBIX（五）-zabbix-主机与组的配置/">ZABBIX（五） zabbix 主机与组的配置</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/04/ZABBIX（五）-zabbix-主机与组的配置/" class="archive-article-date">
-  	<time datetime="2018-11-04T05:31:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-04</time>
-</a>
-        
-      </header>
-    
-    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
-   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-       
-       
-	<p>   在zabbix中，主机（host）的定义不单单指类Linux、Windows等服务器，还包括路由器、交换机等其他设备。在此我们将单独介绍各类设备主机的添加方法。<br>一、创建主机方法<br>    1、新建主机<br>     “配置”-“主机”-“创建主机”：<br>     具体配置方法，在我上次的博客ZABBIX（二）zabbix监控第一台服务器中有具体的方法<br>     博客地址：<a href="http://blog.51cto.com/5001660/2136303" target="_blank" rel="noopener">http://blog.51cto.com/5001660/2136303</a><br>    2、克隆/完全克隆主机<br>     添加新的主机还可以通过已经添加的主机进行克隆或完全克隆方式进行添加新的主机。当使用克隆的方式创建一个新的主机的时候，只保留原来主机上配置的参数和链接的模板；使用完全克隆的方式添加新的主机，除了保留原来主机上的配置的参数和链接的模板之外还会保留在该主机上配置的监控项组、监控项、触发器、图形、low-level discovery 和 web场景。<br>      通过克隆或完全克隆的方式创建一个新主机后，克隆的源主机配置发生变化，例如改变了监控项收集的时间，这种变化只对源主机有效，不会影响克隆后的新主机。直接在主机页面点击源主机名进入主机配置页面，在主机标签中页面的最下方点击克隆或完全克隆按钮就可以完成克隆。<br> 二、主机参数<br>     1、当新添加一台主机时，需要输入一些被添加的主机的基本信息和参数设置：</p>
-	
-	 <p class="article-more-link">
-	  <a class="article-more-a" href="/2018/11/04/ZABBIX（五）-zabbix-主机与组的配置/#more">more >></a>
-	 </p>
-	
-       
-      
-     </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/04/ZABBIX（五）-zabbix-主机与组的配置/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 

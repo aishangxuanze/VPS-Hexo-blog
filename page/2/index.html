@@ -152,6 +152,80 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ZABBIX（五）-zabbix-主机与组的配置" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/04/ZABBIX（五）-zabbix-主机与组的配置/">ZABBIX（五） zabbix 主机与组的配置</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/04/ZABBIX（五）-zabbix-主机与组的配置/" class="archive-article-date">
+  	<time datetime="2018-11-04T05:31:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-04</time>
+</a>
+        
+      </header>
+    
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+       
+       
+	<p>   在zabbix中，主机（host）的定义不单单指类Linux、Windows等服务器，还包括路由器、交换机等其他设备。在此我们将单独介绍各类设备主机的添加方法。<br>一、创建主机方法<br>    1、新建主机<br>     “配置”-“主机”-“创建主机”：<br>     具体配置方法，在我上次的博客ZABBIX（二）zabbix监控第一台服务器中有具体的方法<br>     博客地址：<a href="http://blog.51cto.com/5001660/2136303" target="_blank" rel="noopener">http://blog.51cto.com/5001660/2136303</a><br>    2、克隆/完全克隆主机<br>     添加新的主机还可以通过已经添加的主机进行克隆或完全克隆方式进行添加新的主机。当使用克隆的方式创建一个新的主机的时候，只保留原来主机上配置的参数和链接的模板；使用完全克隆的方式添加新的主机，除了保留原来主机上的配置的参数和链接的模板之外还会保留在该主机上配置的监控项组、监控项、触发器、图形、low-level discovery 和 web场景。<br>      通过克隆或完全克隆的方式创建一个新主机后，克隆的源主机配置发生变化，例如改变了监控项收集的时间，这种变化只对源主机有效，不会影响克隆后的新主机。直接在主机页面点击源主机名进入主机配置页面，在主机标签中页面的最下方点击克隆或完全克隆按钮就可以完成克隆。<br> 二、主机参数<br>     1、当新添加一台主机时，需要输入一些被添加的主机的基本信息和参数设置：</p>
+	
+	 <p class="article-more-link">
+	  <a class="article-more-a" href="/2018/11/04/ZABBIX（五）-zabbix-主机与组的配置/#more">more >></a>
+	 </p>
+	
+       
+      
+     </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/04/ZABBIX（五）-zabbix-主机与组的配置/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-ZABBIX（四）zabbix-用户管理" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -818,83 +892,9 @@
 
 
   
-    <article id="post-Nginx（五）Rewrite语法介绍" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/02/Nginx（五）Rewrite语法介绍/">Nginx（五）Rewrite语法介绍</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/02/Nginx（五）Rewrite语法介绍/" class="archive-article-date">
-  	<time datetime="2018-11-02T07:53:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
-</a>
-        
-      </header>
-    
-    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
-   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-       
-       
-	<p>一、rewrite模块介绍 （Nginx_http_rewrite_module）<br>    nginx通过ngx_http_rewriet_module模块支持url重写、支持if条件判断，但不支持else。另外该模块需要PCRE支持，应该在编译nginx时指定PCRE支持。根据相关变量重定向和选择不同的配置，从一个location跳转到另一个location，不过这样的循环最多可执行10次，超过后Nginx将返回500错误。同时，重写模块包含set指令，来创建新的变量并设其值，这在有些情景下是有用的，如记录条件标识、传递参数到其他location、记录做了什么等等。学习rewrite之前要对正则表达式很熟悉，以下列出一些常用的正则表达式元字符：<br>         .  ：匹配除换行符以外的任意字符。<br>        ？：重复0次或1次</p>
-	
-	 <p class="article-more-link">
-	  <a class="article-more-a" href="/2018/11/02/Nginx（五）Rewrite语法介绍/#more">more >></a>
-	 </p>
-	
-       
-      
-     </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/02/Nginx（五）Rewrite语法介绍/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
