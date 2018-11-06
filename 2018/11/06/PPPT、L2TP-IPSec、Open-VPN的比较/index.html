@@ -6,15 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Melvin の blog</title>
+  <title>PPPT、L2TP/IPSec、Open-VPN的比较 | Melvin の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Melvin の blog">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+  <meta name="description" content="一、前言   很多人需要涉及到远程办公，或者出差期间需要访问公司的网络资源，个人研究学习了一下几种远程访问公网内部网络资源的方法：PPTP、L2TP/IPSec、OPEN-V-PN。   由于网络对V-P-N这个词屏蔽的比较严重，以下信息以图片的形式提供，主要从三个方面进行对比：       基本概念       优缺点       协议的选择二、基本概念    1、PPTP（Point to P">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PPPT、L2TP&#x2F;IPSec、Open-VPN的比较">
+<meta property="og:url" content="http://yoursite.com/2018/11/06/PPPT、L2TP-IPSec、Open-VPN的比较/index.html">
 <meta property="og:site_name" content="Melvin の blog">
+<meta property="og:description" content="一、前言   很多人需要涉及到远程办公，或者出差期间需要访问公司的网络资源，个人研究学习了一下几种远程访问公网内部网络资源的方法：PPTP、L2TP/IPSec、OPEN-V-PN。   由于网络对V-P-N这个词屏蔽的比较严重，以下信息以图片的形式提供，主要从三个方面进行对比：       基本概念       优缺点       协议的选择二、基本概念    1、PPTP（Point to P">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/pasted-962.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-963.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-964.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-965.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-966.png">
+<meta property="og:updated_time" content="2018-11-06T06:31:09.029Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Melvin の blog">
+<meta name="twitter:title" content="PPPT、L2TP&#x2F;IPSec、Open-VPN的比较">
+<meta name="twitter:description" content="一、前言   很多人需要涉及到远程办公，或者出差期间需要访问公司的网络资源，个人研究学习了一下几种远程访问公网内部网络资源的方法：PPTP、L2TP/IPSec、OPEN-V-PN。   由于网络对V-P-N这个词屏蔽的比较严重，以下信息以图片的形式提供，主要从三个方面进行对比：       基本概念       优缺点       协议的选择二、基本概念    1、PPTP（Point to P">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-962.png">
   
     <link rel="alternative" href="/atom.xml" title="Melvin の blog" type="application/atom+xml">
   
@@ -150,295 +160,167 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-PPPT、L2TP-IPSec、Open-VPN的比较" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      PPPT、L2TP/IPSec、Open-VPN的比较
+    </h1>
+  
+
+        
+        <a href="/2018/11/06/PPPT、L2TP-IPSec、Open-VPN的比较/" class="archive-article-date">
+  	<time datetime="2018-11-06T06:26:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-06</time>
+</a>
+        
+      </header>
     
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+       
+       
+        <p>一、前言<br>   很多人需要涉及到远程办公，或者出差期间需要访问公司的网络资源，个人研究学习了一下几种远程访问公网内部网络资源的方法：PPTP、L2TP/IPSec、OPEN-V-PN。<br>   由于网络对V-P-N这个词屏蔽的比较严重，以下信息以图片的形式提供，主要从三个方面进行对比：<br>       基本概念<br>       优缺点<br>       协议的选择<br>二、基本概念<br>    1、PPTP（Point to Point Tunneling Protocol,点对点隧道协议）默认端口：1723<br>    搭建服务器教程：<a href="http://blog.51cto.com/5001660/2177407" target="_blank" rel="noopener">http://blog.51cto.com/5001660/2177407</a></p>
+<p><img src="/images/pasted-962.png" alt="upload successful"><br>    2、L2TP（Layer 2 Tunneling Protocol ，第二层隧道协议）<br>    搭建服务器详细教程：<a href="http://blog.51cto.com/5001660/2296490" target="_blank" rel="noopener">http://blog.51cto.com/5001660/2296490</a></p>
+<p><img src="/images/pasted-963.png" alt="upload successful"><br>    3、OpenVPN<br>    搭建服务器详细教程：<a href="http://blog.51cto.com/5001660/2172920" target="_blank" rel="noopener">http://blog.51cto.com/5001660/2172920</a><br>    （备注：由于V-P-N被屏蔽，凡出现的 xxx，均是 V-P-N 这三个字母被屏蔽）</p>
+<p><img src="/images/pasted-964.png" alt="upload successful"><br>三、优缺点对比</p>
+<p><img src="/images/pasted-965.png" alt="upload successful"><br>四、协议的选择</p>
+<p><img src="/images/pasted-966.png" alt="upload successful"></p>
+
+       
+      
+     </div>
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/04/ZABBIX（六）-zabbix-配置介绍/" class="archive-article-date">
-  	<time datetime="2018-11-04T05:41:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/04/ZABBIX（六）-zabbix-配置介绍/">ZABBIX（六） zabbix 配置介绍</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
   </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/06/PPPT、L2TP-IPSec、Open-VPN的比较/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/04/ZABBIX（八）-zabbix-通知媒介/" class="archive-article-date">
-  	<time datetime="2018-11-04T05:35:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-04</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/05/Centos7-5系统使用L2TP-IPSec-搭建服务器/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Centos7.5系统使用L2TP/IPSec 搭建服务器</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/04/ZABBIX（八）-zabbix-通知媒介/">ZABBIX（八） zabbix 通知媒介</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/04/ZABBIX（五）-zabbix-主机与组的配置/" class="archive-article-date">
-  	<time datetime="2018-11-04T05:31:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/04/ZABBIX（五）-zabbix-主机与组的配置/">ZABBIX（五） zabbix 主机与组的配置</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/04/ZABBIX（四）zabbix-用户管理/" class="archive-article-date">
-  	<time datetime="2018-11-04T05:21:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/04/ZABBIX（四）zabbix-用户管理/">ZABBIX（四）zabbix 用户管理</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/04/ZABBIX（三）-zabbix支持的主要监控方式/" class="archive-article-date">
-  	<time datetime="2018-11-04T05:17:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/04/ZABBIX（三）-zabbix支持的主要监控方式/">ZABBIX（三） zabbix支持的主要监控方式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/04/ZABBIX（七）zabbix-选择适合的监控类型/" class="archive-article-date">
-  	<time datetime="2018-11-04T05:16:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/04/ZABBIX（七）zabbix-选择适合的监控类型/">ZABBIX（七）zabbix 选择适合的监控类型</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/04/Windows-系统下安装dig命令/" class="archive-article-date">
-  	<time datetime="2018-11-04T05:03:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/04/Windows-系统下安装dig命令/">Windows 系统下安装dig命令</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/03/Centos7-2-安装和配置Tomcat8/" class="archive-article-date">
-  	<time datetime="2018-11-04T03:30:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/03/Centos7-2-安装和配置Tomcat8/">Centos7.2 安装和配置Tomcat8</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/03/ZABBIX（二）zabbix-监控第一台服务器/" class="archive-article-date">
-  	<time datetime="2018-11-04T03:04:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/03/ZABBIX（二）zabbix-监控第一台服务器/">ZABBIX（二）zabbix 监控第一台服务器</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/02/ZABBIX（一）Centos7-安装Zabbix-3-5/" class="archive-article-date">
-  	<time datetime="2018-11-02T11:15:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/02/ZABBIX（一）Centos7-安装Zabbix-3-5/">ZABBIX（一）Centos7 安装Zabbix 3.5</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/6/">6</a><a class="extend next" rel="next" href="/archives/page/3/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -467,8 +349,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
