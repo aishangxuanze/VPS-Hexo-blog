@@ -6,15 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Melvin の blog</title>
+  <title>Linux初级运维（九）——vim编辑器 | Melvin の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Melvin の blog">
-<meta property="og:url" content="http://yoursite.com/archives/page/4/index.html">
+  <meta name="description" content="一、VIM介绍    vim是一个类似于vi的著名的功能强大的、高度可定制的文本编辑器，在vi的基础上改进和增加了很多特性。vim是自由软件。vim是从vi发展出来的一个文本编辑器。代码补全、编译及错误跳转等方面编程的功能特别丰富，在程序员中被广泛使用，和Emacs并列成为类Unix系统用户最喜欢的文本编辑器。    主要功能：根据设定可以和原始vi完全兼容；多缓冲编辑、多tab编辑；任意个数的分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux初级运维（九）——vim编辑器">
+<meta property="og:url" content="http://yoursite.com/2018/11/09/Linux初级运维（九）——vim编辑器/index.html">
 <meta property="og:site_name" content="Melvin の blog">
+<meta property="og:description" content="一、VIM介绍    vim是一个类似于vi的著名的功能强大的、高度可定制的文本编辑器，在vi的基础上改进和增加了很多特性。vim是自由软件。vim是从vi发展出来的一个文本编辑器。代码补全、编译及错误跳转等方面编程的功能特别丰富，在程序员中被广泛使用，和Emacs并列成为类Unix系统用户最喜欢的文本编辑器。    主要功能：根据设定可以和原始vi完全兼容；多缓冲编辑、多tab编辑；任意个数的分">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1122.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1123.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1124.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1125.png">
+<meta property="og:updated_time" content="2018-11-09T09:56:36.795Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Melvin の blog">
+<meta name="twitter:title" content="Linux初级运维（九）——vim编辑器">
+<meta name="twitter:description" content="一、VIM介绍    vim是一个类似于vi的著名的功能强大的、高度可定制的文本编辑器，在vi的基础上改进和增加了很多特性。vim是自由软件。vim是从vi发展出来的一个文本编辑器。代码补全、编译及错误跳转等方面编程的功能特别丰富，在程序员中被广泛使用，和Emacs并列成为类Unix系统用户最喜欢的文本编辑器。    主要功能：根据设定可以和原始vi完全兼容；多缓冲编辑、多tab编辑；任意个数的分">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-1122.png">
   
     <link rel="alternative" href="/atom.xml" title="Melvin の blog" type="application/atom+xml">
   
@@ -150,295 +159,230 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Linux初级运维（九）——vim编辑器" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux初级运维（九）——vim编辑器
+    </h1>
+  
+
+        
+        <a href="/2018/11/09/Linux初级运维（九）——vim编辑器/" class="archive-article-date">
+  	<time datetime="2018-11-09T09:30:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-09</time>
+</a>
+        
+      </header>
     
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+       
+       
+        <p>一、VIM介绍<br>    vim是一个类似于vi的著名的功能强大的、高度可定制的文本编辑器，在vi的基础上改进和增加了很多特性。vim是自由软件。vim是从vi发展出来的一个文本编辑器。代码补全、编译及错误跳转等方面编程的功能特别丰富，在程序员中被广泛使用，和Emacs并列成为类Unix系统用户最喜欢的文本编辑器。<br>    主要功能：根据设定可以和原始vi完全兼容；多缓冲编辑、多tab编辑；任意个数的分割窗口（横，竖）；vim7开始，支持多种数据类型，比如具备列表和字典功能、以及（简单形式）面向对象编程的脚本语言vim script，对功能进行高度定制化；可以在脚本中调用 Perl, Ruby, Python, Tcl, MzScheme ，C，C++；单词缩写功能；动态单词补全；多级树状撤销和重做操作；对应550种以上文本文件的语法高亮；Shell，Lisp，C/C++, Perl, Java, Ruby, Python 等40种以上语言的自动缩排；利用ctags的标签中跳转；崩溃后文件恢复；光标位置和打开的缓冲状态的保存、复原（session功能）；可以对两个文件进行差分，同步功能的diff模式；远程文件编辑 ；vim 8.0新增功能；支持异步 I/O 和通道（channels）、JSON；多任务；定时器；Partial、Lambda 和闭包；插件包管理；根据时间戳合并viminfo；Windows用户：支持 DirectX；支持 GTK+ 3。<br>二、vim编辑器<br>    文本编辑器，字处理器<br>    vim模式： 编辑模式（命令模式）；输入模式；末行模式；<br>    模式转换：<br>    编辑模式–&gt;输入模式：<br>      i：在当前光标所在字符的前面，转为输入模式<br>    ​    ​a：在当前光标所在字符的后面，转为输入模式<br>    ​    ​o：在当前光标所在行的下方，新建一行，并转为输入模式；<br>    ​    ​ I：在当前光标所在行的行首，转换为输入模式<br>    ​    ​ A：在当前光标所在行的行尾，转换为输入模式<br>    ​    ​ O：在当前光标所在行的上方，新建一行，并转为输入模式；<br>    ​    ​输入–&gt;编辑： ESC<br>    ​    ​编辑–&gt;末行 ：  ：<br>    ​    ​末行–&gt;编辑： ESCESC<br>三、打开文件<br>     ​# vim /path/to/somefile<br>    ​    ​    vim +# :打开文件，并定位第#行<br>    ​    ​    ​vim + ：打开文件，定位至最后一行<br>   ​    ​    ​vim +/PATTERN ： 打开文件，定位至第一次被PATTERN匹配到的行首。<br>    ​    ​默认处于编辑模式<br>四、关闭文件：<br>    1、末行模式关闭文件：<br>      :w   保存退出        ：q！    不保存退出     ：wq  保存退出    ：w！   强行保存<br>   2、编辑模式下退出<br>        zz:保存并退出<br>五、移动光标（编辑模式）<br>    1、逐字符移动光标：<br>        h：向左   l：向右  j:向下 k：向上</p>
+<pre><code>    #h：移动#个字符
+2、以单词为单位移动
+    w：移至下一个单词的词首
+    e:跳至当前或下一个单词的词尾
+    b：跳至当前或下一个单词的词首
+    #w:跳至#个词
+3、行内跳转
+    0：绝对行首
+    ^: 行首的第一个非空白字符
+    $:绝对行尾
+4、行间跳转
+    #G：跳转至第#行上
+    G：最后一行
+    末行模式下，直接给出行号
+</code></pre><p>六、翻屏操作<br>     Ctrl +f  ：向下翻一屏<br>    Ctrl+b：向上翻一屏<br>    Ctrl+d：向下翻半屏<br>    Ctrl+u：向上翻半屏<br>七、删除单个字符<br>       x：删除光标所在处的单个字符</p>
+<pre><code>#x：删除光标所在处及向后的共#个字符
+</code></pre><p>八、删除命令：d<br>     d命令跟跳转命令配合使用。</p>
+<pre><code>#dw    #de    #db
+dd：删除光标所在行
+#dd：删除包括当前光标所在行在内的#行；
+末行模式下：
+startADD ，Endadd 
+</code></pre><p>   .: 表示当前行<br>    $:最后一行<br>    +#：向下的#行<br>九、粘贴命令：p<br>    P：如果删除或复制为整行内容，则粘贴至光标所在行的下方，如果复制或删除的内容为非整行，则粘贴至光标所在字符的后面；<br>p：如果删除或复制为整行内容，则粘贴至光标所在行的上方，如果复制或删除的内容为非整行，则粘贴至光标所在字符的前面；</p>
+<p>十、复制命令： y<br>    用法同d命令</p>
+<p>十一、修改：先删除命令，在转换为输入模式<br>     c：用法同d命令</p>
+<p>十二、替换 ：r<br>   R：替换模式</p>
+<p>十三、撤销编辑操作   u<br>   u：撤销前一次的编辑操作<br>   连续u命令可撤销此前n次操作</p>
+<p>   #u：连续撤销#次操作</p>
+<p>   撤销最近一次的撤销操作（还原最近一次撤销操作）  ：Ctrl+r  </p>
+<p>十四、重复前一次的编辑操作<br>    .  操作</p>
+<p>十五、可视化模式<br>    v：按字符选举<br>    V：按矩形选取</p>
+<p>十六、查找</p>
+<p>  /PATTERN  ：从文件首部往尾部查找</p>
+<p>  ? PATTERN：从当前光标往尾部查找<br>      n：往上找上一个<br>      N：往下找下一个</p>
+<p>十七、查找并替换</p>
+<p>  在末行模式下使用s命令</p>
+<p>  ADDR1，ADDR2s@PATTERN@string@gi<br>  l,s</p>
+<p>  %: 表示全文</p>
+<p>练习：将/etc/yum.repos.d/server.repo 文件中的    <a href="ftp://instructor.example.com/pub" target="_blank" rel="noopener">ftp://instructor.example.com/pub</a> 替换为<a href="http://172.16.0.1/yum" target="_blank" rel="noopener">http://172.16.0.1/yum</a></p>
+<p>%s/ftp:\/\/instructor.example.com\/pub/http:\/\/172.16.0.1\/yum/g</p>
+<p>%s@<a href="ftp://instructor\.example\.com/pub@http://172.16.0.1/yum@g" target="_blank" rel="noopener">ftp://instructor\.example\.com/pub@http://172.16.0.1/yum@g</a></p>
+<p>十八、使用vim编辑多个文件</p>
+<p>   vim FILE1  FILE2  FILE3</p>
+<p>   :next      切换至下一个文件</p>
+<p>   :prev     切换至上一个文件</p>
+<p>   :last      切换至最后一个文件</p>
+<p>   :first     切换至第一个文件</p>
+<p>   退出 </p>
+<p>   :qa 全部退出</p>
+<p>十九、分屏显示一个文件</p>
+<p>   ctrl+w，s ：水平拆分窗口</p>
+<p>   ctrl+w，v：垂直拆分窗口</p>
+<p>   在窗口间切换光标：</p>
+<p>   ctrl+w，上下左右切换<br>   ：qa 关闭所有窗口</p>
+<p>二十、分窗口编辑多个文件</p>
+<p>  vim -o :水平分割显示<br>  vim -O：垂直分割显示</p>
+<p>二十一、将当前文件中部分内容另存为另外一个文件<br>        末行模式下使用w命令<br>    ：w<br>    ：ADDR1,ADDR2W /path/to/somewhere</p>
+<p>二十二、将另外一个文件的内容填充在当前文件中<br>    :r /path/to/somefile</p>
+<p>二十三、跟shell交互<br>    ：！ COMMAND<br>二十四、高级话题<br>    1、显示或取消显示行号<br>    ：set number<br>    ：set nu<br>    ：set nonu<br>    2、显示忽略或区分字符大小写<br>    :set ignorecase<br>    :set ic<br>    :set noignorecase<br>    3、设定自动缩进<br>    ：set autoindent<br>    ：set ai<br>    : set noai<br>    4、查找到的文本高亮显示或取消<br>    ：set hlsearch<br>    ：set nohlsearch<br>    5、语法高亮<br>    ：syntax on<br>    ：syntax off<br>二十五、vim配置文件<br>    /etc/vimrc<br>    ~/.vimrc</p>
+<p>练习题：<br>    1、写一个脚本</p>
+<p>添加10个用户user1都user10，密码用用户名，但要求只有用户不存在的情况下才能添加；</p>
+<p>扩展：</p>
+<p>  接受一个参数：<br>add：添加用户user1..user10<br>del:删除用户user1..user10</p>
+<p>其他：退出<br>adminusers -add user1,user2，user3，hello，hi</p>
+<p><img src="/images/pasted-1122.png" alt="upload successful"></p>
+<p><img src="/images/pasted-1123.png" alt="upload successful"></p>
+<p><img src="/images/pasted-1124.png" alt="upload successful"></p>
+<p><img src="/images/pasted-1125.png" alt="upload successful"></p>
+
+       
+      
+     </div>
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/02/Nginx（三）日志管理-日志自动备份/" class="archive-article-date">
-  	<time datetime="2018-11-02T07:28:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/02/Nginx（三）日志管理-日志自动备份/">Nginx（三）日志管理 日志自动备份</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
   </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/09/Linux初级运维（九）——vim编辑器/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/02/Nginx（二）-虚拟主机配置/" class="archive-article-date">
-  	<time datetime="2018-11-02T07:06:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/06/VPS-服务器搭建hexo博客/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">VPS 服务器搭建hexo博客</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/02/Nginx（二）-虚拟主机配置/">Nginx（二） 虚拟主机配置</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/02/bash常用命令与技巧/" class="archive-article-date">
-  	<time datetime="2018-11-02T06:53:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/02/bash常用命令与技巧/">bash常用命令与技巧</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/02/Nginx（一）安装配置/" class="archive-article-date">
-  	<time datetime="2018-11-02T06:23:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/02/Nginx（一）安装配置/">Nginx（一）安装配置</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/Git-安装和使用/" class="archive-article-date">
-  	<time datetime="2018-11-02T03:21:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/Git-安装和使用/">Git 安装和使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/从Git玩转GitHub/" class="archive-article-date">
-  	<time datetime="2018-11-02T02:21:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/从Git玩转GitHub/">从Git玩转GitHub</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/Centos7-2-操作系统安装配置Samba服务文档/" class="archive-article-date">
-  	<time datetime="2018-11-02T01:47:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/Centos7-2-操作系统安装配置Samba服务文档/">Centos7.2 操作系统安装配置Samba服务文档</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/Foxmail-邮箱配置-腾讯企业邮箱/" class="archive-article-date">
-  	<time datetime="2018-11-02T01:16:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/Foxmail-邮箱配置-腾讯企业邮箱/">Foxmail 邮箱配置 腾讯企业邮箱</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/Wireshark-在Windows-下的安装/" class="archive-article-date">
-  	<time datetime="2018-11-01T13:54:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/Wireshark-在Windows-下的安装/">Wireshark 在Windows 下的安装</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/Outlook-配置企业邮箱文档/" class="archive-article-date">
-  	<time datetime="2018-11-01T13:42:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/Outlook-配置企业邮箱文档/">Outlook 配置企业邮箱文档</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/3/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/page/5/">5</a><a class="page-number" href="/archives/page/6/">6</a><a class="extend next" rel="next" href="/archives/page/5/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -467,8 +411,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

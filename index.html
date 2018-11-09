@@ -152,6 +152,80 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Linux初级运维（九）——vim编辑器" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/09/Linux初级运维（九）——vim编辑器/">Linux初级运维（九）——vim编辑器</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/09/Linux初级运维（九）——vim编辑器/" class="archive-article-date">
+  	<time datetime="2018-11-09T09:30:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-09</time>
+</a>
+        
+      </header>
+    
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+       
+       
+	<p>一、VIM介绍<br>    vim是一个类似于vi的著名的功能强大的、高度可定制的文本编辑器，在vi的基础上改进和增加了很多特性。vim是自由软件。vim是从vi发展出来的一个文本编辑器。代码补全、编译及错误跳转等方面编程的功能特别丰富，在程序员中被广泛使用，和Emacs并列成为类Unix系统用户最喜欢的文本编辑器。<br>    主要功能：根据设定可以和原始vi完全兼容；多缓冲编辑、多tab编辑；任意个数的分割窗口（横，竖）；vim7开始，支持多种数据类型，比如具备列表和字典功能、以及（简单形式）面向对象编程的脚本语言vim script，对功能进行高度定制化；可以在脚本中调用 Perl, Ruby, Python, Tcl, MzScheme ，C，C++；单词缩写功能；动态单词补全；多级树状撤销和重做操作；对应550种以上文本文件的语法高亮；Shell，Lisp，C/C++, Perl, Java, Ruby, Python 等40种以上语言的自动缩排；利用ctags的标签中跳转；崩溃后文件恢复；光标位置和打开的缓冲状态的保存、复原（session功能）；可以对两个文件进行差分，同步功能的diff模式；远程文件编辑 ；vim 8.0新增功能；支持异步 I/O 和通道（channels）、JSON；多任务；定时器；Partial、Lambda 和闭包；插件包管理；根据时间戳合并viminfo；Windows用户：支持 DirectX；支持 GTK+ 3。<br>二、vim编辑器<br>    文本编辑器，字处理器<br>    vim模式： 编辑模式（命令模式）；输入模式；末行模式；<br>    模式转换：<br>    编辑模式–&gt;输入模式：<br>      i：在当前光标所在字符的前面，转为输入模式<br>    ​    ​a：在当前光标所在字符的后面，转为输入模式<br>    ​    ​o：在当前光标所在行的下方，新建一行，并转为输入模式；<br>    ​    ​ I：在当前光标所在行的行首，转换为输入模式<br>    ​    ​ A：在当前光标所在行的行尾，转换为输入模式<br>    ​    ​ O：在当前光标所在行的上方，新建一行，并转为输入模式；<br>    ​    ​输入–&gt;编辑： ESC<br>    ​    ​编辑–&gt;末行 ：  ：<br>    ​    ​末行–&gt;编辑： ESCESC<br>三、打开文件<br>     ​# vim /path/to/somefile<br>    ​    ​    vim +# :打开文件，并定位第#行<br>    ​    ​    ​vim + ：打开文件，定位至最后一行<br>   ​    ​    ​vim +/PATTERN ： 打开文件，定位至第一次被PATTERN匹配到的行首。<br>    ​    ​默认处于编辑模式<br>四、关闭文件：<br>    1、末行模式关闭文件：<br>      :w   保存退出        ：q！    不保存退出     ：wq  保存退出    ：w！   强行保存<br>   2、编辑模式下退出<br>        zz:保存并退出<br>五、移动光标（编辑模式）<br>    1、逐字符移动光标：<br>        h：向左   l：向右  j:向下 k：向上</p>
+	
+	 <p class="article-more-link">
+	  <a class="article-more-a" href="/2018/11/09/Linux初级运维（九）——vim编辑器/#more">more >></a>
+	 </p>
+	
+       
+      
+     </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/09/Linux初级运维（九）——vim编辑器/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-VPS-服务器搭建hexo博客" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -789,80 +863,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/11/05/Linux初级运维（六）-bash脚本编程（条件判断）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Linux初级运维（五）-bash脚本编程（变量、变量类型）" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/05/Linux初级运维（五）-bash脚本编程（变量、变量类型）/">Linux初级运维（五） bash脚本编程（变量、变量类型）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/05/Linux初级运维（五）-bash脚本编程（变量、变量类型）/" class="archive-article-date">
-  	<time datetime="2018-11-05T09:40:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-05</time>
-</a>
-        
-      </header>
-    
-    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
-   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-       
-       
-	<p>一、BASH概念介绍<br>    Bash（GNU Bourne-Again Shell ）是许多Linux发行版的默认shell。事实上，还有许多传统UNIX上用的Shell，例如tcsh，csh，ash，bsh，ksh等等，Shell Script大致都类同，当您学会一种shell以后，其他shell就会很快上手。<br>   bash的命令语法是Bourne shell命令语法的超集。数量庞大的Bourne shell脚本大多不经修改即可以在bash中执行，只有使用了Bourne的特殊变量或内置命令的脚本才需要修改。 bash的命令语法很多来自Korn shell (ksh) 和 C shell (csh)， 例如命令行编辑，命令历史，目录栈，$RANDOM 和 $PPID 变量，以及POSIX的命令置换语法： $(…)。作为一个交互式的shell，按下TAB键即可自动补全已部分输入的程序名、文件名、变量名等等。<br>   shell具有编程能力。叫做脚本语言。<br>    1、编程语言<br>    编程语言主要分为：机器语言、汇编语言、高级语言<br>      静态语言：编译型语言<br>         强类型（变量）<br>         事先转换成可执行格式<br>         C  、 C++  、JAVA  、C#<br>      动态语言：解释型语言，on the fly<br>         弱类型<br>         边解释边执行<br>         PHP  、SHELL  、Python  、perl<br>    2、编程模型<br>      编程模型主要分为两种：面向对象 和面向过程<br>      面向过程：shell   C<br>      面向对象：JAVA   Python  Perl  C++<br>二、bash变量<br>      变量赋值  ：<br>      本地变量：VAR_NAME =VALUE   （作用范围是整个脚本都有效）<br>      局部变量：local VARNAME=VALUE     （作用域为当前代码段）<br>      环境变量：export VAENAME=VALUE   （作用域为当前shell进程及其子进程）<br>     bash变量的类型有：环境变量、本地变量（局部变量）、位置变量、特殊变量。<br>    1、本地变量<br>        bash：</p>
-	
-	 <p class="article-more-link">
-	  <a class="article-more-a" href="/2018/11/05/Linux初级运维（五）-bash脚本编程（变量、变量类型）/#more">more >></a>
-	 </p>
-	
-       
-      
-     </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/05/Linux初级运维（五）-bash脚本编程（变量、变量类型）/">展开全文 >></a>
         </p>
       
 
