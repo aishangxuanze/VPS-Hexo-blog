@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Melvin の blog</title>
+  <title>Linux初级运维（十）——Linux文件查找详解 | Melvin の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Melvin の blog">
-<meta property="og:url" content="http://yoursite.com/archives/page/4/index.html">
+  <meta name="description" content="一、文件查找    常用命令：locate ，find    1、locate    locate：在全系统查找文件的命令。非实时，模糊匹配，查找事根据全系统文件数据库进行的。 #updatedb：手动生成文件数据库 优点：速度快    2、find       find：遍历指定目录中的所有文件完成查找，速度慢。    find特点：实时查找；精确查找、支持众多查找标准    find:  查找">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux初级运维（十）——Linux文件查找详解">
+<meta property="og:url" content="http://yoursite.com/2018/11/13/Linux初级运维（十）——Linux文件查找详解/index.html">
 <meta property="og:site_name" content="Melvin の blog">
+<meta property="og:description" content="一、文件查找    常用命令：locate ，find    1、locate    locate：在全系统查找文件的命令。非实时，模糊匹配，查找事根据全系统文件数据库进行的。 #updatedb：手动生成文件数据库 优点：速度快    2、find       find：遍历指定目录中的所有文件完成查找，速度慢。    find特点：实时查找；精确查找、支持众多查找标准    find:  查找">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-11-13T06:09:32.372Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Melvin の blog">
+<meta name="twitter:title" content="Linux初级运维（十）——Linux文件查找详解">
+<meta name="twitter:description" content="一、文件查找    常用命令：locate ，find    1、locate    locate：在全系统查找文件的命令。非实时，模糊匹配，查找事根据全系统文件数据库进行的。 #updatedb：手动生成文件数据库 优点：速度快    2、find       find：遍历指定目录中的所有文件完成查找，速度慢。    find特点：实时查找；精确查找、支持众多查找标准    find:  查找">
   
     <link rel="alternative" href="/atom.xml" title="Melvin の blog" type="application/atom+xml">
   
@@ -150,295 +154,171 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Linux初级运维（十）——Linux文件查找详解" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux初级运维（十）——Linux文件查找详解
+    </h1>
+  
+
+        
+        <a href="/2018/11/13/Linux初级运维（十）——Linux文件查找详解/" class="archive-article-date">
+  	<time datetime="2018-11-13T06:00:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-13</time>
+</a>
+        
+      </header>
     
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+       
+       
+        <p>一、文件查找<br>    常用命令：locate ，find<br>    1、locate<br>    locate：在全系统查找文件的命令。非实时，模糊匹配，查找事根据全系统文件数据库进行的。</p>
+<pre><code>#updatedb：手动生成文件数据库
+优点：速度快
+</code></pre><p>   2、find<br>       find：遍历指定目录中的所有文件完成查找，速度慢。<br>    find特点：实时查找；精确查找、支持众多查找标准<br>    find:  查找路径  查找标准   查找到以后的处理动作。<br>      查找路径：默认为当前目录<br>      查找标准：默认为指定路径下的所有文件<br>      处理运作：默认为显示<br>     3、匹配标准：<br>      -name ‘FILENAME’：对文件名作精准匹配<br>        文件名通配：<br>         *：任意长度的任意字符<br>         ？ ：<br>         []  :<br>         -iname ‘FILENAME’:文件名匹配时不区分大小写<br>         -regex PATTERN ：基于正则表达式进行文件名匹配<br>        -user USERNAME：根据属主进行查找<br>        -group GROUPNAME：根据属组进行查找<br>         -uid  UID：根据UID进行查找<br>         -gid  GID ：根据GID进行查找<br>         -nouser :查找没有属主的文件<br>         -nogroup：查找没有属组的文件</p>
+<pre><code>    - type   根据文件类型查找
+     f：普通文件     d：目录文件    c：字符文件   b：块设备    l：链接文件   p：管道设备文件     s：套接设备文件
+-size
+  [+|-] #K (M G)   +表示大于#k  -表示 小于#K
+</code></pre><p>   组合条件<br>    -a：表示两个条件都符合，才显示   与条件  ；  -o ： 表示两个条件符合一个就显示  ，或条件 ； -not ：表示非条件<br>    给出两个条件，没有说明逻辑关系。默认是与条件<br>      -mtime ：修改时间<br>      -ctime：改变时间<br>      -atime：访问时间<br>     都可后缀多少天，   [+|-] #    +号：表示至少#天  -号：表示#号天内   #：表示刚好#天。<br>  -mmin：修改时间        -cmin:改变时间      -amin；  访问时间<br>    都可后缀多少分钟，  [+|-] #    +号：表示至少#分钟  -号：表示#分钟内   #：表示刚好#分钟。<br>    -perm  MODE  :根据权限进行查找<br>    /MODE :只要有一项匹配就可以查找<br>   -MODE：文件权限能够完全包含的情况下可以查找<br>    运作：<br>   -print :显示<br>   -ls ：类似ls -l 的形式显示每一个文档的详细<br>   -ok ：COMMAND\;每一次操作都需要用户确认<br>   -exec COMMAND {}\;</p>
+<p>  练习题：<br>    1、查找/var目录下属主为root，并且属组为mail的所有文件：<br>   find /var -user root -guoup mail<br>    2、查找/usr 目录下不属于root bin 或student的文件：<br>   find /usr -not -user root -a -not -user student<br>   find /usr -not ( -user root -o  -user student)<br>    3、查找/etc目录下最近一周内内容修改过且不属于root及student用户的文件：<br>    find /etc -mtime -7 -not -user root -a -not -user student<br>    find /etc -mtime -7 -not ( -user root -o -user student)<br>    4、查找当前系统上没有属主或属组且最近一天内曾被访问过的文件，并将其属主属组均修改为root：<br>    find / (-nouser -o -nogroup) -a -atime -1 -exec chown root:root {}\;<br>    5、查找 /etc 目录下大于1M的文件，并将其文件名写入 /tmp/etc.largefiles文件中：<br>    find /etc -size +1M -exec ehco {}&gt;&gt; /tmp/etc.largefiles<br>    find /etc -size +1M | xargs echo {} &gt;&gt; /tmp/etc.largefiles<br>    6、查找/etc目录下所有用户都没有写权限的文件，显示其详细信息：<br>    find /etc -not -perm /222 -ls<br> 二、特殊权限<br>       passwd：s<br>    SUID：运行某程序时，相应进程的属主是程序文件自身的属主，而不是启动者。<br>   chmod u+s  FILE<br>   chmod u-s FILE<br>   如果FILE本身原来就有执行权限，则SUID显示为s；否则显示S；<br>   SGID：运行某程序时，相应进程的属组是程序文件自身的属组，而不是启动者所属的基本组。<br>    chmod g+s FILE<br>    chmod g-s FILE<br>   Sticky：在一个公共目录，每个可以创建文件，删除自己的文件，但不能删除别人的文件；<br>    chmod o+t DIR<br>    chmod o-t DIR</p>
+
+       
+      
+     </div>
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/02/Nginx（四）Location配置详解之精准匹配/" class="archive-article-date">
-  	<time datetime="2018-11-02T07:47:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/02/Nginx（四）Location配置详解之精准匹配/">Nginx（四）Location配置详解之精准匹配</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
   </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/13/Linux初级运维（十）——Linux文件查找详解/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/02/Nginx（三）日志管理-日志自动备份/" class="archive-article-date">
-  	<time datetime="2018-11-02T07:28:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/09/Linux初级运维（九）——vim编辑器/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Linux初级运维（九）——vim编辑器</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/02/Nginx（三）日志管理-日志自动备份/">Nginx（三）日志管理 日志自动备份</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/02/Nginx（二）-虚拟主机配置/" class="archive-article-date">
-  	<time datetime="2018-11-02T07:06:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/02/Nginx（二）-虚拟主机配置/">Nginx（二） 虚拟主机配置</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/02/bash常用命令与技巧/" class="archive-article-date">
-  	<time datetime="2018-11-02T06:53:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/02/bash常用命令与技巧/">bash常用命令与技巧</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/02/Nginx（一）安装配置/" class="archive-article-date">
-  	<time datetime="2018-11-02T06:23:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/02/Nginx（一）安装配置/">Nginx（一）安装配置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/Git-安装和使用/" class="archive-article-date">
-  	<time datetime="2018-11-02T03:21:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/Git-安装和使用/">Git 安装和使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/从Git玩转GitHub/" class="archive-article-date">
-  	<time datetime="2018-11-02T02:21:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/从Git玩转GitHub/">从Git玩转GitHub</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/Centos7-2-操作系统安装配置Samba服务文档/" class="archive-article-date">
-  	<time datetime="2018-11-02T01:47:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/Centos7-2-操作系统安装配置Samba服务文档/">Centos7.2 操作系统安装配置Samba服务文档</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/Foxmail-邮箱配置-腾讯企业邮箱/" class="archive-article-date">
-  	<time datetime="2018-11-02T01:16:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/Foxmail-邮箱配置-腾讯企业邮箱/">Foxmail 邮箱配置 腾讯企业邮箱</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/01/Wireshark-在Windows-下的安装/" class="archive-article-date">
-  	<time datetime="2018-11-01T13:54:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/01/Wireshark-在Windows-下的安装/">Wireshark 在Windows 下的安装</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/3/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/page/5/">5</a><a class="page-number" href="/archives/page/6/">6</a><a class="extend next" rel="next" href="/archives/page/5/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -467,8 +347,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
