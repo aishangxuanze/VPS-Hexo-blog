@@ -152,6 +152,80 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Linux初级运维（十三）——RAID及mdadm命令" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/03/Linux初级运维（十三）——RAID及mdadm命令/">Linux初级运维（十三）——RAID及mdadm命令</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/03/Linux初级运维（十三）——RAID及mdadm命令/" class="archive-article-date">
+  	<time datetime="2018-12-03T09:00:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-03</time>
+</a>
+        
+      </header>
+    
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+       
+       
+	<p>一、RAID介绍<br>    RAID（Redundant arrays of Independent Drives），有“独立磁盘构成的具有冗余能力的阵列”。磁盘阵是由很多价格较便宜的磁盘，组合成一个容量巨大的磁盘组，利用个别磁盘提供数据所产生加成效果提供整个磁盘系统效能。利用这个技术，将数据切割成很多区段，分别存放在各个硬盘上。磁盘阵列还能利用同位检车（parity check）的观念，在数组中任意一个硬盘故障时，仍可读出数据，在数据重构时，将数据经计算后重新置入新硬盘中。<br>    1、RAID级别<br>     raid级别：仅代表磁盘组织方式不同，没有上下之分；<br>     0： 条带 性能提升：读 写  冗余能力（容错能力）：无    空间利用率： nS   至少两块盘<br>     1：镜像    性能表现：写性能下降，读性能提升     冗余能力：有   空间利用率：50%  至少两快盘<br>     5：性能表现：读写都提升    冗余能力：有  空间利用率：(n-1)/n  至少需要3块盘<br>     10:性能表现：读写都提升   冗余能力：有 空间利用率：50%  至少需要4块盘<br>     01：性能表现：读写都提升   冗余能力：有 空间利用率：50%   至少需要4块<br>     50：性能表现：读写都提升   冗余能力：有 空间利用率：（n-2）/n  至少6块盘<br>     job:性能表现：无提升   冗余能力：无   空间利用率：100%  至少需要2块盘<br>    2、Raid Level<br>    IDE（ATA）， 133Mbps ，并行<br>    SATA ：6Gbps ，串行<br>    USB：串行<br>    SCSI： Ultrascsi ，320 Mbps，并行总结<br>    SAS：2.5英寸大小<br>    3、md：<br>     mdadm：将任何块设备做成RAID<br>      模式化命令：<br>      创建模式：-C<br>       专用选项：<br>        -l：级别<br>        -n：设备个数<br>        -a{yes|no}：是否自动为其创建设备文件<br>        -c：CHUNK大小<br>    管理模式： –add ，–del<br>              –add ,–remove ,–fail<br>           mdadm /dev/md # –fail /dev/sda7<br>    监控模式 -F<br>    增长模式 -G<br>    装配模式 -A<br>  查看RAID阵列的详细信息<br>    mdadm -D /dev/md #<br>      -detai<br>   停止阵列： mdadm -s /dev/md# –stop<br>  watch:周期性地执行指定命令，并以全屏方式显示结果<br>   -n#：指定周期长度，单位为妙，默认为2<br>  格式：watch -n # ‘COMMAND’</p>
+	
+	 <p class="article-more-link">
+	  <a class="article-more-a" href="/2018/12/03/Linux初级运维（十三）——RAID及mdadm命令/#more">more >></a>
+	 </p>
+	
+       
+      
+     </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/03/Linux初级运维（十三）——RAID及mdadm命令/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Linux初级运维（十二）——磁盘及文件系统管理" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -789,80 +863,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/11/06/自己搭建owncloud私有云/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-PPPT、L2TP-IPSec、Open-VPN的比较" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/06/PPPT、L2TP-IPSec、Open-VPN的比较/">PPPT、L2TP/IPSec、Open-VPN的比较</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/06/PPPT、L2TP-IPSec、Open-VPN的比较/" class="archive-article-date">
-  	<time datetime="2018-11-06T06:26:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-06</time>
-</a>
-        
-      </header>
-    
-    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
-   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-       
-       
-	<p>一、前言<br>   很多人需要涉及到远程办公，或者出差期间需要访问公司的网络资源，个人研究学习了一下几种远程访问公网内部网络资源的方法：PPTP、L2TP/IPSec、OPEN-V-PN。<br>   由于网络对V-P-N这个词屏蔽的比较严重，以下信息以图片的形式提供，主要从三个方面进行对比：<br>       基本概念<br>       优缺点<br>       协议的选择<br>二、基本概念<br>    1、PPTP（Point to Point Tunneling Protocol,点对点隧道协议）默认端口：1723<br>    搭建服务器教程：<a href="http://blog.51cto.com/5001660/2177407" target="_blank" rel="noopener">http://blog.51cto.com/5001660/2177407</a></p>
-	
-	 <p class="article-more-link">
-	  <a class="article-more-a" href="/2018/11/06/PPPT、L2TP-IPSec、Open-VPN的比较/#more">more >></a>
-	 </p>
-	
-       
-      
-     </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/06/PPPT、L2TP-IPSec、Open-VPN的比较/">展开全文 >></a>
         </p>
       
 
