@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | Melvin の blog</title>
+  <title>Linux初级运维（十四）——Linux软件管理 | Melvin の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Melvin の blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/page/7/index.html">
+  <meta name="description" content="一、软件包管理    1、应用程序：     程序，程序，Architecture    C语言：源代码–&amp;gt;（编译）二进制格式    脚本：解释器（二进制程序）    源代码–&amp;gt; 编译–&amp;gt;链接–&amp;gt;运行        程序：          库：  静态  动态              静态链接   动态链接    2、程序组成部分：        二进制程序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux初级运维（十四）——Linux软件管理">
+<meta property="og:url" content="http://yoursite.com/2018/12/12/Linux初级运维（十四）——Linux软件管理/index.html">
 <meta property="og:site_name" content="Melvin の blog">
+<meta property="og:description" content="一、软件包管理    1、应用程序：     程序，程序，Architecture    C语言：源代码–&amp;gt;（编译）二进制格式    脚本：解释器（二进制程序）    源代码–&amp;gt; 编译–&amp;gt;链接–&amp;gt;运行        程序：          库：  静态  动态              静态链接   动态链接    2、程序组成部分：        二进制程序">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1137.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1139.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1140.png">
+<meta property="og:updated_time" content="2018-12-12T08:33:58.558Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Melvin の blog">
+<meta name="twitter:title" content="Linux初级运维（十四）——Linux软件管理">
+<meta name="twitter:description" content="一、软件包管理    1、应用程序：     程序，程序，Architecture    C语言：源代码–&amp;gt;（编译）二进制格式    脚本：解释器（二进制程序）    源代码–&amp;gt; 编译–&amp;gt;链接–&amp;gt;运行        程序：          库：  静态  动态              静态链接   动态链接    2、程序组成部分：        二进制程序">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-1137.png">
   
     <link rel="alternative" href="/atom.xml" title="Melvin の blog" type="application/atom+xml">
   
@@ -150,133 +158,183 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Linux初级运维（十四）——Linux软件管理" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux初级运维（十四）——Linux软件管理
+    </h1>
+  
+
+        
+        <a href="/2018/12/12/Linux初级运维（十四）——Linux软件管理/" class="archive-article-date">
+  	<time datetime="2018-12-12T08:04:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-12</time>
+</a>
+        
+      </header>
     
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+       
+       
+        <p>一、软件包管理<br>    1、应用程序：<br>     程序，程序，Architecture<br>    C语言：源代码–&gt;（编译）二进制格式<br>    脚本：解释器（二进制程序）<br>    源代码–&gt; 编译–&gt;链接–&gt;运行<br>        程序：<br>          库：  静态  动态<br>              静态链接   动态链接<br>    2、程序组成部分：<br>        二进制程序<br>        库<br>        配置文件<br>        帮助文件<br>        /boot ：存放内核，initrd(initramfs)<br>        /etc  ：存放配置文件<br>        /usr<br>        /var：是外围的文件系统，存放日志等文件，建议单独分区<br>        /dev ：设备目录，不能单独分区；<br>        /lib ：存放库文件<br>        /tmp<br>        /bin ：存放二进制文件<br>        /sbin：存放二进制文件<br>        /proc<br>        /sys<br>        /mnt<br>        /media<br>        /home<br>        /root ；不能单独分区<br>        /misc<br>        /opt<br>        /srv</p>
+<p>/etc , /bin ,/sbin, /lib, /usr/share/man：存放帮助文件<br>     系统启动就需要用到以前的程序，这些目录不能挂载额外的分区，必须在根文件系统的分区上。<br>  /usr/      bin   sbin   lib      操作系统核心功能，可以单独分区<br>   系统启动顺序：  POST–&gt;BIOS(HD)–&gt;(MBR)bootloader(文件系统结构）–&gt;内核<br>    3、程序： 指令+ 数据<br>        指令：芯片<br>           CPU：普通指令，特权指令<br>              指令集<br>        C语言：<br>          Powerpc ：二进制格式<br>    4、软件包管理器：<br>      打包成一文件：二进制程序，库文件，配置文件，帮助文件<br>      生成数据库，追踪所安装的每一个文件<br>       软件包管理器的核心功能：<br>          （1）制作软件包；（2）安装、卸载、升级、查询、校验；<br>         前段工具：yum ，apt-get<br>         后端工具：RPM  ,dpt<br>二、rpm命令：<br>        rpm：管理命令<br>        数据库 /var/lib/rpm<br>        rpmbuild：建立rpm<br>    安装、查询、卸载、升级、校验、数据库的重建等工作：<br>    1、rpm命名<br>        包：组成部分<br>         主包：<br>           bind-version  例如：bind-9.7.1-1.i586.el5.rpm<br>         子包：<br>     例如：bind-libs-9.7.1-1.i586.el5.rpm   例如：bind-utils-9.7.1-1.i586.el5.rpm<br>    包名格式：<br>      name-version-release.arch.rpm<br>      bind-major.minor.release-release.arch.rpm<br>    主版本号：重大改进<br>    此版本号：某个子功能发生重大变化<br>    发行号：修正了部分bug，调整了一点功能<br>    2、rpm包<br>      二进制格式<br>       rpm包作者下载源程序，编译配置完成后，制作成rpm包<br>         bind-9.7.1-1.x86_64<br>    rpm：<br>       rpm -i  /PATH/TO/PACKAGE_FILE<br>          -h : 以#显示进度，每个#表示2%<br>          -v：显示详细过程<br>          -vv：更详细的过程<br>     rpm -ivh /PATH/TO/PACKAGE_FILE<br>          –nodeps: 忽略依赖关系<br>          –replacepkgs：重新安装，替换原有安装<br>          –force：强制安装，可以实现重装或降级<br>    3、rpm查询<br>       rpm -q PACKAGE_NAME:查询指定的包是否已经安装<br>       rpm -qa ：查询已经安装的所有包<br>       rpm -qi PACKAGE_NAME:查询指定包的说明信息；<br>       rpm -ql PACKAGE_NAME: 查询指定包安装后生成的文件列表<br>       rpm -qc PACKAGE_NAME:查询指定包安装的配置文件<br>       rpm -qd PACKAGE_NAME:查询指定包安装的帮助文件；<br>       rpm -q –scripts PACKAGE_NAME：查询指定包中包含的脚本<br>       rpm -qf /path/to/somefile:查询指定的文件夹是由那个rpm包安装生成的；<br>    如果某rpm包尚未安装，我们需查询其说明信息，安装以后会生成的文件：<br>      rpm -qpi /PATH/TO/PACKAGE_FILE<br>      rpm -qpl<br>    4、rpm升级<br>      rpm -Uvh /PATH/TO/NEW_PACKAGE_FILE:如果装有老版本的，则升级；否则进行安装<br>      rpm -Fvh /PATH/TO/NEW_PACKAGE_FILE:如果装有老版本的，则升级；否则就退出<br>       –oldpackage：降级<br>    5、卸载<br>       rpm -e PACKAGE_NAME<br>           –nodeps<br>    6、校验<br>        rpm -V PACKAGE_NAME<br>    7、检验来源合法性，及软件完整性：<br>         加密类型：<br>           对称：加密解密使用同一个密钥<br>           公钥：一对密钥，公钥，私钥；公钥隐含于私钥中，可以提取出来，并公开出去；<br>         rpm -k /PATH/TO/PACKAGE_FILE<br>           dsa,gpg:验证来源合法性，也既验证签名；可以使用–nosignature，略过此项<br>           sha1,md5:验证软件包完整性；可以使用 –nodigest,略过此项<br>    8、重建数据库<br>        rpm<br>        –rebuilddb： 重建数据库，一定会重新建立；<br>        –initdb：初始化数据库，没有才建立，有就不用建立；<br>三、yum<br>    yum仓库中的元数据文件：<br>     primary.xml.gz<br>    所有RPM包的列表：<br>      依赖关系：<br>    每个RPM安装生成的文件列表：<br>    filelists.xml.gz<br>    当前仓库中所有RPM包的所有文件列表：<br>    other.xml.gz<br>     额外信息，RPM<br>    1、定义yum<br>     如何为yum定义repo文件<br>     [Repo_ID]<br>     name=Description<br>     baseurl=<br>     ftp://<br>     http://<br>     file:///<br>    enabled={1|0}<br>    gpgcheck={1|0}<br>   gpgkey=<br>   yum [options][command][package …]<br>    list:列表<br>    all:<br>   available:可用的，仓库中有但尚未安装的<br>    installed：已经安装的<br>    updates：可用的升级<br>   clean：清理缓存<br>   [packages | headers | metadata | dbcache | all ]<br>    repolist：显示repo列表及其简要信息<br>    all     ； enable：默认 ；    disable ;<br>    install :安装<br>   yum install PACKAGE_NAME<br>    -y ：自动回答为yes<br>    –nogpgcheck<br>   update：升级<br>    update_to :升级为指定版本<br>remove | erase： 卸载<br>    info：<br>   provides | whatprovides：查看指定的文件或特性是有那个包安装生成的；<br>    2、编译安装的三步骤：<br>    前提：准备开发环境（编译环境）<br>    安装“Development Tools”和 “Development Libraries”</p>
+<pre><code>   #tar
+   #cd
+   # ./configure
+     --help
+     --prefix=/path/to/somewhere
+     --sysconfdir=/PATH/TO/CONFFILE_PATH
+功能：1.让用户选定编译特性； 2、检查编译环境；
+   #make
+   #make install
+</code></pre><p>   （1）修改PATH环境变量，以能够识别此程序的二进制文件路径；<br>       修改/etc/profile文件<br>       在/etc/profile.d/目录建立一个以.sh为名称后缀的文件，在里面定义 export PATH=$PATH:/path/to/somewhere<br>   （2）默认情况下，系统搜索库文件的路径/lib ,/usr/lib ； 需要增添额外搜寻路径；<br>      在/etc/ld.so.conf.d/  中创建已.conf为后缀名的文件，而后把要增添的路径直接写至此文件中国；</p>
+<pre><code> # ldconfig 通知系统重新搜寻库文件
+-v ：显示重新搜寻库的过程
+</code></pre><p>   （3） 头文件： 输出给系统<br>       默认： /usr/include<br>       增添头文件搜寻路径，使用链接进行：<br>      /usr/local/tengin/include/     /usr/include/<br>    两种方式：<br>     ln -s /usr/local/tengine/include/*  /usr/include/  或<br>     ln -s /usr/local/tengine/include  /usr/include/tengine<br>   （4） man文件路径：安装在 –prefix 指定的目录下的man目录： /usr/share/man</p>
+<pre><code>1.  man -M  /PATH/TO/MAN_DIR COMMAND
+2. 在 /etc/man.config 中添加一条MANPATH
+</code></pre><p>  3、netstat命令：<br>     -r：显示路由表<br>     -n：以数字方式显示<br>     -t：建立的tcp连接<br>     -u：显示udp连接<br>     -l：显示监听状态的连接<br>     -p：显示监听指定套接字的进程的进程号与进程名</p>
+<p>四、练习<br>   写一个脚本，完成以下功能：<br>    说明：此脚本能于同一个repo文件中创建多个yum源的指向；<br>    1、接受一个文件名做为参数，此文件存放至/etc/yum.repos.d目录中，且文件名以.repo为后缀；要求，此文件不能事先存，否则，报错；<br>    2、在脚本中，提醒用户输入repo id；如果为quit，则退出脚本；否则，继续完成下面的步骤；<br>    3、repo name 以及baseurl的路径，而后以repo文件的格式将其保存至指定的文件中；<br>    4、enabled 默认为1 ，而gpgcheck默认设定为0；<br>    5、此脚本会循环执行多次，除非用户为repo id指定为quit；</p>
+<p><img src="/images/pasted-1137.png" alt="upload successful"><br>五、while<br>    while ，until  for<br>    break ：提前退出循环<br>    continue：提前结束本轮循环，而进入下一轮循环；</p>
+<p><img src="/images/pasted-1139.png" alt="upload successful"><br>六、练习题<br>    写一个脚本：<br>    1、判断一个指定的bash脚本是否有语法错误；如果有错误，则提醒用户键入Q或者q无视错误并退出，其他任何键可以通过vim打开这个指定的脚本；<br>    2、如果用户通过vim打开编辑后保存退出时仍然有错误，则重复第1步中的内容；否则，就正常关闭退出</p>
+<p><img src="/images/pasted-1140.png" alt="upload successful"></p>
+
+       
+      
+     </div>
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/Windows10-64位安装Python-3-6-4/" class="archive-article-date">
-  	<time datetime="2018-10-30T11:30:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/Windows10-64位安装Python-3-6-4/">Windows10 64位安装Python 3.6.4</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
   </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/12/Linux初级运维（十四）——Linux软件管理/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/Linux系统常用命令/" class="archive-article-date">
-  	<time datetime="2018-10-30T09:40:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/12/03/Linux初级运维（十三）——RAID及mdadm命令/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Linux初级运维（十三）——RAID及mdadm命令</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/Linux系统常用命令/">Linux系统常用命令</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/Mysql-学习笔记/" class="archive-article-date">
-  	<time datetime="2018-10-30T08:15:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/Mysql-学习笔记/">Mysql 学习笔记</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/25/hello-world/" class="archive-article-date">
-  	<time datetime="2018-10-25T07:59:52.692Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/25/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2018/page/6/">&laquo; Prev</a><a class="page-number" href="/archives/2018/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2018/page/5/">5</a><a class="page-number" href="/archives/2018/page/6/">6</a><span class="page-number current">7</span>
-    </nav>
   
 
 
@@ -305,8 +363,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
