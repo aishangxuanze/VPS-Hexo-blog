@@ -152,6 +152,80 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Linux初级运维（十五）——bash脚本编程之函数" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/13/Linux初级运维（十五）——bash脚本编程之函数/">Linux初级运维（十五）——bash脚本编程之函数</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/13/Linux初级运维（十五）——bash脚本编程之函数/" class="archive-article-date">
+  	<time datetime="2018-12-13T09:44:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-13</time>
+</a>
+        
+      </header>
+    
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+       
+       
+	<p>一、函数<br>    函数：功能，function  代码重用的功能。<br>   结构化编程，不能独立运行，需要调用时执行，可以被多次调动<br>  1、定义一个函数<br>      function FUNCNAME {<br>    command<br>   }<br>   FUNCNAME() {<br>       command<br>   }<br> 2、练习题<br>     写一个脚本，判定172.28.5.180-172.28.5.200之间的主机有哪些在线。要求：<br>    使用函数来实现一台主机的判定过程；<br>    在主程序中来调用此函数判定指定范围内的所有主机的在线情况；</p>
+	
+	 <p class="article-more-link">
+	  <a class="article-more-a" href="/2018/12/13/Linux初级运维（十五）——bash脚本编程之函数/#more">more >></a>
+	 </p>
+	
+       
+      
+     </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/13/Linux初级运维（十五）——bash脚本编程之函数/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Linux初级运维（十四）——Linux软件管理" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -789,80 +863,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/11/06/Linux初级运维（八）-sed命令的使用及for循环/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Linux初级运维（七）-bash脚本编程（常见测试）" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/06/Linux初级运维（七）-bash脚本编程（常见测试）/">Linux初级运维（七） bash脚本编程（常见测试）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/06/Linux初级运维（七）-bash脚本编程（常见测试）/" class="archive-article-date">
-  	<time datetime="2018-11-06T07:17:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-06</time>
-</a>
-        
-      </header>
-    
-    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
-   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-       
-       
-	<p>一、bash中常用的条件测试<br>    测试方法：<br>     [ expression ]<br>     [[expression]]<br>     test expression<br>    1、整数测试<br>      -gt：大于<br>      -le：小于等于<br>      -ne:不等于<br>      -eq:等于<br>      -ge：大于等于<br>      -lt：小于<br>     例子：<br>       INT1=63<br>       INT2=77<br>       [ $INT1 -eq $INT2 ]<br>       [[$INT1 -eq $INT2]]<br>       test $INT1 -eq $INT2<br>    2、文件测试<br>     -e   FILE :测试文件是否存在<br>     -f   FILE：测试文件是否为普通文件<br>     -d  FILE:测试指定路径是否为目录<br>     -r   FILE ：测试当前用户对指定文件是否有读取权限<br>     -w  FILE ：测试当前用户对指定文件是否有可写权限<br>     -x   FILE ：测试当前用户对指定文件是否有可执行权限<br>    [注： bash  -n 脚本 ：测试脚本有没有语法错误<br>        bash  -x  脚本： 单步执行脚本]<br>        例子：<br>       [ -e /etc/inittab ]<br>       [ -x /etc/rc.d/rc.sysinit ]<br>  练习：写一个脚本<br>       给定一个文件：<br>     如果是一个普通文件，就显示之；<br>     如果是衣蛾目录，亦显示之；<br>     否则，此为无法识别之文件；  </p>
-	
-	 <p class="article-more-link">
-	  <a class="article-more-a" href="/2018/11/06/Linux初级运维（七）-bash脚本编程（常见测试）/#more">more >></a>
-	 </p>
-	
-       
-      
-     </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/06/Linux初级运维（七）-bash脚本编程（常见测试）/">展开全文 >></a>
         </p>
       
 
