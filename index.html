@@ -152,6 +152,80 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Linux初级运维（十八）——bash脚本编程之信号捕捉及系统管理任务计划" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/18/Linux初级运维（十八）——bash脚本编程之信号捕捉及系统管理任务计划/">Linux初级运维（十八）——bash脚本编程之信号捕捉及系统管理任务计划</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/18/Linux初级运维（十八）——bash脚本编程之信号捕捉及系统管理任务计划/" class="archive-article-date">
+  	<time datetime="2019-01-19T02:59:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-18</time>
+</a>
+        
+      </header>
+    
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+       
+       
+	<p>一、脚本编程知识点<br>    1、变量中字符的长度：${VARNAME}<br>    2、变量赋值等：<br>       ${parameter:-word}：如果parameter为空或未定义，则变量展开为“word”；否则，展开为parameter的值；<br>       ${parameter:+word}：如果parameter为空或未定义，不做任何操作；否则，则展开为“word”值；<br>       ${parameter:=word}：如果parameter为空或未定义，则变量展开为“word”，并将展开后的值赋值给patamter；<br>       ${parameter:offset}<br>       ${parameter:offset:length}：取子串，从offset处的后一个字符开始，取lenth长的子串；<br>       cross compile：交叉编译<br>    3、脚本配置文件<br>       /etc/rc.d/init.d/服务脚本<br>       服务脚本支持配置文件：/etc/sysconfig/服务脚本同名的配置文件<br>    4、局部变量<br>        local VAR_NAME=<br>    eg:<br>        a=1<br>        test() {<br>            a=$[3+4]<br>    }<br>        test<br>        for I in <code>seq $a 10</code> ; do<br>            echo $I<br>        done<br>    5、命令 mktemp<br>        创建临时文件或目录<br>        mktemp /tmp/file.XX<br>            -d :创建为目录<br>    6、信号<br>        kill -SIGNAL PID<br>            1：HUP<br>            2：INT<br>            9：KILL<br>            15：TERM<br>        脚本中，能实现信号捕捉，但9和15无法捕捉<br>        Ctrl+c：SIGINT<br>        trap命令：<br>            trap ‘COMMAND’ 信号列表<br>    7、一行执行多个语句，语句间用分号分隔<br>二、任务计划<br>      1、在未来的某个时间点执行一次某任务<br>        at<br>        batch<br>        at 时间<br>        at&gt;COMMAND<br>        at&gt; Ctrl+d<br>            指定时间:      (绝对时间： HH：MM ， DD.MM.YY   MM/DD/YY 10:20 ）;(相对时间： now+#  单位：minutes，hours，days，weeks     now+3m ）<br>            模糊时间：noon ，midnight，teatime<br>        命令的执行结果：将以邮件的形式发送给安排任务的用户。<br>        at -l = atq<br>        at -d AT_JOB_TD = atrm AT_JOB_ID<br>    2、周期性地执行某任务<br>        cron:自身是一个不间断运行的服务<br>        anacron：cron的补充，能够实现让cron因为各种原因在过去的时间该执行而未执行的任务在恢复正常执行一次；<br>        cron：<br>            系统cron任务：<br>                /etc/crontab<br>                    分钟   小时   天  月  周   用户  任务<br>            用户cron任务：<br>                /var/spool/cron/USERNAME<br>                      分钟   小时   天   月  周  任务<br>            时间的有效取值<br>                分钟：0-59    小时：0-23    天：1-31    月：1-12    周：0-7 ，0和7都表示周日<br>            时间通配表示：  </p>
+	
+	 <p class="article-more-link">
+	  <a class="article-more-a" href="/2019/01/18/Linux初级运维（十八）——bash脚本编程之信号捕捉及系统管理任务计划/#more">more >></a>
+	 </p>
+	
+       
+      
+     </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/18/Linux初级运维（十八）——bash脚本编程之信号捕捉及系统管理任务计划/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Linux初级运维（十七）——Linux内核编译与系统裁减" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -789,80 +863,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/11/09/Linux初级运维（九）——vim编辑器/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-VPS-服务器搭建hexo博客" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/06/VPS-服务器搭建hexo博客/">VPS 服务器搭建hexo博客</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/06/VPS-服务器搭建hexo博客/" class="archive-article-date">
-  	<time datetime="2018-11-06T10:16:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-06</time>
-</a>
-        
-      </header>
-    
-    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
-   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-       
-       
-	<p>一、VPS 介绍<br>    VPS（Virtual Private Server 虚拟专用服务器）技术，将一台服务器分割成多个虚拟专享服务器的优质服务。实现VPS的技术分为容器 [1]  技术，和虚拟化技术 [2]  。在容器或虚拟机中，每个VPS都可分配独立公网IP地址、独立操作系统、实现不同VPS间磁盘空间、内存、CPU资源、进程和系统配置的隔离，为用户和应用程序模拟出“独占”使用计算资源的体验。VPS可以像独立服务器一样，重装操作系统，安装程序，单独重启服务器。VPS为使用者提供了管理配置的自由，可用于企业虚拟化，也可以用于IDC资源租用。<br>   这些VPS主机以最大化的效率共享硬件、软件许可证以及管理资源。每个VPS主机都可分配独立公网IP地址、独立操作系统、独立超大空间、独立内存、独立CPU资源、独立执行程序和独立系统配置等. VPS主机用户除了可以分配多个虚拟主机及无限企业邮箱外， 更具有独立主机功能, 可自行安装程序，单独重启主机。<br>二、Hexo介绍<br>    Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。<br>三、环境准备<br>    vps服务器：<br>   操作系统：Centos 7.4<br>   git<br>   Node.js<br>四、安装步骤<br>    1、更新系统yum源<br>    首先，进行服务端的系统更新，yum update -y</p>
-	
-	 <p class="article-more-link">
-	  <a class="article-more-a" href="/2018/11/06/VPS-服务器搭建hexo博客/#more">more >></a>
-	 </p>
-	
-       
-      
-     </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/06/VPS-服务器搭建hexo博客/">展开全文 >></a>
         </p>
       
 
