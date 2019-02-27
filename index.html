@@ -152,6 +152,80 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Linux初级运维（二十）——加密类型、相关算法及ssl协议、openssl等" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/26/Linux初级运维（二十）——加密类型、相关算法及ssl协议、openssl等/">Linux初级运维（二十）——加密类型、相关算法及ssl协议、openssl等</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/26/Linux初级运维（二十）——加密类型、相关算法及ssl协议、openssl等/" class="archive-article-date">
+  	<time datetime="2019-02-27T01:15:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
+</a>
+        
+      </header>
+    
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+       
+       
+	<p>一、加密类型及相关算法<br>    1、TCP/IP：安全<br>    A–&gt;&gt;B<br>     机密性：明文传输（ftp、http、smtp、telnet）<br>     完整性：10（100）<br>     身份验证：<br>       2、机密性：<br>      plaintext–&gt;转换规则–&gt;ciphertext<br>      ciphertext–&gt;转换规则–&gt;plaintext<br>       3、数据完整性<br>    4、单向加密算法：提取数据特征码<br>       输入一样：输出必然相同<br>       雪崩效应：输入的微小改变，将会引起结果的巨大改变<br>       定长输出：无论原始数据是多长，结果大小都是相同的<br>       不可逆：无法根据特性码还原原来的数据<br>    5、协商生成密码：密钥交换（Internet Key Exchange，IKE）<br>        Diffie-Hellman：协议<br>    6、公钥加密算法：非对称加密算法<br>        密钥对：<br>        公钥：P<br>        私钥：S<br>       发送方用自己的私钥加密数据，可以实现身份验证<br>       发送方用对方的公钥加密数据，可以保证数据机密性<br>       公钥加密算法很少用来加密数据，速递太慢<br>    7、PKI：Public Key Infrastructure<br>        CA：Certificate Authority<br>       8、x509，pkcs12<br>        x509：<br>        公钥及其有效期限<br>        证书的合法拥有者<br>        证书该如何被使用<br>        CA的信息<br>        CA签名的校验码<br>二、加密算法<br>    1、对称加密：<br>    DES：Data Encrption Standard, 56bit<br>    3DES:<br>    AES:Advanced<br>     AES192,    AES256,        AES512<br>    Blowfish<br>    2、单向加密：<br>        MD4        MD5        SHA1    SHA192     SHA256        SHA384     CRC-32<br>   3、公钥加密：（加密/签名）<br>         身份认证（数字签名）<br>     数据加密<br>     密钥交换</p>
+	
+	 <p class="article-more-link">
+	  <a class="article-more-a" href="/2019/02/26/Linux初级运维（二十）——加密类型、相关算法及ssl协议、openssl等/#more">more >></a>
+	 </p>
+	
+       
+      
+     </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/26/Linux初级运维（二十）——加密类型、相关算法及ssl协议、openssl等/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Linux初级运维（十九）——Linux日志系统syslog和系统添加SSH服务" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -789,80 +863,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/11/14/Linux初级运维（十一）——facl及用户及Linux终端及case语句/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Linux初级运维（十）——Linux文件查找详解" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/13/Linux初级运维（十）——Linux文件查找详解/">Linux初级运维（十）——Linux文件查找详解</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/13/Linux初级运维（十）——Linux文件查找详解/" class="archive-article-date">
-  	<time datetime="2018-11-13T06:00:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-13</time>
-</a>
-        
-      </header>
-    
-    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
-   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-       
-       
-	<p>一、文件查找<br>    常用命令：locate ，find<br>    1、locate<br>    locate：在全系统查找文件的命令。非实时，模糊匹配，查找事根据全系统文件数据库进行的。</p>
-	
-	 <p class="article-more-link">
-	  <a class="article-more-a" href="/2018/11/13/Linux初级运维（十）——Linux文件查找详解/#more">more >></a>
-	 </p>
-	
-       
-      
-     </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/13/Linux初级运维（十）——Linux文件查找详解/">展开全文 >></a>
         </p>
       
 
