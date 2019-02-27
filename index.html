@@ -152,6 +152,80 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Linux初级运维（二十一）——DNS服务相关概念" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/26/Linux初级运维（二十一）——DNS服务相关概念/">Linux初级运维（二十一）——DNS服务相关概念</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/26/Linux初级运维（二十一）——DNS服务相关概念/" class="archive-article-date">
+  	<time datetime="2019-02-27T03:39:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
+</a>
+        
+      </header>
+    
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+       
+       
+	<p>一、DNS：域名解析<br>    互联网上的dns服务器都是用BIND：Berkeley Internet Name Domain 解析的。<br>    1、DNS：Domain Name Service<br>    域名：<a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> （主机名，FQDN：Full Qualified Domain Name，完全限定域名）<br>    DNS：名称解析，Name Resolving 名称转换（背后有查询过程，数据库）<br>      2、TLD：<br>    组织域：.com,    .org,    .net,    .cc<br>    国家域：.cn,    .tw,<br>    反向域：IP–&gt;FQDN<br>         反向：IP–&gt;FQDN<br>       正向：FQDN–&gt;IP<br>     IP–&gt;FQDN<br>     FQDN–&gt;IP<br>      <a href="http://www.baiudu.com" target="_blank" rel="noopener">www.baiudu.com</a>      ip1<br>    3、查询<br>         递归：只发出一次请求<br>       迭代：发出多次请求<br>     解析<br>         正向：FQDN–&gt;IP<br>       反向：IP–&gt;FQDN<br>     两段式：递归，迭代<br>   4、DNS：分布式数据库<br>            上级仅知道其直接下级<br>       下级只知道根的位置<br>   5、DNS服务器：<br>            接受本地客户端查询请求（递归）<br>       外部客户端请求：请求权威答案<br>                肯定回答：TTL<br>           否定回答：TTL<br>         外部客户端请求：非权威答案<br>   6、主、从DNS服务器<br>            主DNS服务器：数据修改<br>       辅助DNS服务器：请求数据同步<br>               serial number<br>           refresh<br>           retry<br>           expire<br>           nagative answer TTL<br>         缓存DNS服务器<br>         转发器<br>   7、域：Domian<br>           区域：Zone<br>     建立两个区域文件：<br>         正向区域文件<br>       baidu.com    IN    SOA<br>       <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a>    IN A    192.168.0.1<br>       简写为；<br>       www    IN    A    192.168.0.1<br>   8、反向区域文件：<br>            0.168.192.in-addr.arpa.    IN    SOA<br>       1.0.168.192.in-addr.arpa.    IN    PTR    <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a><br>       1    IN    PTR    <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a><br>   9、区域传送的类型<br>           完全区域传送：axfr<br>       增量区域传送：ixfr<br>   10、区域类型：<br>            主区域：master<br>       从区域：slave<br>       提示区域：hint<br>       转发区域：forward<br>二、DNS常用软件：BIND<br>    BIND:Berkeley Internet Name Domain<br>    1、bind97 安装后，主要文件夹：<br>        /etc/named.conf:BIND 进程的工作属性；区域的定义<br>       /etc/rndc.key:rndc:Remote Name Domain  Controller    密钥文件    配置信息：/etc/rndc.conf<br>       /var/named/:区域数据文件<br>       /etc/rc.d/init.d/named:{start|stop|restart|status|reload|configtest}<br>       2、bind-chroot<br>        默认：named<br>        用户：named<br>        组：named<br>      /var/named/chroot<br>      etc/rdnc.key<br>      sbin/named<br>      var/named<br>     3、dig<br>         dig:Domain Information Groper<br>      DNS 监听的协议及端口<br>       53/udp    53/tcp    /953/tcp.rndc<br>     4、区域：<br>         zone “ZONE NAME” IN {<br>        type{master|slave|hint|forward};<br>        };<br>       主区域：<br>               file “区域数据文件”；<br>       从区域：<br>               file “区域数据文件”<br>          masters{master_ip;};<br>       临时性地关闭SELinux：</p>
+	
+	 <p class="article-more-link">
+	  <a class="article-more-a" href="/2019/02/26/Linux初级运维（二十一）——DNS服务相关概念/#more">more >></a>
+	 </p>
+	
+       
+      
+     </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/26/Linux初级运维（二十一）——DNS服务相关概念/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Linux初级运维（二十）——加密类型、相关算法及ssl协议、openssl等" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -818,83 +892,9 @@
 
 
   
-    <article id="post-Linux初级运维（十一）——facl及用户及Linux终端及case语句" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/14/Linux初级运维（十一）——facl及用户及Linux终端及case语句/">Linux初级运维（十一）——facl及用户及Linux终端及case语句</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/14/Linux初级运维（十一）——facl及用户及Linux终端及case语句/" class="archive-article-date">
-  	<time datetime="2018-11-14T07:48:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-14</time>
-</a>
-        
-      </header>
-    
-    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
-   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-       
-       
-	<p>一、文件系统访问列表<br>    FACL ：Filesystem Access Control List    文件系统访问列表<br>   利用文件扩展保存额外的访问控制权限。<br>   setfacl： -m：设定访问控制权限  （ u：UID：perm     g:GID：perm）    -x：取消访问控制权限<br>  getfacl：<br>二、用户的几个命令<br>    w<br>   who：显示登录到当前系统的用户有哪些<br>   whoami<br>   last ：显示/var/log/wtmp文件，显示用户登录历史及系统重启历史。<br>    -n #:显示最近#次的相关信息。<br>  lastb：/var/log/btmp 文件，显示用户错误的登录尝试<br>     -n #：<br>   lastlog：显示每一个用户最近一次的成功登录信息。<br>     -u USERNAME：显示某个指定用户的最近登录信息<br>      basename ：<br>      $0 :执行脚本时的脚本路径及名称<br>    mail：<br>     生成随机数：  RANDOM  0-32768<br>       内置的环境变量<br>     随机数生成器：   /dev/random     /dev/urandom<br>    生成10个随机数，然后显示这十个随机数中的最大值和最小值：</p>
-	
-	 <p class="article-more-link">
-	  <a class="article-more-a" href="/2018/11/14/Linux初级运维（十一）——facl及用户及Linux终端及case语句/#more">more >></a>
-	 </p>
-	
-       
-      
-     </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/14/Linux初级运维（十一）——facl及用户及Linux终端及case语句/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
