@@ -152,6 +152,80 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Linux初级运维（二十三）——Centos7操作系统搭建DNS服务器" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/17/Linux初级运维（二十三）——Centos7操作系统搭建DNS服务器/">Linux初级运维（二十三）——Centos7操作系统搭建DNS服务器</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/17/Linux初级运维（二十三）——Centos7操作系统搭建DNS服务器/" class="archive-article-date">
+  	<time datetime="2019-03-18T01:14:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-17</time>
+</a>
+        
+      </header>
+    
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+       
+       
+	<p>一、DNS 基本概念<br>    1、DNS概念：<br>    DNS：Domain Name System,域名解析系统，因特网上作为域名和IP地址相互映射的一个分布式数据库，能够使得用户可以方便的访问互联网，而不用去记主机对应的IP地址的过程叫做域名解析。<br>    DNS协议运行在UDP协议之上，使用端口号53。 DNS服务器的功能：每个IP地址都有一个主机名，主机名由一个或多个字符串组成，字符串之间用小数点隔开。有了主机名，就不要去记每台设备的IP地址，只需要记住相对直观有意义的主机名就可以了。这就是DNS协议所要完成的功能。<br>   2、DNS映射方式：<br>       主机名到IP地址的映射有两种方式：1、静态映射：每台设备上都配置主机到IP地址的映射，各设备独立维护自己的映射表，而且只供本设备使用。2、动态映射：建立一套域名解析系统（DNS），只在专门的DNS服务器上配置主机到IP地址的映射，网络上需要使用主机名通信的设备，需要再DNS服务器上查询主机对应的IP地址。<br>    通过主机名，最终得到该主机名对应的IP地址的过程叫做域名解析（或主机名解析）。在解析域名时，可以首先采用静态域名解析的方法，如果静态域名解析不成功，再采用动态域名解析的方法。可以将一些常用的域名放入静态域名解析列表中，这样可以大大提高域名解析效率。<br>   3、DNS常用的资源记录类型<br>       A：地址 此记录列出特定主机名的IP地址。这是名称解析的重要记录<br>    CNAME：标准名称 此记录指定标准主机名的别名<br>    MX：邮件交换服务器，此记录列出了负责接收到域中的电子邮件的主机。<br>    NS：名称服务器此记录指定负责给定区域的名称服务器.<br>   4、DNS服务器类型：<br>       缓存服务器：不负责解析，仅为加速，不需要注册。<br>    主DNS服务器：负责解析本地客户端请求。<br>    辅助DNS服务器：辅助服务器的区域数据都是从主服务器复制而来，其数据都是只读的。<br>   5、dig命令：<br>       语法：dig -t 资源记录类型 名称@server-ip<br>    工作机制：不加“@server-ip”：根据/etc/resolv.conf 配置的解析文件类查询。</p>
+	
+	 <p class="article-more-link">
+	  <a class="article-more-a" href="/2019/03/17/Linux初级运维（二十三）——Centos7操作系统搭建DNS服务器/#more">more >></a>
+	 </p>
+	
+       
+      
+     </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/17/Linux初级运维（二十三）——Centos7操作系统搭建DNS服务器/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Linux初级运维（二十一）——DNS服务相关概念" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -789,80 +863,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/12/03/Linux初级运维（十三）——RAID及mdadm命令/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Linux初级运维（十二）——磁盘及文件系统管理" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/23/Linux初级运维（十二）——磁盘及文件系统管理/">Linux初级运维（十二）——磁盘及文件系统管理</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/23/Linux初级运维（十二）——磁盘及文件系统管理/" class="archive-article-date">
-  	<time datetime="2018-11-23T12:06:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-23</time>
-</a>
-        
-      </header>
-    
-    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
-   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-       
-       
-	<p>一、磁盘管理<br>    1、机械式硬盘:<br>    U盘、光盘、软盘、硬盘、磁带<br>   2、格式化（Partition）创建文件系统<br>       MBR：主引导记录（512byte）<br>    master boot record<br>    main boot record<br>     446bytes：BootLoader<br>     64bytes:<br>         16bytes:标识一个分区<br>       2bytes：magic number<br>               标记MBR<br>      3、硬链接和符合链接<br>     硬链接：是指两个存储块指向一个引导号<br>     符号连接：（又叫软连接）是指一个文件指向另外一个文件<br>     创建连接：ln [-s -v]  SRC （源文件）  DEST（目标文件）<br>      ln SRC DEST 硬链接<br>      ln -s SRC DEST 软链接<br>     硬链接特点：<br>         1、只能对文件创建，不能应用于目录；<br>       2、不能跨文件系统<br>       3、创建硬链接会增加文件被链接的次数<br>     符号链接：<br>         1、可以应用于目录；<br>       2、可以跨文件系统；<br>       3、不会增加被链接文件的链接次数；<br>       4、其大小为指定的路径所包含的字符个数；<br>     du:<br>       -s: 查看文件的大小<br>       -sh：查看目录的总容量<br>     df：查看整个磁盘的分区情况<br>     df -p -i</p>
-	
-	 <p class="article-more-link">
-	  <a class="article-more-a" href="/2018/11/23/Linux初级运维（十二）——磁盘及文件系统管理/#more">more >></a>
-	 </p>
-	
-       
-      
-     </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/23/Linux初级运维（十二）——磁盘及文件系统管理/">展开全文 >></a>
         </p>
       
 

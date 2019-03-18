@@ -6,15 +6,59 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Melvin の blog</title>
+  <title>Linux初级运维（二十三）——Centos7操作系统搭建DNS服务器 | Melvin の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Melvin の blog">
-<meta property="og:url" content="http://yoursite.com/archives/page/7/index.html">
+  <meta name="description" content="一、DNS 基本概念    1、DNS概念：    DNS：Domain Name System,域名解析系统，因特网上作为域名和IP地址相互映射的一个分布式数据库，能够使得用户可以方便的访问互联网，而不用去记主机对应的IP地址的过程叫做域名解析。    DNS协议运行在UDP协议之上，使用端口号53。 DNS服务器的功能：每个IP地址都有一个主机名，主机名由一个或多个字符串组成，字符串之间用小数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux初级运维（二十三）——Centos7操作系统搭建DNS服务器">
+<meta property="og:url" content="http://yoursite.com/2019/03/17/Linux初级运维（二十三）——Centos7操作系统搭建DNS服务器/index.html">
 <meta property="og:site_name" content="Melvin の blog">
+<meta property="og:description" content="一、DNS 基本概念    1、DNS概念：    DNS：Domain Name System,域名解析系统，因特网上作为域名和IP地址相互映射的一个分布式数据库，能够使得用户可以方便的访问互联网，而不用去记主机对应的IP地址的过程叫做域名解析。    DNS协议运行在UDP协议之上，使用端口号53。 DNS服务器的功能：每个IP地址都有一个主机名，主机名由一个或多个字符串组成，字符串之间用小数">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1143.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1144.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1145.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1146.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1147.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1148.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1149.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1150.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1151.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1152.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1153.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1154.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1155.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1156.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1157.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1158.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1159.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1160.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1161.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1162.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1163.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1164.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1165.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1166.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1167.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1168.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1169.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1170.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1171.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1172.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1173.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1174.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1175.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1176.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1177.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1178.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1179.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1180.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-1181.png">
+<meta property="og:updated_time" content="2019-03-18T04:05:27.642Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Melvin の blog">
+<meta name="twitter:title" content="Linux初级运维（二十三）——Centos7操作系统搭建DNS服务器">
+<meta name="twitter:description" content="一、DNS 基本概念    1、DNS概念：    DNS：Domain Name System,域名解析系统，因特网上作为域名和IP地址相互映射的一个分布式数据库，能够使得用户可以方便的访问互联网，而不用去记主机对应的IP地址的过程叫做域名解析。    DNS协议运行在UDP协议之上，使用端口号53。 DNS服务器的功能：每个IP地址都有一个主机名，主机名由一个或多个字符串组成，字符串之间用小数">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-1143.png">
   
     <link rel="alternative" href="/atom.xml" title="Melvin の blog" type="application/atom+xml">
   
@@ -150,295 +194,201 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Linux初级运维（二十三）——Centos7操作系统搭建DNS服务器" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux初级运维（二十三）——Centos7操作系统搭建DNS服务器
+    </h1>
+  
+
+        
+        <a href="/2019/03/17/Linux初级运维（二十三）——Centos7操作系统搭建DNS服务器/" class="archive-article-date">
+  	<time datetime="2019-03-18T01:14:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-17</time>
+</a>
+        
+      </header>
     
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+       
+       
+        <p>一、DNS 基本概念<br>    1、DNS概念：<br>    DNS：Domain Name System,域名解析系统，因特网上作为域名和IP地址相互映射的一个分布式数据库，能够使得用户可以方便的访问互联网，而不用去记主机对应的IP地址的过程叫做域名解析。<br>    DNS协议运行在UDP协议之上，使用端口号53。 DNS服务器的功能：每个IP地址都有一个主机名，主机名由一个或多个字符串组成，字符串之间用小数点隔开。有了主机名，就不要去记每台设备的IP地址，只需要记住相对直观有意义的主机名就可以了。这就是DNS协议所要完成的功能。<br>   2、DNS映射方式：<br>       主机名到IP地址的映射有两种方式：1、静态映射：每台设备上都配置主机到IP地址的映射，各设备独立维护自己的映射表，而且只供本设备使用。2、动态映射：建立一套域名解析系统（DNS），只在专门的DNS服务器上配置主机到IP地址的映射，网络上需要使用主机名通信的设备，需要再DNS服务器上查询主机对应的IP地址。<br>    通过主机名，最终得到该主机名对应的IP地址的过程叫做域名解析（或主机名解析）。在解析域名时，可以首先采用静态域名解析的方法，如果静态域名解析不成功，再采用动态域名解析的方法。可以将一些常用的域名放入静态域名解析列表中，这样可以大大提高域名解析效率。<br>   3、DNS常用的资源记录类型<br>       A：地址 此记录列出特定主机名的IP地址。这是名称解析的重要记录<br>    CNAME：标准名称 此记录指定标准主机名的别名<br>    MX：邮件交换服务器，此记录列出了负责接收到域中的电子邮件的主机。<br>    NS：名称服务器此记录指定负责给定区域的名称服务器.<br>   4、DNS服务器类型：<br>       缓存服务器：不负责解析，仅为加速，不需要注册。<br>    主DNS服务器：负责解析本地客户端请求。<br>    辅助DNS服务器：辅助服务器的区域数据都是从主服务器复制而来，其数据都是只读的。<br>   5、dig命令：<br>       语法：dig -t 资源记录类型 名称@server-ip<br>    工作机制：不加“@server-ip”：根据/etc/resolv.conf 配置的解析文件类查询。</p>
+<p><img src="/images/pasted-1143.png" alt="upload successful"><br>    dit -t 资源记录类型 名称+trace：追踪解析过程。<br>二、环境配置<br>    1、操作系统：CentOS Linux release 7.6.1810 (Core)  Windowserver2008R2<br>   2、DNS服务器IP地址：<br>       Domain Name：melvin.com<br>    主DNS服务器：LinuxMaster.melvin.com     172.28.5.156<br>    备DNS服务器：LinuxSlave.melvin.com      172.28.5.157<br>    辅助DNS服务器：Win2008Slave.melvin.com     172.28.5.158<br>    辅助DNS服务器：<br>    web主机：<a href="http://www.melvin.com" target="_blank" rel="noopener">www.melvin.com</a>        172.28.5.156   172.28.5.157   172.28.5.158<br>    ftp主机： ftp.melvin.com    CNAME    <a href="http://www.melvin.com" target="_blank" rel="noopener">www.melvin.com</a>.<br>    mx邮件服务器：mx.melvin.com.        172.28.5.158<br>   3、正向解析思路：以172.28.5.165的机器为DNS服务器，其他服务器（例如：172.28.5.155）通过DNS服务器172.28.5.156解析后以域名melvintest.com来访问172.28.5.155，在172.28.5.155上通过域名melvintest.com来登录172.28.5.156.<br>  4、反向解析设计思路：以172.28.5.156为DNS服务器，通过172.28.5.155主机的IP来查询其域名：melvintest.com<br>三、正向解析配置<br>    1、DNS服务器需要安装bind、bind-chroot、bind-utils<br>    yum -y install bind bind-utils bind-chroot</p>
+<p><img src="/images/pasted-1144.png" alt="upload successful"></p>
+<p><img src="/images/pasted-1145.png" alt="upload successful"><br>    2、配置区域配置文件：<br>    编辑区域配置文件： /etc/named.rfc1912.zones<br>    vim /etc/named.rfc1912.zones</p>
+<p><img src="/images/pasted-1146.png" alt="upload successful"><br>    3、创建区域数据文件:</p>
+<p><img src="/images/pasted-1147.png" alt="upload successful"><br>    4、测试配置文件及区域文件是否存在语法错误<br>    使用命令：named-checkconf<br>              named-checkzone”melvin.com.zone” /var/named/data/melvin.com.zone<br>    5、确保主配置文件和各区域解析库文件的权限为640，属主为root，属组为named；</p>
+<p><img src="/images/pasted-1148.png" alt="upload successful"><br>    6、重启服务：<br>    systemctl restart named<br>   7、更改iptables和selinux的设置（如果不了解此两项可以暂时关闭）<br>    systemctl stop firewalld<br>    vi /etc/sysconfigselinux<br>   8、分别使用（dig/nslookup）在Linux/windows主机进程查询DNS相关资源记录</p>
+<p><img src="/images/pasted-1149.png" alt="upload successful"></p>
+<p><img src="/images/pasted-1150.png" alt="upload successful"></p>
+<p><img src="/images/pasted-1151.png" alt="upload successful"><br>四、配合反向解析bind服务<br>     正向解析与反向解析各自采用不同的解析库，一台DNS服务器可以只有正向解析库或只有反向解析库，也可以同时提供正向/反向解析。<br>    反向区域的区域名称格式：<br>      ReverseIP.in-add.arpa.<br>      例如：假如网络地址为 172.16.100.1  那么规则命名为100.16.172.in-addr.arpa<br>      这里我本地的内网IP地址为：172.28.5.0 ，所以则写成 5.28.172.in-addr.arpa<br>    1、修改配置文件 /etc/named.conf ,添加反向解析区域配置文件</p>
+<p><img src="/images/pasted-1152.png" alt="upload successful"><br>    2、创建反向区域解析文件 28.172.zone   （可以复制 melvin.com.zone这个文件，然后进行修改）</p>
+<p><img src="/images/pasted-1153.png" alt="upload successful"><br>    3、检查语法错误</p>
+<p><img src="/images/pasted-1154.png" alt="upload successful"><br>    4、设置权限</p>
+<p><img src="/images/pasted-1155.png" alt="upload successful"><br>    5、重启dns服务：<br>    systemctl restart named<br>   6、使用windows系统客户端进行验证解析</p>
+<p><img src="/images/pasted-1156.png" alt="upload successful"><br>     以上配置步骤完成了主bind服务器的配置方法，能够实现正向解析，同时也可以实现反向地址解析<br>五、rnd的相关知识<br>    1、什么是rndc：<br>    rndc：Remote Name Domain Controller ，远程名称域控制器,rndc是BIND安装包提供的一种控制域名服务运行的工具。<br>    rndc 通过一个TCP连接与名字服务器通信，发送经过数字签名认证的命令。在当前版本的rndc和named中，唯一支持的认证算法是HMAC-MD5 ， 在连接的两端使用共享密钥。它为命令请求和名字服务器的响应提供TSIG类型的认证。所有经由通道发送的命令都必须被一个服务器所知道的key_id签名。<br>    监听端口：953/tcp<br>    语法：<br>        rndc [-b address] [-c config] [-s server] [-p port]<br>        [-k key-file] [-y key] [-V] command<br>        command is one of the follwoing:<br>        reload Reload configuration file and zones .  #重新加载配置文件和区域文件<br>        reconfig Reload configuration file and new zones only .  #重新加载配置文件和新的区域文件<br>        freeze Suspend updates to all dynamic zones.<br>        stats Write server statistics to the statistics file. #将服务器统计信息写入统计文件中<br>        stop Save pending updates to master files and stop the server.<br>        halt Stop the server without saving pending updates.<br>        flush Flushes all of the server’s caches. #清空DNS缓存<br>        status Display status of the server. #显示bind服务器的工作状态<br>    2、rndc的调试和日志：</p>
+<p><img src="/images/pasted-1157.png" alt="upload successful"><br>六、区域传送原理：<br>    1、为什么需要区域传送：<br>    DNS辅助服务器是一种容错设计，考虑的是一旦DNS主服务器出现故障或因负载太重无法及时响应客户机请求，辅助服务器将挺身而出代替主服务器。辅助服务器的区域数据都是从主服务器复制而来，因此辅助服务器的数据都是只读的，当然，如果有必要，我们可以很轻松地辅助服务器升级为主服务器。辅助服务器从主服务器复制区域数据的过程叫“区域传送”。区域传送使用TCP的53号端口。<br>   2、区域传送的类型：<br>       （1）完全区域传送（AXFR）<br>    （2）增量区域传送（IXFR）<br>   3、区域传送原理：</p>
+<p><img src="/images/pasted-1158.png" alt="upload successful"></p>
+<p><img src="/images/pasted-1159.png" alt="upload successful"><br>七、辅助DNS服务器的配置<br>     注意：辅助DNS是针对区域来说的；如果有多台DNS服务器，必须为每个DNS服务器建立NS记录，否则主DNS将不向其发送通知；<br>    1、区域的定义：</p>
+<p><img src="/images/pasted-1160.png" alt="upload successful"><br>    2、辅助DNS和区域传送的配置：<br>   第一步：先创建一个辅助DNS （分别在LinuxSlave 和win2008的虚拟主机中实现）</p>
+<p><img src="/images/pasted-1161.png" alt="upload successful"></p>
+<p><img src="/images/pasted-1162.png" alt="upload successful"></p>
+<p><img src="/images/pasted-1163.png" alt="upload successful"></p>
+<p><img src="/images/pasted-1164.png" alt="upload successful"><br>    3、在windows server2008 R2上配置辅助DNS</p>
+<p><img src="/images/pasted-1165.png" alt="upload successful"></p>
+<p><img src="/images/pasted-1166.png" alt="upload successful"></p>
+<p><img src="/images/pasted-1167.png" alt="upload successful"></p>
+<p><img src="/images/pasted-1168.png" alt="upload successful"></p>
+<p><img src="/images/pasted-1169.png" alt="upload successful"></p>
+<p><img src="/images/pasted-1170.png" alt="upload successful"></p>
+<p><img src="/images/pasted-1171.png" alt="upload successful"></p>
+<p><img src="/images/pasted-1172.png" alt="upload successful"></p>
+<p><img src="/images/pasted-1173.png" alt="upload successful"></p>
+<p><img src="/images/pasted-1174.png" alt="upload successful"></p>
+<p><img src="/images/pasted-1175.png" alt="upload successful"></p>
+<p><img src="/images/pasted-1176.png" alt="upload successful"></p>
+<p><img src="/images/pasted-1177.png" alt="upload successful"><br>    第二步：实现从主DNS服务器完全同步区域数据文件，查看日志文件验证辅助服务器是否完成同步：<br>        在辅助DNS服务器上使用dig命令检测是否能从主DNS服务器同步数据（完全区域传送）</p>
+<p><img src="/images/pasted-1178.png" alt="upload successful"><br>    第三步：在主DNS服务器上新增一条资源记录并查看日志文件，然后到辅助DNS服务器上查看日志是否完成增量数据同步</p>
+<p><img src="/images/pasted-1179.png" alt="upload successful"></p>
+<p><img src="/images/pasted-1180.png" alt="upload successful"><br>    第四步：在windows客户端用nslookup 命令来验证辅助DNS的配置</p>
+<p><img src="/images/pasted-1181.png" alt="upload successful"><br>八、DNS服务器配置总结：<br>    1、每个DNS服务器必须要有一个对应的NS资源记录；<br>   2、创建slave的时候，其配置文件类型必须是type slave ；必须指定主服务器的IP地址<br>   3、可以使用dig -t axfr test.com @server_IP 从主DNS服务器拉取所有解析库资源记录；<br>   4、主辅同步完成后，将自动在slave服务器上的slaves/目录下生成zone文件，这些区域文件是从主DNS同步过来的，一般为只读，不建议更改slave的zone文件；<br>   5、在主DNS上修改区域文件时，必须将SOA记录的serial加1因为slave是通过serial值来进行判断更新的（windows系统上是自动完成的）；<br>   6、DNS的日志默认全部保存在/var/log/messege文件中；    7、DNS的解析依赖于解析库，所以就算是所配置的内容是完全不存在的也可以解析（且正向解析和反向解析的解析是各自独立的）。需要注意，正向解析力没有PTR记录，而反向解析库里不需要A记录、MX记录和CNAME记录。</p>
+
+       
+      
+     </div>
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/31/Centos7-firewall防火墙常用配置/" class="archive-article-date">
-  	<time datetime="2018-10-31T10:55:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/31/Centos7-firewall防火墙常用配置/">Centos7 firewall防火墙常用配置</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
   </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/17/Linux初级运维（二十三）——Centos7操作系统搭建DNS服务器/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/31/Centos7-安装Python3-6-5-及安装ipython6-1-0/" class="archive-article-date">
-  	<time datetime="2018-10-31T10:15:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-31</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/02/26/Linux初级运维（二十一）——DNS服务相关概念/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Linux初级运维（二十一）——DNS服务相关概念</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/31/Centos7-安装Python3-6-5-及安装ipython6-1-0/">Centos7 安装Python3.6.5 及安装ipython6.1.0</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/31/VMwareWorkstation-创建新的虚拟机/" class="archive-article-date">
-  	<time datetime="2018-10-31T09:56:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/31/VMwareWorkstation-创建新的虚拟机/">VMwareWorkstation 创建新的虚拟机</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/31/VMWare-中安装VMWare-Tools-（Centos系统和Window-系统）/" class="archive-article-date">
-  	<time datetime="2018-10-31T09:06:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/31/VMWare-中安装VMWare-Tools-（Centos系统和Window-系统）/">VMWare 中安装VMWare Tools （Centos系统和Window 系统）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/31/在vSphere-Client-使用模板部署虚拟机-系统硬盘空间扩展/" class="archive-article-date">
-  	<time datetime="2018-10-31T05:04:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/31/在vSphere-Client-使用模板部署虚拟机-系统硬盘空间扩展/">在vSphere Client 使用模板部署虚拟机 系统硬盘空间扩展</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/安装虚拟机和windows-server-2012-系统操作文档/" class="archive-article-date">
-  	<time datetime="2018-10-31T00:35:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/安装虚拟机和windows-server-2012-系统操作文档/">安装虚拟机和windows server 2012 系统操作文档</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/VM-创建Centos-7-操作系统及防火墙配置/" class="archive-article-date">
-  	<time datetime="2018-10-30T12:35:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/VM-创建Centos-7-操作系统及防火墙配置/">VM 创建Centos 7 操作系统及防火墙配置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/Windows-10-系统-PyCharm软件的安装、激活、汉化-详细教程/" class="archive-article-date">
-  	<time datetime="2018-10-30T11:42:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/Windows-10-系统-PyCharm软件的安装、激活、汉化-详细教程/">Windows 10 系统 PyCharm软件的安装、激活、汉化 详细教程</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/Windows10-64位安装Python-3-6-4/" class="archive-article-date">
-  	<time datetime="2018-10-30T11:30:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/Windows10-64位安装Python-3-6-4/">Windows10 64位安装Python 3.6.4</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/30/Linux系统常用命令/" class="archive-article-date">
-  	<time datetime="2018-10-30T09:40:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/Linux系统常用命令/">Linux系统常用命令</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/6/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/5/">5</a><a class="page-number" href="/archives/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/archives/page/8/">8</a><a class="extend next" rel="next" href="/archives/page/8/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -467,8 +417,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

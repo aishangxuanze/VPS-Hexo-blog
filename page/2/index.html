@@ -152,6 +152,80 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Linux初级运维（十二）——磁盘及文件系统管理" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/23/Linux初级运维（十二）——磁盘及文件系统管理/">Linux初级运维（十二）——磁盘及文件系统管理</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/23/Linux初级运维（十二）——磁盘及文件系统管理/" class="archive-article-date">
+  	<time datetime="2018-11-23T12:06:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-23</time>
+</a>
+        
+      </header>
+    
+    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
+   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+       
+       
+	<p>一、磁盘管理<br>    1、机械式硬盘:<br>    U盘、光盘、软盘、硬盘、磁带<br>   2、格式化（Partition）创建文件系统<br>       MBR：主引导记录（512byte）<br>    master boot record<br>    main boot record<br>     446bytes：BootLoader<br>     64bytes:<br>         16bytes:标识一个分区<br>       2bytes：magic number<br>               标记MBR<br>      3、硬链接和符合链接<br>     硬链接：是指两个存储块指向一个引导号<br>     符号连接：（又叫软连接）是指一个文件指向另外一个文件<br>     创建连接：ln [-s -v]  SRC （源文件）  DEST（目标文件）<br>      ln SRC DEST 硬链接<br>      ln -s SRC DEST 软链接<br>     硬链接特点：<br>         1、只能对文件创建，不能应用于目录；<br>       2、不能跨文件系统<br>       3、创建硬链接会增加文件被链接的次数<br>     符号链接：<br>         1、可以应用于目录；<br>       2、可以跨文件系统；<br>       3、不会增加被链接文件的链接次数；<br>       4、其大小为指定的路径所包含的字符个数；<br>     du:<br>       -s: 查看文件的大小<br>       -sh：查看目录的总容量<br>     df：查看整个磁盘的分区情况<br>     df -p -i</p>
+	
+	 <p class="article-more-link">
+	  <a class="article-more-a" href="/2018/11/23/Linux初级运维（十二）——磁盘及文件系统管理/#more">more >></a>
+	 </p>
+	
+       
+      
+     </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/23/Linux初级运维（十二）——磁盘及文件系统管理/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Linux初级运维（十一）——facl及用户及Linux终端及case语句" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -789,80 +863,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/11/06/PPPT、L2TP-IPSec、Open-VPN的比较/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Centos7-5系统使用L2TP-IPSec-搭建服务器" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/05/Centos7-5系统使用L2TP-IPSec-搭建服务器/">Centos7.5系统使用L2TP/IPSec 搭建服务器</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/05/Centos7-5系统使用L2TP-IPSec-搭建服务器/" class="archive-article-date">
-  	<time datetime="2018-11-06T01:52:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-05</time>
-</a>
-        
-      </header>
-    
-    <div style="text-align:center;" <span="" id="busuanzi_container_page_pv">
-   本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-       
-       
-	<p>一、L2TP介绍<br>    1、L2TP定义<br>    L2TP（Layer 2 Tunneling Protocol，二层隧道协议），通过公共网络（如Internet）上建立点到点的L2TP隧道，将PPP（Point-to-Point Protocol,点对点协议）数据帧封装后通过L2TP隧道传输，使得远端用户利用PPP接入公共网络后，能够通过L2TP隧道与企业内部网络通信，访问企业内部网络资源，从而为远端用户接入私有的企业网络提供了一种安全、经济且有效的方式。<br>   L2TP是一种工业标准的Internet隧道协议，功能大致和PPP协议类似，同样可以对网络数据流进行加密。不过也有不同之处，比如PPTP要求网络为IP网络，L2TP要求面向数据包的点对点连接；PPTP使用单一隧道，L2TP使用多隧道；L2TP提供包头压缩、隧道验证，而PPTP不支持。<br>   第二层隧道协议（L2TP）是用来整合多协议拨号服务至现有的因特网服务提供商点。PPP 定义了多协议跨越第二层点对点链接的一个封装机制。特别地，用户通过使用众多技术之一（如：拨号 POTS、ISDN、ADSL 等）获得第二层连接到网络访问服务器（NAS），然后在此连接上运行 PPP。<br>   L2TP 扩展了 PPP 模型，允许第二层和 PPP 终点处于不同的由包交换网络相互连接的设备来。通过 L2TP，用户在第二层连接到一个访问集中器（如：调制解调器池、ADSL DSLAM 等），然后这个集中器将单独得的 PPP 帧隧道到 NAS。这样，可以把 PPP 包的实际处理过程与 L2 连接的终点分离开来。<br>   L2TP 是一个数据链路层协议。其报文分为数据消息和控制消息两类。数据消息用投递 PPP 帧，该帧作为L2TP报文的数据区。L2TP不保证数据消息的可靠投递，若数据报文丢失，不予重传，不支持对数据消息的流量控制和拥塞控制。控制消息用以建立、维护和终止控制连接及会话，L2TP确保其可靠投递，并支持对控制消息的流量控制和拥塞控制。<br>    2、L2TP典型组网原理</p>
-	
-	 <p class="article-more-link">
-	  <a class="article-more-a" href="/2018/11/05/Centos7-5系统使用L2TP-IPSec-搭建服务器/#more">more >></a>
-	 </p>
-	
-       
-      
-     </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/05/Centos7-5系统使用L2TP-IPSec-搭建服务器/">展开全文 >></a>
         </p>
       
 
